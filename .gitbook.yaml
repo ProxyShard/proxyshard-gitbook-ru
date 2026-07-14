@@ -1,0 +1,218 @@
+root: ./
+
+structure:
+  readme: README.md
+  summary: SUMMARY.md
+
+openapi:
+  specs:
+    - id: proxy-shard-user-api
+      path: ./proxy-shard-user-api.openapi.yaml
+    - id: shardbrowser-api
+      path: ./shardx-launcher.openapi.yaml
+
+redirects:
+  # Старые русские пути -> новые английские
+  nashi-produkty/o-protokole-udp/primer-nastroiki-i-raboty-s-udp: our-products/about-udp
+  nashi-produkty/rezidentskie-proksi: our-products/residential-proxies
+  instrukciya-po-ispolzovaniyu/brauzery/chrome/zeroomega: setup-guides/browsers/chrome/zeroomega
+  nashi-produkty/o-protokole-udp: our-products/about-udp
+  nashi-produkty/mobilnye-proksi: our-products/mobile-proxies
+  nashi-produkty/rezidentskie-proksi/kak-ispolzovat-residential-proksi: our-products/residential-proxies/how-to-use-residential-proxies
+  nashi-produkty/rezidentskie-proksi/spisok-dostupnykh-stran: our-products/residential-proxies/available-countries
+  nashi-produkty/ogranicheniya: our-products/restrictions
+  nashi-produkty/datacentr-proksi: our-products/datacenter-proxies
+  nashi-produkty/isp-proksi: our-products/isp-proxies
+  nashi-produkty/proksi-s-udp: our-products/about-udp
+  nashi-produkty/ip-checker: our-products/ip-checker
+  instrukciya-po-ispolzovaniyu/instrukciya-po-nastroike: setup-guides/getting-started
+  instrukciya-po-ispolzovaniyu/windows/clashx: setup-guides/windows/clashx
+  instrukciya-po-ispolzovaniyu/windows/v2rayn: setup-guides/windows/v2rayn
+  instrukciya-po-ispolzovaniyu/windows/nekoray: setup-guides/windows/nekoray
+  instrukciya-po-ispolzovaniyu/windows/proxycap: setup-guides/windows/proxycap
+  instrukciya-po-ispolzovaniyu/windows/win2socks: setup-guides/windows/win2socks
+  instrukciya-po-ispolzovaniyu/windows/socskcap64: setup-guides/windows/sockscap64
+  instrukciya-po-ispolzovaniyu/windows/proxifier: setup-guides/windows/proxifier
+  instrukciya-po-ispolzovaniyu/macos/v2box: setup-guides/macos/v2box
+  instrukciya-po-ispolzovaniyu/linux/gui-programmy/v2rayn-gui: setup-guides/linux/gui-apps/v2rayn-gui
+  instrukciya-po-ispolzovaniyu/linux/cli-programmy/proxychain: setup-guides/linux/cli-apps/proxychain
+  instrukciya-po-ispolzovaniyu/ios-android/v2box: setup-guides/ios-android/v2box
+  instrukciya-po-ispolzovaniyu/ios-android/potatso: setup-guides/ios-android/potatso
+  instrukciya-po-ispolzovaniyu/ios-android/super-proxy: setup-guides/ios-android/super-proxy
+  instrukciya-po-ispolzovaniyu/antidetekt-brauzery/vision-brauzer: setup-guides/antidetect-browsers/vision-browser
+  instrukciya-po-ispolzovaniyu/antidetekt-brauzery/adspower: setup-guides/antidetect-browsers/adspower
+  instrukciya-po-ispolzovaniyu/brauzery: setup-guides/browsers
+  instrukciya-po-ispolzovaniyu/brauzery/safari: setup-guides/browsers/safari
+  instrukciya-po-ispolzovaniyu/brauzery/mozilla-firefox/foxyproxy: setup-guides/browsers/mozilla-firefox/foxyproxy
+  instrukciya-po-ispolzovaniyu/brauzery/opera/zeroomega: setup-guides/browsers/opera/zeroomega
+  instrukciya-po-ispolzovaniyu/brauzery/edge/zeroomega: setup-guides/browsers/edge/zeroomega
+  instrukciya-po-ispolzovaniyu/telegram: setup-guides/telegram
+  instrukciya-po-ispolzovaniyu/mikrotik-proksi: setup-guides/mikrotik-proxy
+  instrukciya-po-ispolzovaniyu/openwrt-proxy: setup-guides/openwrt-proxy
+  instrukciya-po-ispolzovaniyu/checker-proxy: our-products/proxy-tester
+  navigaciya-po-saitu/popolnenie-balansa: site-navigation/top-up-balance
+  navigaciya-po-saitu/priobretenie-i-prodlenie-proksi: site-navigation/buying-and-renewing
+  navigaciya-po-saitu/priobretenie-i-prodlenie-proksi/primer-priobreteniya-datacentr-proksi: site-navigation/buying-and-renewing/buying-datacenter-proxies
+  navigaciya-po-saitu/priobretenie-i-prodlenie-proksi/primer-priobreteniya-rezidentskikh-proksi: site-navigation/buying-and-renewing/buying-residential-proxies
+  navigaciya-po-saitu/priobretenie-i-prodlenie-proksi/primer-priobreteniya-isp-proksi: site-navigation/buying-and-renewing/buying-isp-proxies
+  navigaciya-po-saitu/priobretenie-i-prodlenie-proksi/primer-priobreteniya-mobilnykh-proksi: site-navigation/buying-and-renewing/buying-mobile-proxies
+  navigaciya-po-saitu/poisk-zakazov-product-tag: site-navigation/order-search-product-tag
+  navigaciya-po-saitu/scheta: site-navigation/invoices
+  navigaciya-po-saitu/moi-zakazy: site-navigation/my-orders
+  navigaciya-po-saitu/referalnaya-programma: site-navigation/referral-program
+  razbor-vozmozhnykh-problem/faq-chastye-voprosy: faq-and-support/faq
+  faq-and-support/faq/products: faq-and-support/faq/general-questions
+  razbor-vozmozhnykh-problem/faq-chastye-voprosy/proksi-ne-rabotayut: faq-and-support/faq/proxy-not-working
+  razbor-vozmozhnykh-problem/faq-chastye-voprosy/lokaciya-proksi-neverna: faq-and-support/faq/wrong-proxy-location
+  chto-takoe-proxyshard: about-proxyshard
+  svyaz-s-nami: contact-us
+  nashi-produkty/o-protokole-udp/kak-ustanovit-tampermonkey-i-skript-dlya-debaga-webrtc: our-products/about-udp/tampermonkey-webrtc-debug
+  nashi-produkty/o-protokole-udp/kak-rabotaet-utechka-cherez-webrtc: our-products/about-udp/how-webrtc-leak-works
+  nashi-produkty/o-protokole-udp/cherez-chto-mozhno-proverit-utechku-webrtc: our-products/about-udp/webrtc-leak-check-tools
+  nashi-produkty/o-protokole-udp/pochemu-prosto-tcp-proksi-nedostatochno: our-products/about-udp/why-tcp-proxy-not-enough
+  nashi-produkty/o-protokole-udp/programmnye-resheniya-dlya-vklyucheniya-webrtc: our-products/about-udp/webrtc-software-solutions
+  nashi-produkty/o-protokole-udp/pochemu-blokirovka-webrtc-ne-spasaet-ot-obnaruzheniya: our-products/about-udp/why-blocking-webrtc-doesnt-help
+  nashi-produkty/o-protokole-udp/rezultaty-nashikh-polevykh-testov: our-products/about-udp/field-test-results
+  nashi-produkty/o-protokole-udp/primer-nastroiki-i-raboty-s-udp/vision-antidetect-browser: our-products/about-udp
+  nashi-produkty/o-protokole-udp/primer-nastroiki-i-raboty-s-udp/clashx: our-products/about-udp
+
+  # Старые автопереведённые английские пути (/eng/)
+  our-products/about-the-udp-protocol: our-products/about-udp
+  our-products/about-the-udp-protocol/example-of-configuring-and-working-with-udp/vision-antidetect-browser: our-products/about-udp
+  our-products/about-the-udp-protocol/example-of-configuring-and-working-with-udp: our-products/about-udp
+  our-products/residential-proxies/list-of-available-countries: our-products/residential-proxies/available-countries
+  our-products/rezidentskie-proksi: our-products/residential-proxies
+  our-products/mobilnye-proksi: our-products/mobile-proxies
+  our-products/ogranicheniya: our-products/restrictions
+  usage-instructions/brauzery/edge/zeroomega: setup-guides/browsers/edge/zeroomega
+  usage-instructions/brauzery: setup-guides/browsers
+  usage-instructions/browsers/chrome/zeroomega: setup-guides/browsers/chrome/zeroomega
+  usage-instructions/browsers/safari: setup-guides/browsers/safari
+  usage-instructions/browsers/mozilla-firefox/foxyproxy: setup-guides/browsers/mozilla-firefox/foxyproxy
+  usage-instructions/linux/gui-programs/v2rayn-gui: setup-guides/linux/gui-apps/v2rayn-gui
+  usage-instructions/linux/cli-programs/proxychain: setup-guides/linux/cli-apps/proxychain
+  usage-instructions/antidetect-browsers/vision-browser: setup-guides/antidetect-browsers/vision-browser
+  usage-instructions/ios-android/ios-android-v2box: setup-guides/ios-android/v2box
+  usage-instructions/ios-android/ios-potatso: setup-guides/ios-android/potatso
+  usage-instructions/windows/sockscap64: setup-guides/windows/sockscap64
+  usage-instructions/mikrotik-proxies: setup-guides/mikrotik-proxy
+  usage-instructions/mikrotik-proksi: setup-guides/mikrotik-proxy
+  usage-instructions/proxy-checker: our-products/proxy-tester
+  troubleshooting/faq-frequently-asked-questions: faq-and-support/faq
+  site-navigation/priobretenie-i-prodlenie-proksi/primer-priobreteniya-isp-proksi: site-navigation/buying-and-renewing/buying-isp-proxies
+
+  # Опечатка в слаге исправлена (2026-07-04)
+  setup-guides/windows/socskcap64: setup-guides/windows/sockscap64
+
+  # Удалённые дубли/черновики -> реальные страницы
+  setup-guides/checker-proxy: our-products/proxy-tester
+
+  # ProxyShard API group migration (2026-07-14)
+  polzovatelskoe-api: proxyshard-api/datacenter-and-isp-proxies
+  polzovatelskoe-api/datacenter-and-isp-proxies: proxyshard-api/datacenter-and-isp-proxies
+  polzovatelskoe-api/residential-proxies: proxyshard-api/residential-proxies
+  polzovatelskoe-api/general: proxyshard-api/general
+  polzovatelskoe-api/models: proxyshard-api/models
+
+  # Temporary combined API group split (2026-07-14)
+  api-specifications: proxyshard-api/datacenter-and-isp-proxies
+  api-specifications/datacenter-and-isp-proxies: proxyshard-api/datacenter-and-isp-proxies
+  api-specifications/residential-proxies: proxyshard-api/residential-proxies
+  api-specifications/general: proxyshard-api/general
+  api-specifications/models: proxyshard-api/models
+  api-specifications/binding-and-lifecycle: shardx-launcher-api/binding-and-lifecycle
+  api-specifications/authentication: shardx-launcher-api/authentication
+  api-specifications/typical-flow: shardx-launcher-api/typical-flow
+  api-specifications/proxies-and-quic-webrtc: shardx-launcher-api/proxies-and-quic-webrtc
+  api-specifications/temporary-profiles: shardx-launcher-api/temporary-profiles
+  api-specifications/fingerprint-object: shardx-launcher-api/fingerprint-object
+  api-specifications/mcp-server: shardx-launcher-api/mcp-server
+  api-specifications/system: shardx-launcher-api/system
+  api-specifications/fingerprints: shardx-launcher-api/fingerprints
+  api-specifications/profiles: shardx-launcher-api/profiles
+  api-specifications/folders: shardx-launcher-api/folders
+  api-specifications/proxies: shardx-launcher-api/proxies
+  api-specifications/models-1: shardx-launcher-api/models
+
+  # Localized group slug migration (2026-07-14)
+  nashi-produkty: our-products/residential-proxies
+  instrumenty: our-products/proxy-tester
+  tekhnologii-i-vozmozhnosti: our-products/p0f-spoofing
+  navigaciya-po-saitu: site-navigation/top-up-balance
+  voprosy-i-otvety: faq-and-support/faq
+  instrukciya-po-ispolzovaniyu: setup-guides/getting-started
+  nashi-produkty/residential-proxies: our-products/residential-proxies
+  nashi-produkty/residential-proxies/standard-residential: our-products/residential-proxies/standard-residential
+  nashi-produkty/residential-proxies/unlimited-residential-proxy: our-products/residential-proxies/unlimited-residential-proxy
+  nashi-produkty/residential-proxies/premium-residential: our-products/residential-proxies/premium-residential
+  nashi-produkty/residential-proxies/available-countries: our-products/residential-proxies/available-countries
+  nashi-produkty/residential-proxies/premium-available-countries: our-products/residential-proxies/premium-available-countries
+  nashi-produkty/residential-proxies/how-to-use-residential-proxies: our-products/residential-proxies/how-to-use-residential-proxies
+  nashi-produkty/datacenter-proxies: our-products/datacenter-proxies
+  nashi-produkty/mobile-proxies: our-products/mobile-proxies
+  nashi-produkty/isp-proxies: our-products/isp-proxies
+  nashi-produkty/restrictions: our-products/restrictions
+  instrumenty/proxy-tester: our-products/proxy-tester
+  instrumenty/ip-checker: our-products/ip-checker
+  instrumenty/proxyshard-extension: our-products/proxyshard-extension
+  instrumenty/shardx-launcher: our-products/shardx-launcher
+  tekhnologii-i-vozmozhnosti/p0f-spoofing: our-products/p0f-spoofing
+  tekhnologii-i-vozmozhnosti/about-udp: our-products/about-udp
+  tekhnologii-i-vozmozhnosti/about-udp/tampermonkey-webrtc-debug: our-products/about-udp/tampermonkey-webrtc-debug
+  tekhnologii-i-vozmozhnosti/about-udp/how-webrtc-leak-works: our-products/about-udp/how-webrtc-leak-works
+  tekhnologii-i-vozmozhnosti/about-udp/webrtc-leak-check-tools: our-products/about-udp/webrtc-leak-check-tools
+  tekhnologii-i-vozmozhnosti/about-udp/why-tcp-proxy-not-enough: our-products/about-udp/why-tcp-proxy-not-enough
+  tekhnologii-i-vozmozhnosti/about-udp/why-blocking-webrtc-doesnt-help: our-products/about-udp/why-blocking-webrtc-doesnt-help
+  tekhnologii-i-vozmozhnosti/about-udp/field-test-results: our-products/about-udp/field-test-results
+  tekhnologii-i-vozmozhnosti/about-udp/webrtc-software-solutions: our-products/about-udp/webrtc-software-solutions
+  navigaciya-po-saitu/top-up-balance: site-navigation/top-up-balance
+  navigaciya-po-saitu/buying-and-renewing: site-navigation/buying-and-renewing
+  navigaciya-po-saitu/buying-and-renewing/buying-datacenter-proxies: site-navigation/buying-and-renewing/buying-datacenter-proxies
+  navigaciya-po-saitu/buying-and-renewing/buying-residential-proxies: site-navigation/buying-and-renewing/buying-residential-proxies
+  navigaciya-po-saitu/buying-and-renewing/buying-isp-proxies: site-navigation/buying-and-renewing/buying-isp-proxies
+  navigaciya-po-saitu/buying-and-renewing/buying-mobile-proxies: site-navigation/buying-and-renewing/buying-mobile-proxies
+  navigaciya-po-saitu/order-search-product-tag: site-navigation/order-search-product-tag
+  navigaciya-po-saitu/invoices: site-navigation/invoices
+  navigaciya-po-saitu/my-orders: site-navigation/my-orders
+  voprosy-i-otvety/faq: faq-and-support/faq
+  voprosy-i-otvety/faq/general-questions: faq-and-support/faq/general-questions
+  voprosy-i-otvety/faq/residential-proxies: faq-and-support/faq/residential-proxies
+  voprosy-i-otvety/faq/residential-proxies/why-residential-proxies-not-saved: faq-and-support/faq/why-residential-proxies-not-saved
+  voprosy-i-otvety/faq/datacenter-isp-proxies: faq-and-support/faq/datacenter-isp-proxies
+  voprosy-i-otvety/faq/mobile-proxies: faq-and-support/faq/mobile-proxies
+  voprosy-i-otvety/faq/how-to-check-proxy: faq-and-support/faq/how-to-check-proxy
+  instrukciya-po-ispolzovaniyu/getting-started: setup-guides/getting-started
+  instrukciya-po-ispolzovaniyu/shardx-browser: setup-guides/shardx-browser
+  instrukciya-po-ispolzovaniyu/windows: setup-guides/windows
+  instrukciya-po-ispolzovaniyu/windows/sockscap64: setup-guides/windows/sockscap64
+  instrukciya-po-ispolzovaniyu/macos: setup-guides/macos
+  instrukciya-po-ispolzovaniyu/linux: setup-guides/linux
+  instrukciya-po-ispolzovaniyu/linux/gui-apps: setup-guides/linux/gui-apps
+  instrukciya-po-ispolzovaniyu/linux/gui-apps/v2rayn-gui: setup-guides/linux/gui-apps/v2rayn-gui
+  instrukciya-po-ispolzovaniyu/linux/cli-apps: setup-guides/linux/cli-apps
+  instrukciya-po-ispolzovaniyu/linux/cli-apps/proxychain: setup-guides/linux/cli-apps/proxychain
+  instrukciya-po-ispolzovaniyu/ios-android: setup-guides/ios-android
+  instrukciya-po-ispolzovaniyu/antidetect-browsers: setup-guides/antidetect-browsers
+  instrukciya-po-ispolzovaniyu/antidetect-browsers/vision-browser: setup-guides/antidetect-browsers/vision-browser
+  instrukciya-po-ispolzovaniyu/antidetect-browsers/adspower: setup-guides/antidetect-browsers/adspower
+  instrukciya-po-ispolzovaniyu/browsers: setup-guides/browsers
+  instrukciya-po-ispolzovaniyu/browsers/chrome: setup-guides/browsers/chrome
+  instrukciya-po-ispolzovaniyu/browsers/chrome/proxyshard: setup-guides/browsers/chrome/proxyshard
+  instrukciya-po-ispolzovaniyu/browsers/chrome/zeroomega: setup-guides/browsers/chrome/zeroomega
+  instrukciya-po-ispolzovaniyu/browsers/edge: setup-guides/browsers/edge
+  instrukciya-po-ispolzovaniyu/browsers/edge/proxyshard: setup-guides/browsers/edge/proxyshard
+  instrukciya-po-ispolzovaniyu/browsers/edge/zeroomega: setup-guides/browsers/edge/zeroomega
+  instrukciya-po-ispolzovaniyu/browsers/opera: setup-guides/browsers/opera
+  instrukciya-po-ispolzovaniyu/browsers/opera/proxyshard: setup-guides/browsers/opera/proxyshard
+  instrukciya-po-ispolzovaniyu/browsers/opera/zeroomega: setup-guides/browsers/opera/zeroomega
+  instrukciya-po-ispolzovaniyu/browsers/brave: setup-guides/browsers/brave
+  instrukciya-po-ispolzovaniyu/browsers/brave/proxyshard: setup-guides/browsers/brave/proxyshard
+  instrukciya-po-ispolzovaniyu/browsers/yandex: setup-guides/browsers/yandex
+  instrukciya-po-ispolzovaniyu/browsers/yandex/proxyshard: setup-guides/browsers/yandex/proxyshard
+  instrukciya-po-ispolzovaniyu/browsers/vivaldi: setup-guides/browsers/vivaldi
+  instrukciya-po-ispolzovaniyu/browsers/vivaldi/proxyshard: setup-guides/browsers/vivaldi/proxyshard
+  instrukciya-po-ispolzovaniyu/browsers/safari: setup-guides/browsers/safari
+  instrukciya-po-ispolzovaniyu/browsers/mozilla-firefox: setup-guides/browsers/mozilla-firefox
+  instrukciya-po-ispolzovaniyu/browsers/mozilla-firefox/proxyshard: setup-guides/browsers/mozilla-firefox/proxyshard
+  instrukciya-po-ispolzovaniyu/browsers/mozilla-firefox/foxyproxy: setup-guides/browsers/mozilla-firefox/foxyproxy
+  instrukciya-po-ispolzovaniyu/mikrotik-proxy: setup-guides/mikrotik-proxy
