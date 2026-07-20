@@ -67,13 +67,12 @@ icon: fingerprint
 
 ## Где доступно
 
-Подмена p0f доступна на следующих продуктах:
+Подмена p0f и фильтрация устройств доступны на следующих продуктах:
 
 * [Датацентр прокси](datacenter-proxies.md)
 * [ISP прокси](isp-proxies.md)
 * [Мобильные прокси](mobile-proxies.md)
-
-[Резидентские прокси](residential-proxies/) не поддерживают подмену p0f. На [Premium Residential](residential-proxies/premium-residential.md) доступна только фильтрация устройств по параметру Device OS.
+* [Premium Residential](residential-proxies/premium-residential.md) - фильтрация устройств по параметру [Device OS](residential-proxies/#opisanie-polei-nastroek), без подмены p0f
 
 {% hint style="warning" %}
 На некоторых [мобильных прокси](mobile-proxies.md) подмена p0f недоступна. Полный список ограничений смотрите на странице [Ограничения](restrictions.md).
