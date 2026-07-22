@@ -62,11 +62,17 @@ icon: signal
 
 <figure><img src="../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
 
+{% hint style="warning" %}
+После покупки активируйте порт: нажмите <mark style="color:purple;">**Restart**</mark> в заказе или перейдите по персональной ссылке <mark style="color:purple;">**Reset URL**</mark>. До активации прокси работать не будет.
+{% endhint %}
+
+<figure><img src="../.gitbook/assets/mobile_pred.png" alt="Предупреждение об активации мобильного прокси" width="492"><figcaption></figcaption></figure>
+
 ## Описание полей заказа
 
 Рассмотрим поля <mark style="color:purple;">заказа</mark>:
 
-<figure><img src="../.gitbook/assets/image (20) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/mobile_order2.png" alt="Поля заказа мобильного прокси"><figcaption></figcaption></figure>
 
 <mark style="color:purple;">Proxy info</mark> - Наименование продукта
 
