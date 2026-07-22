@@ -26,7 +26,7 @@ icon: check-to-slot
 
 ## 2. Ipbinding
 
-<mark style="color:purple;">**Ipbinding**</mark> — сервис для проверки WebRTC утечек.
+<mark style="color:purple;">**Ipbinding**</mark> - сервис для проверки WebRTC утечек.
 
 {% embed url="https://ipbinding.online/" %}
 

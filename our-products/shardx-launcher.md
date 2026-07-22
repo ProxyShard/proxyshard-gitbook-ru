@@ -11,7 +11,7 @@ icon: fingerprint
 <mark style="color:violet;">**Пошаговая инструкция по установке, настройке прокси и созданию первого профиля:**</mark>
 
 {% content-ref url="../setup-guides/shardx-browser.md" %}
-[ShardX Launcher — установка и настройка](../setup-guides/shardx-browser.md)
+[ShardX Launcher - установка и настройка](../setup-guides/shardx-browser.md)
 {% endcontent-ref %}
 
 #### Что умеет ShardX:

@@ -12,7 +12,7 @@ icon: house-signal
 {% endhint %}
 
 {% hint style="warning" %}
-Адреса выдаются на реальных домашних IP. Сессия может смениться в любой момент, если устройство в пуле выйдет из сети раздачи трафика. Если вам нужен **статический IP** — смотрите [Datacenter](../datacenter-proxies.md) или [ISP прокси](../isp-proxies.md).
+Адреса выдаются на реальных домашних IP. Сессия может смениться в любой момент, если устройство в пуле выйдет из сети раздачи трафика. Если вам нужен **статический IP** - смотрите [Datacenter](../datacenter-proxies.md) или [ISP прокси](../isp-proxies.md).
 {% endhint %}
 
 {% embed url="https://dashboard.proxyshard.com/en/residential-main" %}
@@ -21,8 +21,8 @@ icon: house-signal
 
 | Параметр                                                                                                           | [Standard](standard-residential.md) | [Unlimited](unlimited-residential-proxy.md)      | [Premium](premium-residential.md) |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------- | ------------------------------------------------ | --------------------------------- |
-| Размер пула                                                                                                        | 300k — 400k                         | 300k — 400k (= Standard)                         | 3.8M — 4.6M                       |
-| Макс. соединений                                                                                                   | 35 000                              | 5 000                                            | —                                 |
+| Размер пула                                                                                                        | 300k - 400k                         | 300k - 400k (= Standard)                         | 3.8M - 4.6M                       |
+| Макс. соединений                                                                                                   | 35 000                              | 5 000                                            | -                                 |
 | Макс. скорость                                                                                                     | 75 Mbps                             | 75 Mbps                                          | 75 Mbps                           |
 | [Поддержка UDP](../about-udp/)                                                                                     | ✓ (кроме США)                       | ✓ (кроме США)                                    | ✗                                 |
 | [Фильтрация Device OS (p0f)](https://docs.proxyshard.com/our-products/residential-proxies#opisanie-polei-nastroek) | ✗                                   | ✗                                                | ✓                                 |
@@ -91,7 +91,7 @@ icon: house-signal
 <mark style="color:purple;">**Protocol**</mark> - HTTP/SOCKS.\
 Это основные протоколы для установления соединения с сервером прокси.
 
-<mark style="color:purple;">**TTL**</mark> - Появляется при выборе <mark style="color:purple;">Session - Sticky</mark> и отвечает за время жизни IP адреса (<mark style="color:purple;">Time to live</mark>). Минимально возможный <mark style="color:purple;">TTL</mark> — 60 секунд (1 минута).
+<mark style="color:purple;">**TTL**</mark> - Появляется при выборе <mark style="color:purple;">Session - Sticky</mark> и отвечает за время жизни IP адреса (<mark style="color:purple;">Time to live</mark>). Минимально возможный <mark style="color:purple;">TTL</mark> - 60 секунд (1 минута).
 
 <mark style="color:purple;">**Relay**</mark> **-** Устанавливается только в случаях, если нет подключения
 
@@ -136,7 +136,7 @@ icon: house-signal
 {% endhint %}
 
 {% hint style="warning" %}
-Прокси в "Proxy List" не сохраняются, так как это динамическое поле. Можно сгенерировать много прокси разных локаций — старые при генерации новых прокси не перестанут работать.
+Прокси в "Proxy List" не сохраняются, так как это динамическое поле. Можно сгенерировать много прокси разных локаций - старые при генерации новых прокси не перестанут работать.
 {% endhint %}
 
 ## Для каких задач подходит
@@ -147,17 +147,17 @@ icon: house-signal
 
 #### <mark style="color:green;">Плюсы:</mark>
 
-* **Гибкая тарификация** — Pay as you go или безлимитная подписка (Unlimited)
-* **Смена IP** — ротация адресов по требованию или по таймеру (TTL)
-* **Широкий геотаргетинг** — выбор страны, региона, города и оператора
-* **Адреса домашнего происхождения** — IP зарегистрированы на домашних провайдерах
-* **Поддержка UDP** — доступна на Standard и Unlimited (кроме локации США)
+* **Гибкая тарификация** - Pay as you go или безлимитная подписка (Unlimited)
+* **Смена IP** - ротация адресов по требованию или по таймеру (TTL)
+* **Широкий геотаргетинг** - выбор страны, региона, города и оператора
+* **Адреса домашнего происхождения** - IP зарегистрированы на домашних провайдерах
+* **Поддержка UDP** - доступна на Standard и Unlimited (кроме локации США)
 
 #### <mark style="color:red;">Минусы:</mark>
 
-* **Возможны просадки скорости** — зависит от качества интернета на конечном устройстве, это специфика продукта
-* **Динамический IP** — произвольная смена адреса возможна в любой момент; если нужен статический IP — смотрите [ISP](../isp-proxies.md) или [Datacenter](../datacenter-proxies.md)
-* **Подмена p0f недоступна** — на Premium Residential доступна только [фильтрация устройств по Device OS](https://docs.proxyshard.com/our-products/residential-proxies#opisanie-polei-nastroek)
+* **Возможны просадки скорости** - зависит от качества интернета на конечном устройстве, это специфика продукта
+* **Динамический IP** - произвольная смена адреса возможна в любой момент; если нужен статический IP - смотрите [ISP](../isp-proxies.md) или [Datacenter](../datacenter-proxies.md)
+* **Подмена p0f недоступна** - на Premium Residential доступна только [фильтрация устройств по Device OS](https://docs.proxyshard.com/our-products/residential-proxies#opisanie-polei-nastroek)
 * **UDP недоступен в локации США** на Standard и Unlimited
 
 {% hint style="success" %}
