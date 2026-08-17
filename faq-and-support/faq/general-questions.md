@@ -239,6 +239,7 @@ relay-eu.proxyshard.com:8080:plan-limited-country-any-sid-8dbryym0a32i:7nnrpl633
 | 🇨🇿 Чехия |
 | 🇺🇸 США (Пенсильвания) |
 | 🇹🇷 Турция |
+| 🇺🇦 Украина |
 
 ***
 
