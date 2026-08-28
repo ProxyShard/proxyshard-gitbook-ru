@@ -49,6 +49,7 @@
 * [Поиск заказов (Product tag)](site-navigation/order-search-product-tag.md)
 * [Счета](site-navigation/invoices.md)
 * [Мои заказы](site-navigation/my-orders.md)
+* [Команды](site-navigation/teamspaces.md)
 * [Реферальная программа](site-navigation/referral-program.md)
 
 ## Вопросы и ответы <a href="#questions-and-answers" id="questions-and-answers"></a>
