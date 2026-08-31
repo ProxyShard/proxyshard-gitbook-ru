@@ -33,7 +33,3 @@ icon: check-to-slot
 <div data-full-width="true"><figure><img src="../../.gitbook/assets/image (175).png" alt="Ipbinding" width="153"><figcaption></figcaption></figure></div>
 
 ***
-
-
-
-

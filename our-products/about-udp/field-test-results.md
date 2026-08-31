@@ -4,7 +4,7 @@ icon: island-tropical
 
 # Результаты наших полевых тестов
 
-Изначально мы добавили поддержку <mark style="color:purple;">**UDP**</mark> на все наши локации <mark style="color:purple;">Datacentre</mark> прокси и произвели проверку через ClashX.\
+Изначально мы добавили поддержку <mark style="color:purple;">**UDP**</mark> на все наши локации [<mark style="color:purple;">**Datacentre**</mark>](../datacenter-proxies.md) прокси и произвели проверку через браузер [Vision](../../setup-guides/antidetect-browsers/vision-browser.md).\
 У нас получились следующие результаты:
 
 * Google - 15 аккаунтов созданы подряд без единой ошибки, без номеров.
@@ -14,6 +14,5 @@ icon: island-tropical
 
 Для сравнения, те же действия через ISP-прокси без **UDP** заканчивались ошибками или требовали SMS.
 
-И все это на Datacentre прокси!
+Благодаря правильной работе WebRTC, все проблемы с ложным обнаружением бот активности пропали.
 
-**Теперь у нас появилась поддержка на всех продуктах** :tada:
