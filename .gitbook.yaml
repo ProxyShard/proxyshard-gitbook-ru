@@ -69,7 +69,7 @@ redirects:
   nashi-produkty/o-protokole-udp/kak-ustanovit-tampermonkey-i-skript-dlya-debaga-webrtc: our-products/about-udp/tampermonkey-webrtc-debug
   nashi-produkty/o-protokole-udp/kak-rabotaet-utechka-cherez-webrtc: our-products/about-udp/how-webrtc-leak-works
   nashi-produkty/o-protokole-udp/cherez-chto-mozhno-proverit-utechku-webrtc: our-products/about-udp/webrtc-leak-check-tools
-  nashi-produkty/o-protokole-udp/pochemu-prosto-tcp-proksi-nedostatochno: our-products/about-udp/why-tcp-proxy-not-enough
+  nashi-produkty/o-protokole-udp/pochemu-prosto-tcp-proksi-nedostatochno: our-products/about-udp/how-webrtc-leak-works
   nashi-produkty/o-protokole-udp/programmnye-resheniya-dlya-vklyucheniya-webrtc: our-products/about-udp/webrtc-software-solutions
   nashi-produkty/o-protokole-udp/pochemu-blokirovka-webrtc-ne-spasaet-ot-obnaruzheniya: our-products/about-udp/why-blocking-webrtc-doesnt-help
   nashi-produkty/o-protokole-udp/rezultaty-nashikh-polevykh-testov: our-products/about-udp/field-test-results
@@ -161,7 +161,7 @@ redirects:
   tekhnologii-i-vozmozhnosti/about-udp/tampermonkey-webrtc-debug: our-products/about-udp/tampermonkey-webrtc-debug
   tekhnologii-i-vozmozhnosti/about-udp/how-webrtc-leak-works: our-products/about-udp/how-webrtc-leak-works
   tekhnologii-i-vozmozhnosti/about-udp/webrtc-leak-check-tools: our-products/about-udp/webrtc-leak-check-tools
-  tekhnologii-i-vozmozhnosti/about-udp/why-tcp-proxy-not-enough: our-products/about-udp/why-tcp-proxy-not-enough
+  tekhnologii-i-vozmozhnosti/about-udp/why-tcp-proxy-not-enough: our-products/about-udp/how-webrtc-leak-works
   tekhnologii-i-vozmozhnosti/about-udp/why-blocking-webrtc-doesnt-help: our-products/about-udp/why-blocking-webrtc-doesnt-help
   tekhnologii-i-vozmozhnosti/about-udp/field-test-results: our-products/about-udp/field-test-results
   tekhnologii-i-vozmozhnosti/about-udp/webrtc-software-solutions: our-products/about-udp/webrtc-software-solutions

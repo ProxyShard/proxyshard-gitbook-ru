@@ -33,7 +33,7 @@
   * [Как работает утечка через WebRTC](our-products/about-udp/how-webrtc-leak-works.md)
   * [Через что можно проверить утечку WebRTC](our-products/about-udp/webrtc-leak-check-tools.md)
   * [Почему блокировка WebRTC не спасает от обнаружения](our-products/about-udp/why-blocking-webrtc-doesnt-help.md)
-  * [Как установить tampermonkey и скрипт для дебага WebRTC](our-products/about-udp/tampermonkey-webrtc-debug.md)
+  * [Как установить Tampermonkey и скрипт для отладки WebRTC](our-products/about-udp/tampermonkey-webrtc-debug.md)
   * [Результаты наших полевых тестов](our-products/about-udp/field-test-results.md)
   * [Программные решения для включения WebRTC](our-products/about-udp/webrtc-software-solutions.md)
 

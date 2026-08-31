@@ -4,19 +4,19 @@ icon: git-alt
 
 # Программные решения для включения WebRTC
 
-#### Для полноценной работы WebRTC, требуется программное обеспечение, которое поддерживает работу с UDP ASSOCIATE.
+#### Для полноценной работы WebRTC требуется программное обеспечение с поддержкой UDP ASSOCIATE.
 
 Примеры поддерживаемого софта для разных операционных систем:
 
-<mark style="color:purple;">**Antidetect browser:**</mark>
+<mark style="color:purple;">**Антидетект-браузеры:**</mark>
 
-* [<mark style="color:$success;">Vision</mark>](../../setup-guides/antidetect-browsers/vision-browser.md) - Самое доступное и надежное решение на рынке платных браузеров, за счет поддержки UDP\QUIC\Smart-отпечаток и других полезных функций. Более 60% команд на нашем сайте выбирают именно него.
+* [<mark style="color:$success;">Vision</mark>](../../setup-guides/antidetect-browsers/vision-browser.md): доступное и надёжное решение среди платных браузеров с поддержкой UDP, QUIC, Smart Fingerprint и других полезных функций. Более 60% команд на нашем сайте выбирают именно его.
 
 {% hint style="success" %}
-На сегодняшний день связка наших [ISP Proxy](https://dashboard.proxyshard.com/en/isp-proxy) и браузера [Vision](../../setup-guides/antidetect-browsers/vision-browser.md) является самой актуальной и правильной при работе с UDP на прокси. Также на ISP Proxy имеется поддержка смены [p0f](../p0f-spoofing.md).
+Связка наших [ISP Proxy](https://dashboard.proxyshard.com/en/isp-proxy) и браузера [Vision](../../setup-guides/antidetect-browsers/vision-browser.md) является одним из рекомендуемых вариантов для работы с UDP через прокси. ISP Proxy также поддерживает смену сетевого отпечатка [p0f](../p0f-spoofing.md).
 {% endhint %}
 
-* [<mark style="color:$tint;">ShardX</mark>](../shardx-launcher.md) - Является нашим техническим ответом на 90% браузеров на рынке, с базовыми функциями который должен иметь настоящий браузер. Open Source решение, включающее в себя богатый выбор профилей, правильной работы UDP и QUCK. &#x20;
+* [<mark style="color:$tint;">ShardX</mark>](../shardx-launcher.md): наше решение с открытым исходным кодом, большим выбором профилей и корректной поддержкой UDP и QUIC.
 
 <mark style="color:purple;">**Windows:**</mark>
 
@@ -44,5 +44,5 @@ icon: git-alt
 * [Potatso](../../setup-guides/ios-android/potatso.md)
 
 {% hint style="info" %}
-Актуальный список, который всегда пополняется, вы можете посмотреть в "[Инструкции по использованию](../../setup-guides/getting-started.md)"
+Актуальный список приложений доступен в [Инструкции по использованию](../../setup-guides/getting-started.md).
 {% endhint %}
