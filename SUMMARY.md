@@ -82,6 +82,7 @@
   * [CLI Программы](setup-guides/linux/cli-apps/README.md)
     * [Proxychain](setup-guides/linux/cli-apps/proxychain.md)
 * [iOS / Android](setup-guides/ios-android/README.md)
+  * [Octo Browser](setup-guides/ios-android/octo-browser.md)
   * [🔥 V2Box](setup-guides/ios-android/v2box.md)
   * [Potatso](setup-guides/ios-android/potatso.md)
   * [Super Proxy](setup-guides/ios-android/super-proxy.md)

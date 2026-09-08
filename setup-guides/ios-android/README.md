@@ -6,6 +6,13 @@ icon: mobile-signal-out
 
 ## Программы для настройки прокси на iOS / Android
 
+### [<mark style="color:purple;">**Octo Browser**</mark>](octo-browser.md)
+
+* Платформа: <mark style="color:purple;">iOS</mark>
+* Поддержка UDP: Да
+* Сложность: Легкая
+* Раздельная маршрутизация: да, прокси работает только внутри выбранного профиля
+
 ### [<mark style="color:purple;">**V2Box**</mark>](v2box.md)
 
 * Платформа: <mark style="color:purple;">iOS</mark>, <mark style="color:purple;">Android, MacOS</mark>
