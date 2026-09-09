@@ -10,9 +10,11 @@ icon: octopus
 
 ## Установка Octo Browser
 
-Скачайте Octo Browser из App Store.
+Скачайте Octo Browser из App Store или Google Play.
 
 {% embed url="https://apps.apple.com/us/app/octo-browser/id6762627194" %}
+
+{% embed url="https://play.google.com/store/apps/details?id=net.octobrowser.mobile&pli=1" %}
 
 ## Регистрация и вход
 

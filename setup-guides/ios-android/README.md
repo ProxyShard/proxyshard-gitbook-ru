@@ -8,7 +8,7 @@ icon: mobile-signal-out
 
 ### [<mark style="color:purple;">**Octo Browser**</mark>](octo-browser.md)
 
-* Платформа: <mark style="color:purple;">iOS</mark>
+* Платформа: <mark style="color:purple;">iOS</mark>, <mark style="color:purple;">Android</mark>
 * Поддержка UDP: Да
 * Сложность: Легкая
 * Раздельная маршрутизация: да, прокси работает только внутри выбранного профиля
