@@ -8,27 +8,27 @@ icon: magnifying-glass
 
 {% embed url="https://proxyshard.com/ip-checker" %}
 
-<figure><img src="../.gitbook/assets/image (41).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/ip-checker-overview.png" alt=""><figcaption></figcaption></figure>
 
 ***
 
 ## Основные поля
 
-### My IP
+### My IP address
 
 Ваш текущий внешний IP-адрес, который видят все сайты. Рядом отображается флаг страны и кнопка копирования. Если прокси подключён правильно, здесь должен быть <mark style="color:purple;">IP прокси-сервера</mark>, а не ваш настоящий адрес.
 
-### Browser Score
+### Risk score
 
-Числовой показатель: сколько проблем с анонимностью обнаружено. **Чем меньше, тем лучше.** 
+Числовая оценка риска, рассчитанная по обнаруженным проблемам с анонимностью. **Чем меньше, тем лучше.**
 
 {% hint style="info" %}
-Нажмите **"View details"**, чтобы увидеть полный отчёт по каждому параметру.
+Откройте подробную диагностику, чтобы увидеть отчёт по каждому параметру.
 {% endhint %}
 
 ***
 
-## General IP Info
+## General info
 
 ### Provider
 
@@ -40,7 +40,7 @@ icon: magnifying-glass
 Самое важное поле. Если отображается **"WebRTC is leaked"**, ваш реальный IP виден сайтам при активном прокси. Подробнее: [Как работает утечка через WebRTC](about-udp/how-webrtc-leak-works.md)
 {% endhint %}
 
-<mark style="color:purple;">WebRTC</mark> - браузерный протокол для p2p-соединений. Он может раскрывать реальный IP в обход прокси и VPN. Поле показывает IP, который определил <mark style="color:purple;">WebRTC</mark>. Если он отличается от **My IP**, значит утечка есть.
+<mark style="color:purple;">WebRTC</mark> - браузерный протокол для p2p-соединений. Он может раскрывать реальный IP в обход прокси и VPN. Поле показывает IP, который определил <mark style="color:purple;">WebRTC</mark>. Если он отличается от **My IP address**, значит утечка есть.
 
 | Статус              | Что это значит                       |
 | ------------------- | ------------------------------------ |
@@ -68,7 +68,9 @@ Reverse DNS запись для вашего IP (PTR-запись). Показы
 
 ## Browser Status Report
 
-Раскрывается по кнопке **"View details"**. Показывает результаты детального анализа браузера и сети, разбитые по уровням критичности:
+<figure><img src="../.gitbook/assets/ip-checker-diagnostics.png" alt=""><figcaption></figcaption></figure>
+
+Подробная диагностика показывает результаты анализа браузера и сети по уровням критичности. Чтобы открыть сведения о найденной проблеме, нажмите **View troubles** на соответствующей карточке.
 
 | Уровень      | Что значит                                         |
 | ------------ | -------------------------------------------------- |
@@ -173,7 +175,7 @@ Reverse DNS запись для вашего IP (PTR-запись). Показы
 ## Как читать результат
 
 {% hint style="success" %}
-**Всё хорошо:** My IP = IP прокси, WebRTC не обнаружен или заблокирован, Browser Score = 0, ISP type = `residential`.
+**Всё хорошо:** My IP address = IP прокси, WebRTC не обнаружен или заблокирован, Risk score = 0, ISP type = `residential`.
 {% endhint %}
 
 {% hint style="warning" %}
