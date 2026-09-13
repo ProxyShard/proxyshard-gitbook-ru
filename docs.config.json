@@ -1,0 +1,39 @@
+{
+  "$comment": "Настройки сайта документации. Файл читает docs-api (DOCS_CONFIG_SPACE=ru) и отдаёт всем четырём языкам; GitBook его не использует и не трогает. Правится из админки, каждая правка — обычный коммит.",
+  "site": {
+    "name": {
+      "ru": "Документация ProxyShard",
+      "eng": "ProxyShard Docs",
+      "ua": "Документація ProxyShard",
+      "cn": "ProxyShard 文档"
+    }
+  },
+  "header": {
+    "tabs": [
+      {
+        "id": "proxyshard",
+        "title": { "ru": "ProxyShard", "eng": "ProxyShard", "ua": "ProxyShard", "cn": "ProxyShard" },
+        "groups": [
+          "our-products",
+          "technologies-and-capabilities",
+          "site-navigation",
+          "questions-and-answers",
+          "usage-instructions",
+          "buy"
+        ]
+      },
+      {
+        "id": "tools",
+        "title": { "ru": "Инструменты", "eng": "Tools", "ua": "Інструменти", "cn": "工具" },
+        "groups": ["tools"]
+      },
+      {
+        "id": "api",
+        "title": { "ru": "API", "eng": "API", "ua": "API", "cn": "API" },
+        "groups": ["proxyshard-api", "shardx-launcher-api"]
+      }
+    ],
+    "links": [],
+    "auto_language": true
+  }
+}
