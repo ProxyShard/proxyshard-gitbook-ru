@@ -1,5 +1,5 @@
 # ============================================================================
-# ProxyShard User API — OpenAPI 3.0.3.
+# ProxyShard User API: OpenAPI 3.0.3.
 #
 # ИСТОЧНИК ПРАВДЫ по публичному API. Раньше спека жила только в GitBook
 # (docs.proxyshard.com/proxyshard-api/*), из-за чего расходилась с кодом
@@ -7,7 +7,7 @@
 # продолжала обещать старую форму.
 #
 # Правила:
-#   * добавил/изменил ручку в services/user-api — правь этот файл в ТОМ ЖЕ
+#   * добавил/изменил ручку в services/user-api - правь этот файл в ТОМ ЖЕ
 #     коммите;
 #   * теги = страницы в GitBook, менять их имена без нужды не стоит;
 #   * после мержа залить файл в GitBook (OpenAPI-спека проекта), иначе
@@ -18,7 +18,7 @@
 # ============================================================================
 openapi: 3.0.3
 info:
-  title: ProxyShard User API Billing
+  title: "Биллинг пользовательского API ProxyShard"
   version: 1.1.0
 servers:
   - url: https://user-api.proxyshard.com
@@ -32,7 +32,7 @@ tags:
   - name: Residential Proxies
     description: Операции для резидентских прокси
   - name: Service
-    description: Health probes (no authentication)
+    description: "Зонды работоспособности (без аутентификации)"
 components:
   securitySchemes:
     bearerAuth:
@@ -54,13 +54,13 @@ components:
           type: integer
         until:
           type: string
-          description: ISO8601/string date
+          description: "Строка даты ISO 8601"
         status:
           type: string
         signature:
           type: string
           nullable: true
-          description: p0f signature assigned to the IP, null when not set
+          description: "подпись p0f, назначенная IP-адресу, ноль, если не установлена"
       required:
         - ip
         - username
@@ -81,7 +81,7 @@ components:
         - message
     AddonLine:
       type: object
-      description: A single add-on line stored on an order
+      description: "Одна строка дополнения, сохраненная в заказе"
       properties:
         addon_key:
           type: string
@@ -89,12 +89,12 @@ components:
           type: integer
         qty:
           type: integer
-          description: Active units for the current period
+          description: "Активные единицы за текущий период"
         price_per_unit:
           type: integer
-          description: Price per unit in cents at time of purchase
+          description: "Цена за единицу в центах на момент покупки"
         pending:
-          description: Scheduled change to apply on next renewal (null if none)
+          description: "Изменение запланировано на следующее продление или `null`"
           nullable: true
           type: object
           properties:
@@ -105,10 +105,10 @@ components:
                 - downgrade
             next_qty:
               type: integer
-              description: Target qty after downgrade (only present for downgrade action)
+              description: "Целевое количество после понижения"
     PurchaseRequestDcIsp:
       type: object
-      description: Покупка для Datacenter/ISP — поле location обязательно.
+      description: "Покупка для Datacenter/ISP; поле location обязательно."
       properties:
         product:
           type: string
@@ -132,7 +132,7 @@ components:
         addons:
           type: array
           nullable: true
-          description: Add-ons attached at purchase time (e.g. p0f_slots for DC/ISP)
+          description: "Дополнения, прикрепляемые во время покупки, например `p0f_slots` для DC или ISP."
           items:
             $ref: '#/components/schemas/CreateOrderAddonRequest'
       required:
@@ -141,7 +141,7 @@ components:
         - cycle
     PurchaseRequestResidentialStandard:
       type: object
-      description: Покупка для Standart Residential Proxy — location не требуется; цикл фиксирован (lifetime).
+      description: "Покупка для Standart Residential Proxy; location не требуется; цикл фиксирован (lifetime)."
       properties:
         product:
           type: string
@@ -157,14 +157,14 @@ components:
         addons:
           type: array
           nullable: true
-          description: Add-ons attached at purchase time (e.g. p0f_slots for DC/ISP)
+          description: "Дополнения, прикрепляемые во время покупки, например `p0f_slots` для DC или ISP."
           items:
             $ref: '#/components/schemas/CreateOrderAddonRequest'
       required:
         - product
     PurchaseRequestResidentialPremium:
       type: object
-      description: Покупка для Premium Residential Proxy — location не требуется; цикл фиксирован (lifetime).
+      description: "Покупка для Premium Residential Proxy; location не требуется; цикл фиксирован (lifetime)."
       properties:
         product:
           type: string
@@ -180,14 +180,14 @@ components:
         addons:
           type: array
           nullable: true
-          description: Add-ons attached at purchase time (e.g. p0f_slots for DC/ISP)
+          description: "Дополнения, прикрепляемые во время покупки, например `p0f_slots` для DC или ISP."
           items:
             $ref: '#/components/schemas/CreateOrderAddonRequest'
       required:
         - product
     PurchaseRequestResidentialUnmetered:
       type: object
-      description: Покупка для Unmetered Residential proxy — поддерживает авто-продление.
+      description: "Покупка для Unmetered Residential proxy; поддерживает авто-продление."
       properties:
         product:
           type: string
@@ -204,7 +204,7 @@ components:
         addons:
           type: array
           nullable: true
-          description: Add-ons attached at purchase time (e.g. p0f_slots for DC/ISP)
+          description: "Дополнения, прикрепляемые во время покупки, например `p0f_slots` для DC или ISP."
           items:
             $ref: '#/components/schemas/CreateOrderAddonRequest'
       required:
@@ -233,7 +233,7 @@ components:
         addons:
           type: array
           nullable: true
-          description: Add-ons attached at purchase time (e.g. p0f_slots for DC/ISP)
+          description: "Дополнения, прикрепляемые во время покупки, например `p0f_slots` для DC или ISP."
           items:
             $ref: '#/components/schemas/CreateOrderAddonRequest'
       required:
@@ -379,11 +379,11 @@ components:
         code:
           type: string
           maxLength: 10
-          description: ISO country code
+          description: "Код страны ISO"
         name:
           type: string
           maxLength: 255
-          description: Country name
+          description: "Название страны"
       required:
         - code
         - name
@@ -393,11 +393,11 @@ components:
         code:
           type: string
           maxLength: 10
-          description: Region code (state/province code)
+          description: "Код региона или штата"
         name:
           type: string
           maxLength: 255
-          description: Region name (state/province name)
+          description: "Название региона или штата"
         country:
           $ref: '#/components/schemas/Country'
       required:
@@ -410,11 +410,11 @@ components:
         code:
           type: string
           maxLength: 50
-          description: City code (usually slug format)
+          description: "Код города, обычно в формате slug"
         name:
           type: string
           maxLength: 255
-          description: City name
+          description: "Название города"
         country:
           $ref: '#/components/schemas/Country'
         region:
@@ -424,11 +424,11 @@ components:
             code:
               type: string
               maxLength: 10
-              description: Region code
+              description: "Код региона"
             name:
               type: string
               maxLength: 255
-              description: Region name
+              description: "Название региона"
           required:
             - code
             - name
@@ -477,10 +477,10 @@ components:
       properties:
         code:
           type: string
-          description: ISP code (slug)
+          description: "Код интернет-провайдера, обычно в формате slug"
         name:
           type: string
-          description: ISP name
+          description: "Имя интернет-провайдера"
         country:
           $ref: '#/components/schemas/Country'
         region:
@@ -489,10 +489,10 @@ components:
           properties:
             code:
               type: string
-              description: Region code
+              description: "Код региона"
             name:
               type: string
-              description: Region name
+              description: "Название региона"
           required:
             - code
             - name
@@ -566,10 +566,8 @@ paths:
     post:
       tags:
         - Datacenter & ISP Proxies
-      summary: Set del-np (per-IP deletion)
-      description: |
-        Only for Datacenter & ISP proxies.
-        After updating, the order `quantity` and `price_paid` are recalculated.
+      summary: "Установить удаление для каждого IP-адреса (del-np)"
+      description: "Только для прокси дата-центров и ISP. После обновления заказа поля `quantity` и `price_paid` пересчитываются."
       parameters:
         - in: path
           name: order_id
@@ -599,7 +597,7 @@ paths:
                 - items
       responses:
         '200':
-          description: Success
+          description: "Успех"
           content:
             application/json:
               schema:
@@ -610,7 +608,7 @@ paths:
                   message:
                     type: string
         '400':
-          description: Validation error / not DC-ISP / keep=0
+          description: "Ошибка проверки, не DC-ISP или `keep=0`"
           content:
             application/json:
               schema:
@@ -619,35 +617,8 @@ paths:
     post:
       tags:
         - Datacenter & ISP Proxies
-      summary: Set IP OS-fingerprint signature
-      description: "Sets the OS-fingerprint signature for one or more proxy IPs. \ 
-
-        Requires the `p0f_slots` add-on to be active on the order.
-
-
-        Each IP that receives a signature permanently occupies one slot.
-
-        Changing the OS value on an IP that already has a signature does not consume an extra slot.
-
-
-        **Available signature values:**
-
-
-        | Value | OS |
-
-        |-------|----|
-
-        | `ios` | iOS |
-
-        | `macos` | macOS |
-
-        | `android` | Android |
-
-        | `linux` | Linux |
-
-        | `win10` | Windows 10 |
-
-        | `win11` | Windows 11 |\n"
+      summary: "Установить отпечаток ОС для IP"
+      description: "Устанавливает подпись отпечатка ОС для одного или нескольких IP-адресов прокси. Требуется, чтобы дополнение `p0f_slots` было активным для заказа. Каждый IP, получивший подпись, постоянно занимает один слот. Изменение значения ОС на IP-адресе, который уже имеет подпись, не требует дополнительного слота. **Доступные значения подписи:** | Значение | ОС | |-------|----| | `ios` | iOS | | `macos` | macOS | | `android` | Android | | `linux` | Linux | | `win10` | Windows 10 | | `win11` | Windows 11 |"
       parameters:
         - in: path
           name: order_id
@@ -675,7 +646,7 @@ paths:
                         type: string
                       signature:
                         type: string
-                        description: OS identifier to spoof.
+                        description: "Идентификатор ОС для подделки."
                         enum:
                           - ios
                           - macos
@@ -685,7 +656,7 @@ paths:
                           - win11
       responses:
         '200':
-          description: Success
+          description: "Успех"
           content:
             application/json:
               schema:
@@ -697,9 +668,9 @@ paths:
                     type: string
                   updated:
                     type: integer
-                    description: Number of IPs updated
+                    description: "Количество обновленных IP-адресов"
         '400':
-          description: Validation error or not enough slots
+          description: "Ошибка валидации или недостаточно слотов"
           content:
             application/json:
               schema:
@@ -708,32 +679,31 @@ paths:
     get:
       tags:
         - Datacenter & ISP Proxies
-      summary: Calculate add-on price
-      description: |
-        Returns the price preview for purchasing additional units of a given add-on for an active datacenter/ISP order.   Currently the only supported add-on key is `p0f_slots` — OS-fingerprint signature slots.
+      summary: "Рассчитать дополнительную стоимость"
+      description: "Возвращает предварительный просмотр цены на приобретение дополнительных единиц данного дополнения для активного заказа центра обработки данных или интернет-провайдера. В настоящее время поддерживается только дополнительный ключ `p0f_slots`; Слоты для подписи отпечатков пальцев ОС."
       parameters:
         - in: path
           name: order_id
           required: true
-          description: Order ID
+          description: "Идентификатор заказа"
           schema:
             type: integer
         - in: query
           name: addon_key
           required: true
-          description: Add-on identifier (e.g. `p0f_slots`)
+          description: "Идентификатор дополнения (например, `p0f_slots`)"
           schema:
             type: string
         - in: query
           name: add_qty
           required: true
-          description: Number of units to add
+          description: "Количество единиц для добавления"
           schema:
             type: integer
             minimum: 1
       responses:
         '200':
-          description: Price preview
+          description: "Предварительный просмотр цены"
           content:
             application/json:
               schema:
@@ -747,7 +717,7 @@ paths:
                     type: integer
                   price_per_unit:
                     type: integer
-                    description: Price per unit in cents
+                    description: "Цена за единицу в центах"
                   current_qty:
                     type: integer
                   add_qty:
@@ -756,19 +726,18 @@ paths:
                     type: integer
                   add_total:
                     type: integer
-                    description: Total charge for this purchase in cents
+                    description: "Общая сумма за эту покупку в центах"
   /user/api/orders/{order_id}/addons/purchase:
     post:
       tags:
         - Datacenter & ISP Proxies
-      summary: Purchase an add-on
-      description: |
-        Immediately charges the wallet and adds the requested number of add-on units to the order.  The order must be **active**.   The only currently available add-on key is `p0f_slots`.
+      summary: "Купить дополнение"
+      description: "Списывает средства с кошелька и добавляет к заказу указанное количество единиц дополнения. Заказ должен иметь статус **active**. Сейчас доступен только ключ `p0f_slots`."
       parameters:
         - in: path
           name: order_id
           required: true
-          description: Order ID
+          description: "Идентификатор заказа"
           schema:
             type: integer
       requestBody:
@@ -788,7 +757,7 @@ paths:
                   minimum: 1
       responses:
         '200':
-          description: Add-on purchased
+          description: "Дополнение куплено"
           content:
             application/json:
               schema:
@@ -800,24 +769,23 @@ paths:
                     type: string
                   addons_price_paid:
                     type: integer
-                    description: Cumulative add-on cost for this order (cents)
+                    description: "Совокупная дополнительная стоимость для этого заказа (центы)"
                   addons:
                     type: array
-                    description: Updated add-on list stored on the order
+                    description: "Обновленный список дополнений, хранящийся в заказе."
                     items:
                       $ref: '#/components/schemas/AddonLine'
   /user/api/orders/{order_id}/addons/schedule:
     post:
       tags:
         - Datacenter & ISP Proxies
-      summary: Schedule add-on downgrade for next renewal
-      description: |
-        Schedules a **downgrade** of an add-on to take effect on the next renewal cycle.  The new quantity must be lower than the current one.  The change is stored as a `pending` marker and applied automatically when the order renews.
+      summary: "Запланировать понижение версии дополнения"
+      description: "Планирует **понижение** дополнения на следующий цикл продления. Новое количество должно быть меньше текущего. Изменение сохраняется как маркер `pending` и применяется автоматически при продлении заказа."
       parameters:
         - in: path
           name: order_id
           required: true
-          description: Order ID
+          description: "Идентификатор заказа"
           schema:
             type: integer
       requestBody:
@@ -839,11 +807,11 @@ paths:
                     - downgrade
                 next_qty:
                   type: integer
-                  description: Target quantity after renewal. Must be less than current qty.
+                  description: "Целевое количество после продления. Должно быть меньше текущего количества."
                   minimum: 1
       responses:
         '200':
-          description: Downgrade scheduled
+          description: "Понижение запланировано"
           content:
             application/json:
               schema:
@@ -861,13 +829,13 @@ paths:
     post:
       tags:
         - Datacenter & ISP Proxies
-      summary: Cancel a scheduled downgrade
-      description: Removes the pending downgrade that was set via the schedule endpoint.
+      summary: "Отменить запланированный переход на более раннюю версию"
+      description: "Удаляет ожидающее понижение версии, установленное через конечную точку расписания."
       parameters:
         - in: path
           name: order_id
           required: true
-          description: Order ID
+          description: "Идентификатор заказа"
           schema:
             type: integer
       requestBody:
@@ -883,7 +851,7 @@ paths:
                   type: string
       responses:
         '200':
-          description: Pending downgrade cleared
+          description: "Запланированное понижение отменено"
           content:
             application/json:
               schema:
@@ -902,10 +870,7 @@ paths:
       tags:
         - General
       summary: Создать и оплатить заказ
-      description: |
-        Покупка по имени продукта, локации и циклу.
-        Для Datacenter/ISP — location обязателен.
-        Для Standart Residential Proxy — location не требуется.
+      description: "Покупка по имени продукта, локации и циклу.\nДля Datacenter/ISP; location обязателен.\nДля Standart Residential Proxy; location не требуется.\n"
       requestBody:
         required: true
         content:
@@ -940,10 +905,8 @@ paths:
     get:
       tags:
         - General
-      summary: Calculate order price
-      description: |
-        Calculates price by product name, cycle name and quantity.
-        Uses the same validation rules as purchase (allowed billing cycles, promo rules).
+      summary: "Рассчитать стоимость заказа"
+      description: "Рассчитывает цену по названию продукта, названию цикла и количеству. Использует те же правила проверки, что и при покупке (разрешенные платежные циклы, правила промоакций)."
       parameters:
         - in: query
           name: product
@@ -977,13 +940,13 @@ paths:
         - in: query
           name: addons_json
           required: false
-          description: URL-encoded JSON array of add-ons, e.g. [{"addon_key":"p0f_slots","qty":5}]
+          description: "Массив дополнений в URL-кодированном JSON, например [{\"addon_key\":\"p0f_slots\",\"qty\":5}]"
           schema:
             type: string
             nullable: true
       responses:
         '200':
-          description: Success
+          description: "Успех"
           content:
             application/json:
               schema:
@@ -997,18 +960,18 @@ paths:
                     type: integer
                   addons_price:
                     type: integer
-                    description: Add-ons total, minor units
+                    description: "Общая стоимость дополнений в минимальных единицах"
                   total_with_addons:
                     type: integer
-                    description: final_price + addons_price
+                    description: "final_price + addons_price"
         '400':
-          description: Validation error
+          description: "Ошибка проверки"
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiError'
         '401':
-          description: Unauthorized
+          description: "Требуется авторизация"
           content:
             application/json:
               schema:
@@ -1145,7 +1108,7 @@ paths:
     get:
       tags:
         - General
-      summary: Get the available number of proxies
+      summary: "Получить доступное количество прокси"
       description: Возвращает суммарное доступное количество для всех продуктов.
       responses:
         '200':
@@ -1177,7 +1140,7 @@ paths:
         - in: query
           name: status
           required: true
-          description: active | on-hold | cancelled | all
+          description: "активный | в ожидании | отменен | все"
           schema:
             type: string
         - in: query
@@ -1284,24 +1247,24 @@ paths:
                         type: integer
                       price_paid:
                         type: integer
-                        description: Base subscription price in cents
+                        description: "Базовая цена подписки в центах"
                       addons_price_paid:
                         type: integer
-                        description: Total add-on cost in cents
+                        description: "Общая дополнительная стоимость в центах"
                       addons:
                         type: array
-                        description: Add-on lines attached to this order
+                        description: "Дополнительные строки, прикрепленные к этому заказу"
                         items:
                           $ref: '#/components/schemas/AddonLine'
                       p0f_slots_available:
                         type: integer
-                        description: Active p0f signature slots (from add-ons)
+                        description: "Активные слоты для подписи p0f (из дополнений)"
                       p0f_slots_used:
                         type: integer
-                        description: Slots currently occupied by signed proxies
+                        description: "Слоты, в настоящее время занятые подписанными прокси"
                       p0f_slots_next:
                         type: integer
-                        description: Slots that will be active after next renewal
+                        description: "Слоты, которые будут активны после следующего продления"
                       status:
                         type: string
                       created_at:
@@ -1327,8 +1290,7 @@ paths:
       tags:
         - General
       summary: Продлить заказ
-      description: |
-        Renewal is available only when order status is `on-hold`.
+      description: "Продление доступно только при статусе заказа `on-hold`."
       parameters:
         - in: path
           name: id
@@ -1432,19 +1394,18 @@ paths:
     get:
       tags:
         - Residential Proxies
-      summary: Parent (account owner) traffic
-      description: |
-        Returns the parent account's own total and remaining data for the given proxy type, aggregated across the parent's orders. Unlike the sub-user endpoints, this reflects the data of the account owner, not a sub-user.
+      summary: "Трафик владельца аккаунта"
+      description: "Возвращает общие и оставшиеся данные родительского аккаунта для данного типа прокси, агрегированные по родительским заказам. В отличие от конечных точек субпользователя, здесь отражаются данные владельца учетной записи, а не субпользователя."
       parameters:
         - in: query
           name: proxy_type
           required: true
-          description: Proxy type (standart | premium)
+          description: "Тип прокси (стандарт | премиум)"
           schema:
             type: string
       responses:
         '200':
-          description: Success
+          description: "Успех"
           content:
             application/json:
               schema:
@@ -1454,16 +1415,16 @@ paths:
                     type: boolean
                   data:
                     type: integer
-                    description: Total allocated data in bytes
+                    description: "Общее количество выделенных данных в байтах"
                   data_remain:
                     type: integer
-                    description: Remaining data in bytes
+                    description: "Оставшиеся данные в байтах"
                   data_spent:
                     type: integer
-                    description: Consumed data in bytes
+                    description: "Потребляемые данные в байтах"
                   proxy_password:
                     type: string
-                    description: Parent account's proxy password
+                    description: "Пароль прокси-сервера родительской учетной записи"
                 required:
                   - success
                   - data
@@ -1471,13 +1432,13 @@ paths:
                   - data_spent
                   - proxy_password
         '400':
-          description: User resident not set / invalid proxy type
+          description: "Резидент пользователя не установлен/неверный тип прокси"
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiError'
         '401':
-          description: Unauthorized
+          description: "Требуется авторизация"
           content:
             application/json:
               schema:
@@ -1516,7 +1477,7 @@ paths:
                     type: boolean
                   count:
                     type: integer
-                    description: Total sub-users before pagination
+                    description: "Всего подпользователей до разбиения на страницы"
                   data:
                     type: array
                     items:
@@ -1909,17 +1870,13 @@ paths:
     get:
       tags:
         - Residential Proxies
-      summary: List ISPs
-      description: |
-        Internet providers available inside a city — the fourth targeting level after country, region and city.
-        Unlike the other location endpoints this one needs the full chain: `country_code`, `region_code` AND `city_code` are all required, because upstream ISPs are bound to a city.
-        Premium package only: the ISP catalogue is not maintained for the standart and unlimited packages, and any other `proxy_type` is rejected with 400.
-        ISPs are listed for major cities only, so an empty `results` with `count: 0` is a normal answer for a smaller city.
+      summary: "Список интернет-провайдеров"
+      description: "Интернет-провайдеры, доступные внутри города; четвертый уровень таргетинга после страны, региона и города. В отличие от других конечных точек местоположения, для этой требуется полная цепочка: `country_code`, `region_code` и `city_code` необходимы, поскольку вышестоящие интернет-провайдеры привязаны к городу. Только пакет «Премиум»: каталог интернет-провайдеров не поддерживается для стандартных и безлимитных пакетов, а любой другой `proxy_type` отклоняется с кодом 400. Интернет-провайдеры указаны только для крупных городов, поэтому пустой `results` с `count: 0` является нормальным ответом для меньшего города."
       parameters:
         - in: query
           name: proxy_type
           required: true
-          description: Must be `premium` — ISP targeting is premium-only
+          description: "Должно быть `premium`; Таргетинг на интернет-провайдеров доступен только для премиум-класса."
           schema:
             type: string
             enum:
@@ -1927,30 +1884,30 @@ paths:
         - in: query
           name: country_code
           required: true
-          description: ISO country code
+          description: "Код страны ISO"
           schema:
             type: string
         - in: query
           name: region_code
           required: true
-          description: Region code (state/province code)
+          description: "Код региона или штата"
           schema:
             type: string
         - in: query
           name: city_code
           required: true
-          description: City code from GET /user/api/proxies/cities
+          description: "Код города из GET /user/api/proxy/cities."
           schema:
             type: string
       responses:
         '200':
-          description: Success
+          description: "Успех"
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/PagedIspsResponse'
         '400':
-          description: proxy_type is not `premium`, user resident is not set, or the user has no active order for the package
+          description: "proxy_type не `premium`, резидентность пользователя не установлена ​​или у пользователя нет активного заказа на пакет."
           content:
             application/json:
               schema:
@@ -1961,7 +1918,7 @@ paths:
                     success: false
                     message: ISP targeting is available for the premium package only
         '401':
-          description: Unauthorized
+          description: "Требуется авторизация"
           content:
             application/json:
               schema:
@@ -1970,21 +1927,19 @@ paths:
     get:
       tags:
         - Service
-      summary: Deep health check
-      description: |
-        Outside the /user/api/ prefix, so no API key is required.
+      summary: "Проверка состояния сервиса"
+      description: "За пределами префикса /user/api/, поэтому ключ API не требуется."
       security: []
       responses:
         '200':
-          description: Service is up
+          description: "Служба запущена"
   /health/live:
     get:
       tags:
         - Service
-      summary: Liveness probe
-      description: |
-        Outside the /user/api/ prefix, so no API key is required.
+      summary: "Проверка работоспособности"
+      description: "За пределами префикса /user/api/, поэтому ключ API не требуется."
       security: []
       responses:
         '200':
-          description: Service is up
+          description: "Служба запущена"
