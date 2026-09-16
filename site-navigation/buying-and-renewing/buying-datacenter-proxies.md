@@ -2,39 +2,68 @@
 icon: '1'
 ---
 
-# Пример приобретения Датацентр прокси
+# Пример приобретения датацентр-прокси
 
 ## Покупка прокси
 
-При приобретении [<mark style="color:purple;">Датацентр</mark>](https://dashboard.proxyshard.com/datacenter-proxy) прокси укажите:
+Чтобы приобрести [датацентр-прокси](https://dashboard.proxyshard.com/datacenter-proxy):
 
-* Страну прокси
-* Цикл аренды (неделя\месяц\полгода\год)
-* Количество прокси
-* Переключать автопродления (при активации, будет каждый цикл аренды списывать средства автоматически, возможно отключение внутри заказа)
-* Промокод, при наличии.
+1. Откройте раздел `Datacenter Proxy`.
+2. В поле `Proxy region` выберите страну прокси.
+3. В поле `Billing cycle` выберите период оплаты.
+4. В поле `Number of proxies` укажите количество прокси.
+5. Включите `Auto renew`, если хотите автоматически продлевать заказ.
+6. При необходимости включите `Enable p0f settings`.
+7. В поле `Total slots` укажите количество слотов для p0f.
+8. Если у вас есть промокод, введите его в поле `Promocode` и нажмите `Apply`.
+9. Проверьте стоимость заказа и нажмите `Buy now`.
 
-<figure><img src="../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/datacenter-purchase-form_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/datacenter-purchase-form_white.png" alt="Форма покупки датацентр-прокси">
+  </picture>
+</figure>
 
-После приобретения, заказ автоматически откроется и будет доступен в панели "<mark style="color:purple;">Active Product</mark>" или в "[<mark style="color:purple;">My orders</mark>](https://dashboard.proxyshard.com/products)"
+## Оплата заказа
 
-<figure><img src="../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
+После нажатия `Buy now` откроется счет со статусом `Unpaid`. Проверьте сумму в строке `Total amount`, затем нажмите `Pay with Wallet`.
+
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/datacenter-invoice-payment_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/datacenter-invoice-payment_white.png" alt="Оплата счета с баланса ProxyShard">
+  </picture>
+</figure>
+
+После оплаты заказ появится в блоке `Active products` и в разделе [`My orders`](https://dashboard.proxyshard.com/products). Для активного заказа отображается статус `Active`.
+
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/datacenter-active-products_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/datacenter-active-products_white.png" alt="Список активных датацентр-прокси">
+  </picture>
+</figure>
 
 {% hint style="warning" %}
-Прокси начнут работать в течении 1-2  минут, это время требуется для синхронизации заказа
+Прокси начнут работать в течение 1-2 минут. Это время требуется для синхронизации заказа.
 {% endhint %}
 
-## Продление Датацентр прокси 
+## Продление датацентр-прокси
 
-Продление продукта возможно автоматически и ручное\
-\
-При автоматической оплате, за 1-2 часа, заказ попытается автоматически произвести продление. \
-Если средств для продления хватает, то прокси автоматически продлеваются, при нехватки средств, прокси перестают работать и будут ожидать пополнение счета в <mark style="color:purple;">течении трех дней</mark>.\
-\
-При отключенной функции автоматического продления, прокси будут ожидать (Статус <mark style="color:$warning;">On-hold</mark>) ручной оплаты, для этого в заказе требуется нажать ![](<../../.gitbook/assets/image (55).png>)
+Заказ можно продлевать автоматически или вручную.
 
-<figure><img src="../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+Если включена функция `Auto renew`, система попытается продлить заказ за 1-2 часа до окончания оплаченного периода. При достаточном балансе средства спишутся автоматически, а прокси продолжат работать.
+
+Если автоматическое продление отключено или на балансе недостаточно средств, заказ получит статус `On-hold`. Для ручного продления откройте заказ, нажмите ![](<../../.gitbook/assets/datacenter-renew-button.png>) и оплатите выставленный счет.
+
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/datacenter-order-details_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/datacenter-order-details_white.png" alt="Ручное продление датацентр-прокси">
+  </picture>
+</figure>
 
 {% hint style="danger" %}
-Прокси со статусом "<mark style="color:$danger;">Canceled</mark>" продлить невозможно, данный статус наступает по истечении трех дней с момента неуплаты заказа.
+Заказ в статусе `Canceled` продлить нельзя. Этот статус присваивается через три дня после неоплаты заказа.
 {% endhint %}
