@@ -5,21 +5,22 @@ icon: coin-vertical
 # Приобретение и продление прокси
 
 {% hint style="info" %}
-Чтобы приобрести заказ, у вас должны быть [средства](../top-up-balance.md) на балансе.
+Для оплаты заказа на балансе должны быть [средства](../top-up-balance.md).
 {% endhint %}
 
-## **Примеры приобретения и управления заказа**
+## Приобретение и управление заказами
 
-Для приобретения заказа, требуется выбрать любой из интересующих продуктов:
+Выберите нужный тип прокси в боковом меню:
 
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/proxy-product-navigation_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/proxy-product-navigation_white.png" alt="Разделы для покупки прокси">
+  </picture>
+</figure>
 
+#### [**Приобретение ISP / Datacentre**](buying-datacenter-proxies.md)
 
-<figure><img src="../../.gitbook/assets/new_pokupka_zakaza.png" alt=""><figcaption></figcaption></figure>
+#### [**Приобретение резидентских прокси**](buying-residential-proxies.md)
 
-#### [**Пример для Datacentre proxy**](buying-datacenter-proxies.md)
-
-#### [**Пример для ISP**](buying-isp-proxies.md)
-
-#### [**Пример для Residential proxy**](buying-residential-proxies.md)
-
-#### [**Пример для Mobile proxy**](buying-mobile-proxies.md)
+#### [**Приобретение мобильных прокси**](buying-mobile-proxies.md)

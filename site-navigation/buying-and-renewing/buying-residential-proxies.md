@@ -2,30 +2,52 @@
 icon: '2'
 ---
 
-# Пример приобретения Резидентских прокси
+# Приобретение резидентских прокси
 
 ## Покупка прокси
 
-Так как расчет <mark style="color:purple;">Residential</mark> прокси производится в гигабайтах, то необходимо указать количество приобретаемого трафика, а также промокод, при его наличии
+Перед покупкой выберите подходящий план: `Standard`, `Residential Premium` или `Unlimited`. Различия между планами приведены в [таблице сравнения](../../our-products/residential-proxies/).
+
+Чтобы оформить заказ:
+
+1. Выберите план в разделе `Residential Proxy`.
+2. Для плана с оплатой за трафик укажите количество гигабайт.
+3. Если у вас есть промокод, введите его в поле `Promocode` и нажмите `Apply`.
+4. Проверьте стоимость и нажмите `Buy now`.
 
 {% hint style="info" %}
-Неиспользованный трафик не сгорает в конце месяца: он остаётся на заказе, пока не будет использован полностью.
+Неиспользованный трафик не сгорает в конце месяца. Он остается на заказе, пока не будет использован полностью.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (51).png" alt="" width="537"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/residential-purchase-form_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/residential-purchase-form_white.png" alt="Покупка резидентских прокси">
+  </picture>
+</figure>
 
-После приобретения, становится доступна панель настройки и генерации прокси
+## Оплата заказа
 
-<figure><img src="../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
+После нажатия `Buy now` откроется счет со статусом `Unpaid`. Проверьте сумму в строке `Total amount` и нажмите `Pay with Wallet`.
 
-{% hint style="info" %}
-Описание полей параметров заказа представлено [тут](../../our-products/residential-proxies/#opisanie-polei-nastroek)
-{% endhint %}
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/residential-invoice-payment_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/residential-invoice-payment_white.png" alt="Оплата резидентских прокси с баланса">
+  </picture>
+</figure>
+
+После оплаты откроется панель настройки и генерации прокси. Описание параметров заказа доступно в [разделе о резидентских прокси](../../our-products/residential-proxies/#opisanie-polei-nastroek).
 
 ## Пополнение трафика на заказе
 
-Пополнение трафика возможно через кнопку ![](<../../.gitbook/assets/image (248).png>) в правом углу заказа
+Откройте заказ и нажмите `Add Traffic` рядом с остатком трафика. Выберите нужный объем и оплатите выставленный счет с баланса.
 
-<figure><img src="../../.gitbook/assets/image (249).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/residential-add-traffic_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/residential-add-traffic_white.png" alt="Добавление трафика к заказу">
+  </picture>
+</figure>
 
-После приобретения дополнительного трафика, прокси вновь заработают
+После оплаты дополнительный трафик будет добавлен к заказу. Если прокси остановились из-за нулевого остатка, они снова станут доступны.

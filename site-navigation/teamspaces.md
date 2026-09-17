@@ -4,38 +4,76 @@ icon: people-group
 
 # Команды
 
-Раздел Teamspaces позволяет работать с другими пользователями, делиться доступом к прокси, назначать роли и управлять заказами в общем рабочем пространстве.
+Команды позволяют делиться доступом к прокси и заказам, назначать разрешения и работать в общем пространстве. Один аккаунт может создать до 10 команд.
 
-## Открытие раздела команд
+## Открытие раздела Teams
 
-1. Нажмите на иконку профиля в левом нижнем углу дашборда.
-2. Выберите **Settings**, затем откройте вкладку **Teams** в верхней навигации.
+1. Нажмите иконку профиля в левом нижнем углу.
+2. Выберите `Settings`.
+3. Откройте вкладку `Teams`.
 
-<figure><img src="../.gitbook/assets/navigation-to-teams.png" alt="Открытие раздела Teams"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/teams-navigation_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/teams-navigation_white.png" alt="Переход в раздел Teams">
+  </picture>
+</figure>
 
-## Управление командами
+## Создание команды
 
-На вкладке **Teams** отображаются созданные вами команды и команды, в которых вы состоите. Можно создать до 10 команд.
+1. Нажмите `Create team`.
+2. Введите название в поле `Team name`.
+3. Нажмите `Create team` в окне создания.
 
-В командах, где вы участник, доступны кнопки для переключения активной команды и выхода из неё.
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/team-create_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/team-create_white.png" alt="Создание команды">
+  </picture>
+</figure>
 
-<figure><img src="../.gitbook/assets/switch-between-teams.png" alt="Переключение между командами"><figcaption></figcaption></figure>
+## Переключение между командами
 
-В созданных вами командах можно управлять участниками и настраивать параметры команды.
+Откройте меню аккаунта в левом нижнем углу, выберите `Team`, затем нужную команду. После переключения в интерфейсе будут отображаться доступные этой команде заказы и функции.
 
-<figure><img src="../.gitbook/assets/teams-review.png" alt="Список команд"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/team-switch_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/team-switch_white.png" alt="Переключение рабочей команды">
+  </picture>
+</figure>
 
-Если вы владелец команды, нажмите **Settings** на её карточке, чтобы настроить рабочее пространство:
+Команды, в которых вы состоите, находятся в блоке `Teams you belong to`. Активная команда отмечена статусом `Active`. Чтобы выйти из команды, нажмите `Leave team`.
 
-<figure><img src="../.gitbook/assets/teams-settings.png" alt="Настройки команды"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/team-membership_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/team-membership_white.png" alt="Команда, в которой состоит пользователь">
+  </picture>
+</figure>
+
+## Настройки команды
+
+Владелец может открыть `Settings` на карточке команды, изменить `Team name`, включить `Log order views` или удалить команду. После изменения настроек нажмите `Save changes`.
+
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/team-settings_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/team-settings_white.png" alt="Настройки команды">
+  </picture>
+</figure>
 
 ## Добавление участников
 
-1. Откройте команду и выберите **Members**.
-2. Нажмите **+ Add member** и укажите электронную почту пользователя.
+Откройте `Members` на карточке своей команды и нажмите `Add member`. Затем:
 
-<figure><img src="../.gitbook/assets/members-menu.png" alt="Меню участников"><figcaption></figcaption></figure>
+1. Укажите адрес в поле `Member email`.
+2. Настройте доступ к заказам и необходимые разрешения.
+3. Нажмите `Add member`.
 
-3. Настройте необходимые разрешения для участника.
-
-<figure><img src="../.gitbook/assets/add-new-member.png" alt="Добавление участника команды"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/team-add-member_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/team-add-member_white.png" alt="Добавление участника и настройка разрешений">
+  </picture>
+</figure>

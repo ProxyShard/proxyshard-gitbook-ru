@@ -2,20 +2,34 @@
 icon: magnifying-glass
 ---
 
-# Поиск заказов (Product tag)
+# Поиск заказов по Product tag
 
-В каждом заказе есть возможность установки <mark style="color:purple;">Protuct-Tag</mark>
+Каждому заказу можно присвоить собственный `Product tag`. Тег помогает быстро найти заказ по понятному названию.
 
-<figure><img src="../.gitbook/assets/image (255).png" alt="" width="506"><figcaption></figcaption></figure>
+1. Откройте заказ и введите тег в поле `Product tag`.
+2. Нажмите `Apply`.
 
-В левой части заказа указывается произвольное имя, в этом примере указывается "<mark style="color:$info;">test\_tag1</mark>"
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/product-tag-setup_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/product-tag-setup_white.png" alt="Настройка Product tag">
+  </picture>
+</figure>
 
-Затем в "<mark style="color:purple;">Active product</mark>" или "<mark style="color:purple;">My order</mark>" можно увидеть, как применился тег к заказу.
+Присвоенный тег отображается рядом с номером заказа в блоке `Active products`.
 
-<figure><img src="../.gitbook/assets/image (256).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/product-tag-active-search_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/product-tag-active-search_white.png" alt="Поиск заказа в Active products">
+  </picture>
+</figure>
 
-С помощью поля "Search" ![](<../.gitbook/assets/image (258).png>) можно найти заказы по тегу
+Введите тег в поле `Search` и нажмите `Search`. Поиск доступен как на странице выбранного продукта, так и в разделе [`My orders`](https://dashboard.proxyshard.com/products).
 
-<figure><img src="../.gitbook/assets/image (259).png" alt="" width="563"><figcaption></figcaption></figure>
-
-Поиск заказов возможен как на странице с продуктом, так и в списке [заказов](https://dashboard.proxyshard.com/products)
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/product-tag-orders-search_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/product-tag-orders-search_white.png" alt="Поиск заказа по тегу в My orders">
+  </picture>
+</figure>

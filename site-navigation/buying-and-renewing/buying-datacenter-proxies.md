@@ -2,13 +2,13 @@
 icon: '1'
 ---
 
-# Пример приобретения датацентр-прокси
+# Приобретение ISP / Datacentre
 
 ## Покупка прокси
 
-Чтобы приобрести [датацентр-прокси](https://dashboard.proxyshard.com/datacenter-proxy):
+Чтобы приобрести [датацентр-прокси](https://dashboard.proxyshard.com/datacenter-proxy) или [ISP-прокси](https://dashboard.proxyshard.com/isp-proxy):
 
-1. Откройте раздел `Datacenter Proxy`.
+1. Откройте раздел `Datacenter Proxy` или `ISP Proxy` в зависимости от нужного типа прокси.
 2. В поле `Proxy region` выберите страну прокси.
 3. В поле `Billing cycle` выберите период оплаты.
 4. В поле `Number of proxies` укажите количество прокси.
@@ -21,7 +21,7 @@ icon: '1'
 <figure>
   <picture>
     <source srcset="../../.gitbook/assets/datacenter-purchase-form_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../.gitbook/assets/datacenter-purchase-form_white.png" alt="Форма покупки датацентр-прокси">
+    <img src="../../.gitbook/assets/datacenter-purchase-form_white.png" alt="Форма покупки прокси">
   </picture>
 </figure>
 
@@ -41,7 +41,7 @@ icon: '1'
 <figure>
   <picture>
     <source srcset="../../.gitbook/assets/datacenter-active-products_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../.gitbook/assets/datacenter-active-products_white.png" alt="Список активных датацентр-прокси">
+    <img src="../../.gitbook/assets/datacenter-active-products_white.png" alt="Список активных заказов">
   </picture>
 </figure>
 
@@ -49,7 +49,7 @@ icon: '1'
 Прокси начнут работать в течение 1-2 минут. Это время требуется для синхронизации заказа.
 {% endhint %}
 
-## Продление датацентр-прокси
+## Продление заказа
 
 Заказ можно продлевать автоматически или вручную.
 
@@ -60,7 +60,7 @@ icon: '1'
 <figure>
   <picture>
     <source srcset="../../.gitbook/assets/datacenter-order-details_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../.gitbook/assets/datacenter-order-details_white.png" alt="Ручное продление датацентр-прокси">
+    <img src="../../.gitbook/assets/datacenter-order-details_white.png" alt="Ручное продление заказа">
   </picture>
 </figure>
 

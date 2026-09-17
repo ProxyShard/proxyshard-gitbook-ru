@@ -4,15 +4,20 @@ icon: file-lines
 
 # Счета
 
-Вкладка "<mark style="color:purple;">Invoices</mark>" отображает покупки, время оплаты и статус платежа.\
-На данной странице можно отследить, как были израсходованы средства.
+В разделе `Invoices` отображаются сумма, дата и статус каждого счета. Нажмите `Open`, чтобы открыть нужный счет.
 
-Пример списка инвойсов:
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/invoice-list_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/invoice-list_white.png" alt="Список счетов">
+  </picture>
+</figure>
 
-<figure><img src="../.gitbook/assets/image (264).png" alt=""><figcaption></figcaption></figure>
+Внутри счета доступны данные плательщика, способ оплаты, статус и состав заказа. Нажмите `Download invoice PDF`, чтобы скачать счет в формате PDF.
 
-Пример инвойса:
-
-<figure><img src="../.gitbook/assets/image (251).png" alt=""><figcaption></figcaption></figure>
-
-Внутри счета доступна кнопка выгрузки счета в формате PDF.
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/invoice-details_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/invoice-details_white.png" alt="Данные счета и загрузка PDF">
+  </picture>
+</figure>

@@ -2,42 +2,72 @@
 icon: '4'
 ---
 
-# Пример приобретения Мобильных прокси
+# Приобретение мобильных прокси
 
 ## Покупка прокси
 
-При приобретении <mark style="color:purple;">Мобильных прокси</mark> прокси выберите подходящий Вам тариф (для сортировки списка, можно использовать фильтр по странам) и укажите срок аренды, как представлено на скриншоте ниже
+Чтобы оформить заказ:
 
-<figure><img src="../../.gitbook/assets/image (9) (1).png" alt="" width="563"><figcaption></figcaption></figure>
+1. Откройте раздел `Mobile Proxy`.
+2. Выберите страну с помощью `Country filter`.
+3. В карточке подходящего оператора выберите период аренды.
+4. Нажмите `Buy`.
 
-После приобретения, заказ автоматически откроется и будет доступен в панели "<mark style="color:purple;">Active Product</mark>" или в "[<mark style="color:purple;">My orders</mark>](https://dashboard.proxyshard.com/products)"
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/mobile-purchase-form_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/mobile-purchase-form_white.png" alt="Покупка мобильных прокси">
+  </picture>
+</figure>
 
-<figure><img src="../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
+## Оплата заказа
+
+Проверьте сумму счета и нажмите `Pay with Wallet`.
+
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/mobile-invoice-payment_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/mobile-invoice-payment_white.png" alt="Оплата мобильных прокси с баланса">
+  </picture>
+</figure>
+
+После оплаты заказ появится в блоке `Active products` и в разделе [`My orders`](https://dashboard.proxyshard.com/products). Нажмите `Open`, чтобы перейти к настройкам заказа.
+
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/mobile-active-products_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/mobile-active-products_white.png" alt="Активный заказ мобильных прокси">
+  </picture>
+</figure>
 
 ## Старт работы
 
-<figure><img src="../../.gitbook/assets/mobile_order.png" alt=""><figcaption></figcaption></figure>
+Чтобы активировать прокси после покупки, скопируйте `Reset URL` и откройте ссылку либо нажмите `Restart`.
 
-{% hint style="danger" %}
-**Чтоб прокси начали работать, после приобретения перейдите по ссылке **<mark style="color:purple;">**Reset URL**</mark>** или нажмите кнопку** ![](<../../.gitbook/assets/image (13) (1).png>)**.**\
-\
-_Также при отсутствии действий на прокси более трех часов они отключаются, и их нужно активировать повторно._
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/mobile-order-restart_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/mobile-order-restart_white.png" alt="Активация мобильных прокси">
+  </picture>
+</figure>
+
+{% hint style="warning" %}
+После трех часов бездействия прокси становится неактивным. Чтобы возобновить работу, снова откройте `Reset URL` или нажмите `Restart`.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/mobile_pred.png" alt="" width="492"><figcaption></figcaption></figure>
+Описание настроек и полей заказа доступно в [разделе о мобильных прокси](../../our-products/mobile-proxies.md).
 
-{% hint style="info" %}
-Про настройки и описание полей вы можете ознакомиться по [ссылке](../../our-products/mobile-proxies.md)
-{% endhint %}
+## Продление заказа
 
-## Продление Мобильных прокси
+Если включен `Auto renew`, заказ продлевается автоматически при достаточном балансе. Если автоматическое продление отключено, после окончания оплаченного периода заказ получит статус `On-hold`. Откройте заказ и нажмите `Renew`, чтобы продлить его вручную.
 
-Продление продукта возможно только вручную.\
-\
-При отключенной функции автоматического продления, прокси будут ожидать (Статус <mark style="color:$warning;">On-hold</mark>) ручной оплаты, для этого в заказе требуется нажать ![](<../../.gitbook/assets/image (55).png>)
-
-<figure><img src="../../.gitbook/assets/image (21) (1).png" alt="" width="463"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/mobile-order-renewal_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/mobile-order-renewal_white.png" alt="Продление мобильных прокси">
+  </picture>
+</figure>
 
 {% hint style="danger" %}
-Прокси со статусом "<mark style="color:$danger;">Canceled</mark>" продлить невозможно, данный статус наступает по истечении трех дней с момента неуплаты заказа.
+Заказ в статусе `Canceled` продлить нельзя. Этот статус присваивается через три дня после неоплаты заказа.
 {% endhint %}

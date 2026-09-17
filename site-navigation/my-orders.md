@@ -4,8 +4,13 @@ icon: arrow-up-wide-short
 
 # Мои заказы
 
-Данная страница позволяет просмотреть все заказы аккаунта.
+В разделе `My orders` собраны все заказы аккаунта. Вкладки в верхней части страницы позволяют отфильтровать их по типу продукта, а меню `All statuses` по статусу.
 
-<figure><img src="../.gitbook/assets/image (22) (1).png" alt=""><figcaption></figcaption></figure>
+Для поиска по номеру или `Product tag` введите значение в поле `Search` и нажмите `Search`. Кнопка `Open` открывает выбранный заказ.
 
-При помощи различных фильтров и вкладок, можно просмотреть все заказы
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/orders-list_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/orders-list_white.png" alt="Список и фильтры заказов">
+  </picture>
+</figure>
