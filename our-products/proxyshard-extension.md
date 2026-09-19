@@ -17,7 +17,13 @@ icon: puzzle-piece
 * Bypass-листы и продвинутый routing по доменам
 * Локализация на **Английском, Русском, Украинском и Китайском** языках
 
-<div align="center"><figure><img src="../.gitbook/assets/ext-promo.png" alt="Внешний вид расширения ProxyShard" width="283"><figcaption><p>Внешний вид расширения ProxyShard</p></figcaption></figure></div>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/extension-overview_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/extension-overview_white.png" alt="Внешний вид расширения ProxyShard">
+  </picture>
+  <figcaption><p>Внешний вид расширения ProxyShard</p></figcaption>
+</figure>
 
 ## Установка расширения
 
@@ -33,7 +39,13 @@ icon: puzzle-piece
 
 После установки откройте меню расширений (иконка пазла справа от адресной строки) и **закрепите ProxyShard** для быстрого доступа, кликнув на иконку «булавки» напротив названия расширения.
 
-<div align="center"><figure><img src="../.gitbook/assets/ext-pinextension.png" alt="Закрепление расширения в браузере"><figcaption><p>1) Откройте меню расширений 2) Закрепите ProxyShard</p></figcaption></figure></div>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/extension-pin_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/extension-pin_white.png" alt="Закрепление расширения в браузере">
+  </picture>
+  <figcaption><p>1) Откройте меню расширений. 2) Закрепите ProxyShard.</p></figcaption>
+</figure>
 
 {% hint style="danger" %}
 **Ограничение SOCKS5 в Chromium-браузерах**
@@ -61,30 +73,66 @@ icon: puzzle-piece
 3. Скопируйте строку подключения кнопкой <mark style="color:purple;">**Copy all**</mark>.
 4. Откройте расширение ProxyShard (закреплённую иконку справа от адресной строки).
 
-<figure><img src="../.gitbook/assets/ext-resiadd.png" alt="Генерация резидентского прокси на сайте"><figcaption><p>Шаги 1-4: настройка и копирование прокси из дашборда</p></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/extension-residential-copy_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/extension-residential-copy_white.png" alt="Генерация резидентского прокси на сайте">
+  </picture>
+  <figcaption><p>Шаги 1-4: настройка и копирование прокси из дашборда</p></figcaption>
+</figure>
 
 5. В нижнем поле расширения **вставьте скопированную строку** в формате `ip:port:login:password` и нажмите <mark style="color:purple;">**Add**</mark>.
 
-<div align="center"><figure><img src="../.gitbook/assets/ext-resiadd2.png" alt="Добавление прокси в расширение" width="332"><figcaption><p>Шаг 5: вставка прокси и добавление профиля</p></figcaption></figure></div>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/extension-residential-add_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/extension-residential-add_white.png" alt="Добавление прокси в расширение">
+  </picture>
+  <figcaption><p>Шаг 5: вставка прокси и добавление профиля</p></figcaption>
+</figure>
 
 6. Профиль появится в списке. Нажмите <mark style="color:purple;">**Test**</mark>, чтобы проверить работоспособность, и кнопку <mark style="color:purple;">**Play**</mark> для активации прокси.
 
-<div align="center"><figure><img src="../.gitbook/assets/ext-resiadd4.png" alt="Активация прокси в расширении" width="282"><figcaption><p>Шаг 6: тестирование и запуск профиля</p></figcaption></figure></div>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/extension-residential-run_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/extension-residential-run_white.png" alt="Активация прокси в расширении">
+  </picture>
+  <figcaption><p>Шаг 6: тестирование и запуск профиля</p></figcaption>
+</figure>
 
 ## Настройка для Datacenter / ISP прокси
 
 1. Откройте ваш заказ <mark style="color:purple;">Datacenter</mark> или <mark style="color:purple;">ISP proxy</mark> на дашборде и **скопируйте** строку подключения из блока <mark style="color:purple;">Proxy List</mark>.
 2. Откройте закреплённое расширение **ProxyShard**.
 
-<figure><img src="../.gitbook/assets/ext-dcispadd.png" alt="Копирование прокси из заказа DC/ISP"><figcaption><p>Шаги 1-2: копирование прокси из заказа и открытие расширения</p></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/extension-dcisp-copy_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/extension-dcisp-copy_white.png" alt="Копирование прокси из заказа DC/ISP">
+  </picture>
+  <figcaption><p>Шаги 1-2: копирование прокси из заказа и открытие расширения</p></figcaption>
+</figure>
 
 3. В нижнем поле расширения **вставьте прокси** (`ip:port:login:password`) и нажмите <mark style="color:purple;">**Add**</mark>.
 
-<div align="center"><figure><img src="../.gitbook/assets/ext-dcispadd2.png" alt="Вставка прокси в расширение" width="404"><figcaption><p>Шаг 3: вставка прокси в расширение</p></figcaption></figure></div>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/extension-dcisp-add_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/extension-dcisp-add_white.png" alt="Вставка прокси в расширение">
+  </picture>
+  <figcaption><p>Шаг 3: вставка прокси в расширение</p></figcaption>
+</figure>
 
 4. Нажмите <mark style="color:purple;">**Test**</mark> для проверки, и активируйте профиль кнопкой <mark style="color:purple;">**Play**</mark>.
 
-<div align="center"><figure><img src="../.gitbook/assets/ext-dcispadd3.png" alt="Активация профиля DC/ISP" width="284"><figcaption><p>Шаг 4: тестирование и запуск профиля</p></figcaption></figure></div>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/extension-dcisp-run_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/extension-dcisp-run_white.png" alt="Активация профиля DC/ISP">
+  </picture>
+  <figcaption><p>Шаг 4: тестирование и запуск профиля</p></figcaption>
+</figure>
 
 {% hint style="info" %}
 **Для Мобильных прокси: IP-ротация по таймеру или хоткею**
@@ -96,7 +144,12 @@ icon: puzzle-piece
 * **Trigger: Hotkey** - назначьте сочетание клавиш (например, `Shift+F2`) для смены IP «на лету».
 * **Track IP history** - функция детекта повторов: расширение уведомит вас, если в течение сессии повторился один и тот же IP-адрес.
 
-<img src="../.gitbook/assets/ext-iprotate.png" alt="Блок IP Rotation в настройках профиля" data-size="original">
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/extension-ip-rotation_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/extension-ip-rotation_white.png" alt="Блок IP Rotation в настройках профиля">
+  </picture>
+</figure>
 {% endhint %}
 
 ## Ручное добавление профиля
@@ -114,7 +167,13 @@ icon: puzzle-piece
    * <mark style="color:purple;">**Username**</mark> / <mark style="color:purple;">**Password**</mark> - данные авторизации
 4. Нажмите <mark style="color:purple;">**Save Profile**</mark>.
 
-<figure><img src="../.gitbook/assets/ext-manual_add.png" alt="Ручное добавление профиля"><figcaption><p>Полная форма создания профиля</p></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/extension-manual-profile_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/extension-manual-profile_white.png" alt="Ручное добавление профиля">
+  </picture>
+  <figcaption><p>Полная форма создания профиля</p></figcaption>
+</figure>
 
 {% hint style="success" %}
 **Готово!** Расширение ProxyShard полностью настроено и готово к работе. Переключайтесь между прокси «в один клик» из любого поддерживаемого браузера.

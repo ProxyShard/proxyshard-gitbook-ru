@@ -4,32 +4,46 @@ icon: check-to-slot
 
 # Через что можно проверить утечку WebRTC
 
-Есть несколько сервисов, которые помогут проверить наличие утечки WebRTC. Рекомендуем начинать с нашего собственного инструмента.
+Проверить WebRTC можно через ProxyShard IP Checker или сторонний сервис Ipbinding. Начните с нашего инструмента: он показывает внешний IP, адрес WebRTC и результат проверки UDP в одном отчёте.
 
 ## 1. ProxyShard IP Checker
 
-<mark style="color:purple;">**Рекомендуем**</mark> наш собственный инструмент, который показывает IP-адрес, геолокацию и сразу определяет утечку <mark style="color:purple;">WebRTC</mark>.
-
 {% embed url="https://proxyshard.com/ip-checker" %}
 
+### Нормальный результат
+
+При корректной настройке значения `My IP address` и `WebRTC IP` совпадают. Это означает, что WebRTC использует адрес прокси, а UDP-трафик не обходит подключение.
+
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/ip-checker-overview_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/ip-checker-overview_white.png" alt="Корректный результат проверки WebRTC">
+  </picture>
+</figure>
+
+### UDP-кандидаты не получены
+
+Если поле `WebRTC IP` показывает `error`, а в блоке `WebRTC Check` указано `No UDP candidates received`, браузер не получил UDP-кандидаты.
+
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/webrtc-check-failed_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/webrtc-check-failed_white.png" alt="Проверка WebRTC без UDP-кандидатов">
+  </picture>
+</figure>
+
+{% hint style="warning" %}
+Такой результат сам по себе не означает утечку IP. Обычно WebRTC заблокирован либо выбранный продукт или программа не передаёт UDP. Проверьте [доступность UDP в продуктах](./README.md#v-kakikh-produktakh-dostupen-udp) и используйте [программу с поддержкой UDP ASSOCIATE](webrtc-software-solutions.md).
+{% endhint %}
+
 {% hint style="danger" %}
-Если вы видите строку **"**<mark style="color:purple;">**WebRTC is leaked**</mark>**"** с посторонним IP, то ваш реальный адрес виден другим сайтам.
+Если `WebRTC IP` показывает адрес, который отличается от `My IP address`, WebRTC обходит прокси. Такой результат означает утечку.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (41).png" alt="" width="563"><figcaption></figcaption></figure>
-
-{% hint style="info" %}
-Подробнее узнать об инструменте можно на странице [IP Checker](../ip-checker.md).
-{% endhint %}
-
-***
+Подробнее о полях отчёта: [IP Checker](../ip-checker.md).
 
 ## 2. Ipbinding
 
-<mark style="color:purple;">**Ipbinding**</mark>: сервис для проверки утечек WebRTC.
+[Ipbinding](https://ipbinding.online/) также показывает WebRTC-кандидаты. Интерпретация результата та же: адрес WebRTC должен совпадать с адресом прокси.
 
 {% embed url="https://ipbinding.online/" %}
-
-<div data-full-width="true"><figure><img src="../../.gitbook/assets/image (175).png" alt="Ipbinding" width="153"><figcaption></figcaption></figure></div>
-
-***

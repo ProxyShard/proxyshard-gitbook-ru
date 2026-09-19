@@ -10,7 +10,12 @@ icon: vial
 
 ***
 
-<figure><img src="../.gitbook/assets/proxy-tester-check-result.png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/proxy-tester-check-result_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/proxy-tester-check-result_white.png" alt="Результат проверки прокси">
+  </picture>
+</figure>
 
 ## Как пользоваться
 

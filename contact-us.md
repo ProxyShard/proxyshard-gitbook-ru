@@ -8,7 +8,7 @@ icon: at
 
 <mark style="color:blue;">Telegram</mark> - [https://t.me/proxyshard](https://t.me/proxyshard)\
 <mark style="color:purple;">Discord</mark> - [https://discord.gg/zKzzRKZheP](https://discord.gg/zKzzRKZheP)\
-Основная поддержка оказывается в Live-чате, справа снизу ![](<.gitbook/assets/image (32).png>)
+Основная поддержка оказывается в Live-чате в правом нижнем углу <img src=".gitbook/assets/contact-support-icon.png" alt="Live-чат" data-size="line">
 
 По сотрудничеству или иным вопросам - заполните нашу Google-форму\
 [RU](https://forms.gle/13WbC2ibArtfT6LXA) | [EN](https://forms.gle/ysqdK3CzXjHuDmxL6)
@@ -20,4 +20,9 @@ icon: at
 Или форму на [сайте](https://proxyshard.com/contacts)\
 Если у вас возникнут вопросы, мы будем рады вам помочь в Live-Chat
 
-<figure><img src=".gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset=".gitbook/assets/contact-page_black.png" media="(prefers-color-scheme: dark)">
+    <img src=".gitbook/assets/contact-page_white.png" alt="Форма связи на сайте ProxyShard">
+  </picture>
+</figure>

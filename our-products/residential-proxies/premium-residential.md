@@ -8,20 +8,22 @@ icon: crown
 
 {% embed url="https://dashboard.proxyshard.com/en/residential-premium" %}
 
+Пошаговая инструкция по покупке и оплате: [Приобретение резидентских прокси](../../site-navigation/buying-and-renewing/buying-residential-proxies.md).
+
 ## Характеристики
 
 | Параметр                    | Значение                             |
 | --------------------------- | ------------------------------------ |
 | Размер пула                 | 3 800 000 - 4 600 000 устройств      |
-| Поддержка UDP               | ✗                                    |
-| [Фильтрация Device OS (p0f)](https://docs.proxyshard.com/our-products/residential-proxies#opisanie-polei-nastroek) | ✓ |
+| [Поддержка UDP](../about-udp/) | ✓ (кроме отдельных городов и устройств macOS/iOS) |
+| [Фильтрация Device OS](../p0f-spoofing.md) | ✓ |
 | Безлимитный тариф           | ✗                                    |
 | Тарификация                 | За гигабайты (система Pay as you go) |
 | Таргетинг                   | Страна / Регион / Город / Оператор   |
 | Стоимость                   | **$3 / ГБ**                          |
 
 {% hint style="warning" %}
-Premium Residential не поддерживает <mark style="color:purple;">UDP</mark> и не имеет безлимитного тарифа. Если для задачи важен UDP или WebRTC - выбирайте [Standard](standard-residential.md) или [Unlimited](unlimited-residential-proxy.md).
+Premium Residential поддерживает <mark style="color:purple;">UDP</mark> во всех локациях, кроме отдельных городов и устройств на базе macOS/iOS. Безлимитного тарифа нет.
 {% endhint %}
 
 ## Доступные страны
@@ -37,6 +39,6 @@ Premium Residential не поддерживает <mark style="color:purple;">UD
 - Задачи, требующие максимального разнообразия IP
 - Тонкое геотаргетирование: страна, регион, город, оператор
 - Работа с жёсткими антифрод-системами, где важна чистота пула
-- Парсинг и автоматизация без требований к UDP
+- Задачи с UDP / WebRTC с учётом ограничений продукта
 
 С ограничениями продукта можно ознакомиться [тут](../restrictions.md).

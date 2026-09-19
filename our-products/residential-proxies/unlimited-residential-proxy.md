@@ -8,6 +8,8 @@ icon: triple-chevrons-up
 
 {% embed url="https://dashboard.proxyshard.com/en/residential-unlimited" %}
 
+Пошаговая инструкция по покупке и оплате: [Приобретение резидентских прокси](../../site-navigation/buying-and-renewing/buying-residential-proxies.md).
+
 ## Характеристики
 
 | Параметр                    | Значение                                    |
@@ -15,8 +17,8 @@ icon: triple-chevrons-up
 | Размер пула                 | 300 000 - 400 000 устройств (= Standard)    |
 | Макс. кол-во соединений     | 5 000                                       |
 | Макс. скорость на заказ     | 75 Mbps                                     |
-| Поддержка UDP               | ✓ (недоступно в локации США)                |
-| [Фильтрация Device OS (p0f)](https://docs.proxyshard.com/our-products/residential-proxies#opisanie-polei-nastroek) | ✗ |
+| [Поддержка UDP](../about-udp/) | ✓ (кроме США; есть ограничения по портам) |
+| [Фильтрация Device OS](../p0f-spoofing.md) | ✗ |
 | Тарификация                 | День / Половина месяца / Месяц              |
 | Стоимость                   | **$30** / день · **$199** / нед. · **$399** / полм. · **$699** / мес. |
 

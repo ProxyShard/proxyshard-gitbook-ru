@@ -17,6 +17,8 @@ icon: house-signal
 
 {% embed url="https://dashboard.proxyshard.com/en/residential-main" %}
 
+Пошаговая инструкция по покупке и оплате: [Приобретение резидентских прокси](../../site-navigation/buying-and-renewing/buying-residential-proxies.md).
+
 ## Тарифы
 
 | Параметр                                                                                                           | [Standard](standard-residential.md) | [Unlimited](unlimited-residential-proxy.md)      | [Premium](premium-residential.md) |
@@ -24,8 +26,8 @@ icon: house-signal
 | Размер пула                                                                                                        | 300k - 400k                         | 300k - 400k (= Standard)                         | 3.8M - 4.6M                       |
 | Макс. соединений                                                                                                   | 35 000                              | 5 000                                            | -                                 |
 | Макс. скорость                                                                                                     | 75 Mbps                             | 75 Mbps                                          | 75 Mbps                           |
-| [Поддержка UDP](../about-udp/)                                                                                     | ✓ (кроме США)                       | ✓ (кроме США)                                    | ✗                                 |
-| [Фильтрация Device OS (p0f)](https://docs.proxyshard.com/our-products/residential-proxies#opisanie-polei-nastroek) | ✗                                   | ✗                                                | ✓                                 |
+| [Поддержка UDP](../about-udp/) | ✓ (кроме США; есть ограничения по портам) | ✓ (кроме США; есть ограничения по портам) | ✓ (кроме отдельных городов и устройств macOS/iOS) |
+| [Фильтрация Device OS](../p0f-spoofing.md) | ✗ | ✗ | ✓ |
 | Безлимитный тариф                                                                                                  | ✗                                   | ✓                                                | ✗                                 |
 | Тарификация                                                                                                        | За ГБ (Pay as you go)               | День / Полмесяца / Месяц                         | За ГБ (Pay as you go)             |
 | Стоимость                                                                                                          | **$2 / ГБ**                         | **$30** / д · **$399** / полм. · **$699** / мес. | **$3 / ГБ**                       |
@@ -48,96 +50,92 @@ icon: house-signal
 [premium-available-countries.md](premium-available-countries.md)
 {% endcontent-ref %}
 
-## **Как начать использовать?**
+## Как приобрести
 
-Расчет стоимости резидентских прокси производится от количества приобретенных гигабайт на заказ.\
-\
-Чтобы получить доступ к выбору страны и других параметров, вам нужно [**приобрести**](https://dashboard.proxyshard.com/en/residential-main) заказ. Для этого перейдите в раздел «Residential Proxy» и укажите количество гигабайтов.
+1. В разделе `Residential Proxy` выберите план `Standard`, `Residential Premium` или `Unlimited`.
+2. Для плана с оплатой за трафик укажите количество гигабайт.
+3. Если у вас есть промокод, введите его в `Promocode` и нажмите `Apply`.
+4. Проверьте стоимость и нажмите `Buy now`.
 
-<figure><img src="../../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/residential-purchase-form_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/residential-purchase-form_white.png" alt="Покупка резидентских прокси">
+  </picture>
+</figure>
 
-## Описание полей настроек
+Оплата заказа и пополнение трафика описаны в инструкции [Приобретение резидентских прокси](../../site-navigation/buying-and-renewing/buying-residential-proxies.md).
 
-В самом заказе вы можете обнаружить несколько важных пунктов и опций, рассмотрим их
+## Настройка прокси
 
-<figure><img src="../../.gitbook/assets/residential-proxy-settings.png" alt="Настройки Residential Proxy с параметрами Device OS и Session mode"><figcaption></figcaption></figure>
+Для обычного подключения достаточно выбрать `Country` и нажать `Generate proxy`. Остальные параметры нужны для более точного таргетинга и управления сессией.
 
-<mark style="color:purple;">**Traffic used**</mark> - Сколько потрачено \ Сколько приобретено
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/residential-settings_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/residential-settings_white.png" alt="Настройка резидентских прокси">
+  </picture>
+</figure>
 
-<mark style="color:purple;">**Country**</mark> - Выбор страны
+1. `Country` выбирает страну.
+2. `Region` выбирает регион внутри страны.
+3. `City` выбирает город.
+4. `ISP` фильтрует адреса по провайдеру. Поле доступно только для [Premium Residential](premium-residential.md).
+5. `Session` задаёт режим ротации. `Sticky` удерживает один IP в пределах `TTL`, а `Rotate` меняет IP при каждом запросе.
+6. `Protocol` выбирает `HTTP` или `SOCKS5`.
+7. `Relay` меняет сервер подключения. Используйте его только при проблемах с соединением.
+8. `TTL` задаёт время жизни IP для сессии `Sticky`. Минимальное значение составляет 60 секунд.
+9. `Device OS` фильтрует пул [Premium Residential](premium-residential.md) по операционной системе устройства.
+10. `Amount` задаёт количество строк, которые будут созданы за один раз.
+11. `Session mode` управляет поведением сессии в Premium Residential. `Default(after 5sec)` переключает сессию, если устройство не отвечает более пяти секунд. `Static` ждёт возвращения того же устройства в течение `TTL`.
+12. `Generate proxy` создаёт строки подключения с выбранными параметрами.
+13. `Proxy List` показывает созданные строки. Через `Format` можно выбрать их формат, а через `Copy all` скопировать весь список.
 
-<mark style="color:purple;">**Region**</mark> - Выбор региона страны
-
-<mark style="color:purple;">**City**</mark> - Выбор города региона
-
-<mark style="color:purple;">**ISP**</mark> - Выбор типа провайдера. Доступен только для [Premium Residential](premium-residential.md).
-
-[**Device OS**](../p0f-spoofing.md) - Фильтрация пула [Premium Residential](premium-residential.md) по операционной системе устройства. Выберите нужную ОС, чтобы получать прокси от устройств с соответствующим типом ОС. Доступна только для Premium Residential.
+`Presets` сохраняет наборы настроек для повторного использования. Настройте поля, нажмите `Save preset` и выберите сохранённый набор при следующей генерации.
 
 {% hint style="warning" %}
-Этот параметр значительно сокращает пул доступных устройств. Рекомендуем использовать его только при таргетинге на города с населением более 1 млн человек либо на уровне страны или региона.
-{% endhint %}
-
-<mark style="color:purple;">**Session**</mark> - Выбор типа сессии, на выбор дается <mark style="color:purple;">Sticky</mark> и <mark style="color:purple;">Rotate</mark>.
-
-* <mark style="color:purple;">Sticky</mark> позволяет удержать один IP адрес и зависит от выбранного параметра TTL.
-* <mark style="color:purple;">Rotate</mark> меняет IP при каждом обращении. Пул IP диапазонов у <mark style="color:purple;">Sticky</mark> меньше, чем у <mark style="color:purple;">Rotate</mark>
-
-<mark style="color:purple;">**Session mode**</mark> - Параметр управления сессией, доступный только для [Premium Residential](premium-residential.md).
-
-* <mark style="color:purple;">Default (5 sec)</mark> меняет сессию, если устройство не отвечает более 5 секунд.
-* <mark style="color:purple;">Static</mark> не меняет сессию и ожидает возвращения устройства в сеть в течение времени, указанного в TTL. Если TTL не задан, сессия фиксируется на один день.
-
-<mark style="color:purple;">**Protocol**</mark> - HTTP/SOCKS.\
-Это основные протоколы для установления соединения с сервером прокси.
-
-<mark style="color:purple;">**TTL**</mark> - Появляется при выборе <mark style="color:purple;">Session - Sticky</mark> и отвечает за время жизни IP адреса (<mark style="color:purple;">Time to live</mark>). Минимально возможный <mark style="color:purple;">TTL</mark> - 60 секунд (1 минута).
-
-<mark style="color:purple;">**Relay**</mark> **-** Устанавливается только в случаях, если нет подключения
-
-<mark style="color:purple;">**Username\Password\Host\Port**</mark> - Данные для подключения, также формируются в списке прокси и поддерживают условное форматирование.
-
-{% hint style="info" %}
-Порты на прокси не влияют на конечный получаемый адрес, это просто номер порта для удаленного сервера прокси и не более того!
-{% endhint %}
-
-<mark style="color:purple;">**Traffic Statistics**</mark> - Поминутная статистика использованного трафика. Имеется задержка в отображении 10-20 минут.
-
-<figure><img src="../../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
-
-В конце заказа, вы можете обнаружить статистику запросов с вашего резидентского трафика, в редких случаях могут быть задержки в отображении до 20 минут.
-
-## **Инструкция по настройке**
-
-1. Укажите настройки - <mark style="color:purple;">Страна</mark>, <mark style="color:purple;">Регион</mark> и другие параметры при необходимости
-
-<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
-
-2. Протокол <mark style="color:purple;">HTTP</mark> или <mark style="color:purple;">SOCKS5</mark> устанавливается по вашему желанию <mark style="color:$info;">(как правило для работы UDP устанавливают SOCKS5)</mark>
-
-<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
-
-3. Сервер (<mark style="color:purple;">Relay</mark>) указывается только при проблемах с подключением
-
-<figure><img src="../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
-
-4. Остальные параметры устанавливаются при необходимости
-
-<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
-
-5. Нажать кнопку <img src="../../.gitbook/assets/image (76).png" alt="" data-size="line"> и скопировать прокси из <mark style="color:purple;">Proxy List</mark>
-
-<figure><img src="../../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
-
-В дальнейшем, если вам требуется другая страна, то нужно указать новые настройки и нажать <img src="../../.gitbook/assets/image (76).png" alt="" data-size="line"> и повторно установить новые прокси в приложение, откуда производится подключение.
-
-{% hint style="info" %}
-Дополнительную информацию о форматировании подключения можно узнать по [ссылке](how-to-use-residential-proxies.md)
+Одновременный выбор `Device OS`, города и провайдера сильно сокращает доступный пул. Для macOS и iOS в странах Tier 2 и Tier 3 подходящих устройств может не оказаться.
 {% endhint %}
 
 {% hint style="warning" %}
-Прокси в "Proxy List" не сохраняются, так как это динамическое поле. Можно сгенерировать много прокси разных локаций - старые при генерации новых прокси не перестанут работать.
+При использовании `Session mode`, отличного от стандартного, строка может перестать отвечать, если выбранное устройство вышло из сети. В таком случае создайте новую строку через `Generate proxy`.
 {% endhint %}
+
+{% hint style="danger" %}
+Кнопка `Regenerate password` меняет пароль заказа и сразу отключает все ранее созданные строки. Используйте её, только если данные авторизации могли попасть к посторонним. Для контроля трафика отдельных пользователей используйте вкладку `Users`.
+{% endhint %}
+
+`Proxy List` является динамическим полем, а не хранилищем. При новой генерации старые строки продолжают работать, поскольку выбранные параметры записаны в `Username`. Для сохранения самих настроек используйте `Presets`.
+
+## Формат строки подключения
+
+Стандартный формат выглядит так:
+
+```text
+host:port:username:password
+```
+
+* `host` указывает сервер подключения, например `relay-eu.proxyshard.com`.
+* `port` выбирается для подключения к серверу и сам по себе не определяет конечный IP.
+* `username` содержит параметры таргетинга и идентификатор сессии `sid`.
+* `password` используется для авторизации.
+
+Готовую строку можно добавить в браузер, приложение или другой клиент. Пошаговые примеры собраны в [инструкциях по настройке](../../setup-guides/getting-started.md).
+
+## Статистика
+
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/residential-statistics_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/residential-statistics_white.png" alt="Статистика резидентских прокси">
+  </picture>
+</figure>
+
+1. Откройте вкладку `Statistics`.
+2. Выберите период для графика `Traffic Statistics`.
+3. Отдельно выберите период для таблицы `Requests Statistics`.
+
+Данные могут появляться с задержкой 10-20 минут. Статистика хранится один месяц.
 
 ## Для каких задач подходит
 
@@ -151,19 +149,19 @@ icon: house-signal
 * **Смена IP** - ротация адресов по требованию или по таймеру (TTL)
 * **Широкий геотаргетинг** - выбор страны, региона, города и оператора
 * **Адреса домашнего происхождения** - IP зарегистрированы на домашних провайдерах
-* **Поддержка UDP** - доступна на Standard и Unlimited (кроме локации США)
+* **Поддержка UDP** - доступна на Standard, Unlimited и Premium с учётом ограничений продукта
 
 #### <mark style="color:red;">Минусы:</mark>
 
 * **Возможны просадки скорости** - зависит от качества интернета на конечном устройстве, это специфика продукта
 * **Динамический IP** - произвольная смена адреса возможна в любой момент; если нужен статический IP - смотрите [ISP](../isp-proxies.md) или [Datacenter](../datacenter-proxies.md)
-* **Подмена p0f недоступна** - на Premium Residential доступна только [фильтрация устройств по Device OS](https://docs.proxyshard.com/our-products/residential-proxies#opisanie-polei-nastroek)
-* **UDP недоступен в локации США** на Standard и Unlimited
+* **Подмена p0f недоступна** - на Premium Residential доступна только [фильтрация устройств по Device OS](../p0f-spoofing.md)
+* **Ограничения UDP** - Standard и Unlimited не поддерживают UDP в США, а на Premium есть исключения для отдельных городов и устройств macOS/iOS. Также действуют общие [ограничения по портам](../restrictions.md)
 
 {% hint style="success" %}
-Нет UDP или нужен статический адрес? [ISP прокси](../isp-proxies.md) закрывают оба пункта.
+Нужен статический адрес с UDP? Выбирайте [ISP прокси](../isp-proxies.md).
 {% endhint %}
 
 {% hint style="info" %}
-О том как можно настроить прокси вы можете в нашем разделе "[Инструкция по использованию](../../setup-guides/getting-started.md)"
+Примеры настройки прокси собраны в разделе [Инструкция по использованию](../../setup-guides/getting-started.md).
 {% endhint %}

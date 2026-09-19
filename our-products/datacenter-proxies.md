@@ -4,11 +4,13 @@ icon: server
 
 # Датацентр прокси
 
-<mark style="color:purple;">Датацентр прокси</mark> представляют собой прокси для высоконагруженных сценариев и задачи, как правило размещаются на хостингах, обладают самый высокой скоростью и стабильностью.
+<mark style="color:purple;">Датацентровые прокси</mark> предназначены для высоконагруженных задач. Они размещаются в дата-центрах и обеспечивают максимальную скорость и стабильность.
 
-<mark style="color:purple;">Прокси Датацентр</mark> как и <mark style="color:purple;">ISP</mark> выдаются в одни руки, никакого шейринга (больше одного пользователя за адресом) и другой формы обмана. Адреса относятся к типу <mark style="color:purple;">IPv4</mark> и также имеют поддержку <mark style="color:purple;">UDP</mark>.
+<mark style="color:purple;">Датацентровые прокси</mark>, как и <mark style="color:purple;">ISP</mark>, выдаются одному пользователю без скрытого шейринга. Адреса относятся к типу <mark style="color:purple;">IPv4</mark> и поддерживают <mark style="color:purple;">UDP</mark>.
 
 {% embed url="https://dashboard.proxyshard.com/en/datacenter-proxy" %}
+
+Пошаговая инструкция по покупке и оплате: [Приобретение ISP / Datacentre](../site-navigation/buying-and-renewing/buying-datacenter-proxies.md).
 
 ## Характеристики
 
@@ -17,8 +19,8 @@ icon: server
 | Тип IP              | IPv4                                                                      |
 | Шеринг              | Нет - один IP на одного пользователя                                      |
 | Лимит подключений   | 2 500 на IP                                                               |
-| Поддержка UDP       | ✓                                                                         |
-| Поддержка p0f       | ✓ (при аренде от месяца, +$0.3 / IP)                                     |
+| [Поддержка UDP](about-udp/) | ✓                                                                  |
+| [Поддержка p0f](p0f-spoofing.md) | ✓ (при аренде от месяца, +$0.3 / IP)                         |
 | Стоимость           | **$0.3** / 3 дня · **$0.4** / нед. · **$0.7** / полм. · **$1.2** / мес. |
 
 ## Доступные локации
@@ -32,51 +34,54 @@ icon: server
 * 🇺🇦 Украина
 * 🇪🇸 Испания
 
-## **Как они работают?**
+## Как приобрести
 
-В самом заказе вы можете обнаружить несколько важных пунктов и опций, рассмотрим их:
+1. Откройте раздел `Datacenter Proxy`.
+2. В поле `Proxy region` выберите страну.
+3. В поле `Billing cycle` выберите срок аренды.
+4. В поле `Number of proxies` укажите количество прокси.
+5. Включите `Auto renew`, если заказ нужно продлевать автоматически.
+6. При необходимости включите `Enable p0f settings`.
+7. В поле `Total slots` укажите, для скольких прокси нужна подмена p0f.
+8. Если у вас есть промокод, введите его в поле `Promocode` и нажмите `Apply`.
+9. Проверьте стоимость и нажмите `Buy now`.
 
-Приобрести вы можете на странице [Datacentre proxy](https://dashboard.proxyshard.com/en/datacenter-proxy), в нем вам требуется указать <mark style="color:purple;">Страну</mark>, <mark style="color:purple;">Срок аренды</mark> и <mark style="color:purple;">Количество</mark>. При необходимости можете активировать <mark style="color:purple;">Auto renew</mark>, для автоматического продления.
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/datacenter-purchase-form_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/datacenter-purchase-form_white.png" alt="Покупка датацентр-прокси">
+  </picture>
+</figure>
 
-<figure><img src="../.gitbook/assets/image (66).png" alt=""><figcaption></figcaption></figure>
+Оплата и продление заказа описаны в инструкции [Приобретение ISP / Datacentre](../site-navigation/buying-and-renewing/buying-datacenter-proxies.md).
 
 {% hint style="info" %}
-После приобретения прокси начнут работать в течении 1-2 минут, так как требуется синхронизация базы данных с сервером прокси.
+После оплаты подождите 1-2 минуты, пока заказ синхронизируется и прокси начнут работать.
 {% endhint %}
 
-## Описание полей заказа
+## Поля заказа
 
-Рассмотрим поля <mark style="color:purple;">Заказа</mark>:
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/datacenter-order-details_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/datacenter-order-details_white.png" alt="Поля заказа датацентр-прокси">
+  </picture>
+</figure>
 
-<figure><img src="../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
-
-<mark style="color:purple;">User ID</mark> - Это User используется для внутренней идентификации вашего заказа, иногда мы его запрашиваем при обращении в техническую поддержку.
-
-<mark style="color:purple;">Status</mark> - Статус заказа, может иметь статусы:
-
-* <mark style="color:green;">**Active**</mark> - Активный заказ
-* <mark style="color:orange;">**On-Hold**</mark> - Ожидание оплаты заказа при истечении срока аренды
-* <mark style="color:red;">**Cancelled**</mark> - Отменённый заказ
+* `Status` показывает состояние заказа: `Active`, `On-hold` или `Canceled`.
+* `Product tag` задаёт метку для поиска заказа в списках.
+* `User ID` используется для внутренней идентификации заказа и может потребоваться при обращении в поддержку.
+* `Proxy Region` показывает выбранную страну.
+* `p0f slots` показывает количество активных слотов p0f и их изменение в следующем платёжном периоде.
+* `Username` и `Password` содержат данные авторизации. Кнопка `Regenerate` создаёт новый пароль, после чего старые строки подключения перестают работать.
+* `Billing cycle`, `Next due date`, `Price` и `Next charge` показывают срок аренды и данные следующего платежа.
+* `Auto-renew proxy` управляет автоматическим продлением. Те же настройки доступны через `Manage renewal`.
+* Кнопки `p0f` и `Buy p0f slots` открывают настройки подмены отпечатка и покупку дополнительных слотов.
+* В блоке `Proxy List` можно выбрать `HTTP` или `SOCKS5`, изменить формат строки, скопировать список через `Copy all` или выгрузить его через `Export All`.
 
 {% hint style="danger" %}
-Восстановлению заказы со статусом "<mark style="color:$danger;">**Cancelled**</mark>" после трех дней с момента окончания аренды **невозможна**.
+Заказ со статусом `Canceled` восстановить нельзя. Этот статус присваивается через три дня после неоплаты.
 {% endhint %}
-
-<mark style="color:purple;">Price</mark> - Стоимость продукта в месяц
-
-<mark style="color:purple;">Username</mark> - Логин прокси
-
-<mark style="color:purple;">Password</mark> - Пароль прокси
-
-<mark style="color:purple;">Next Due Date</mark> - Следующая дата списания
-
-<mark style="color:purple;">Copy proxy</mark> - Кнопка для копирования прокси в буфер обмена
-
-<mark style="color:purple;">HTTP/SOCKS</mark> - Выбор типа протокола прокси
-
-<mark style="color:purple;">Re-generate</mark> - Смена пароля на прокси
-
-<mark style="color:purple;">Auto renew</mark> - переключатель для активации/деактивации продления продукта каждый месяц <mark style="color:purple;">(средства списываются с баланса аккаунта в срок, указанный при приобретении)</mark>
 
 ## Для каких задач подходит
 
@@ -103,5 +108,5 @@ icon: server
 {% endhint %}
 
 {% hint style="info" %}
-О том как можно настроить прокси вы можете в нашем разделе "[Инструкция по использованию](../setup-guides/getting-started.md)"
+Примеры настройки прокси собраны в разделе [Инструкция по использованию](../setup-guides/getting-started.md).
 {% endhint %}

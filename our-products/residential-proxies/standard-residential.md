@@ -8,6 +8,8 @@ icon: house-signal
 
 {% embed url="https://dashboard.proxyshard.com/en/residential-main" %}
 
+Пошаговая инструкция по покупке и оплате: [Приобретение резидентских прокси](../../site-navigation/buying-and-renewing/buying-residential-proxies.md).
+
 ## Характеристики
 
 | Параметр                    | Значение                       |
@@ -15,8 +17,8 @@ icon: house-signal
 | Размер пула                 | 300 000 - 400 000 устройств    |
 | Макс. кол-во соединений     | 35 000                         |
 | Макс. скорость на заказ     | 75 Mbps                        |
-| Поддержка UDP               | ✓ (недоступно в локации США)   |
-| [Фильтрация Device OS (p0f)](https://docs.proxyshard.com/our-products/residential-proxies#opisanie-polei-nastroek) | ✗ |
+| [Поддержка UDP](../about-udp/) | ✓ (кроме США; есть ограничения по портам) |
+| [Фильтрация Device OS](../p0f-spoofing.md) | ✗ |
 | Тарификация                 | За гигабайты (система Pay as you go) |
 | Стоимость                   | **$2 / ГБ**                          |
 

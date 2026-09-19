@@ -12,7 +12,6 @@
   * [Premium Residential](our-products/residential-proxies/premium-residential.md)
   * [Страны Standard и Unlimited](our-products/residential-proxies/available-countries.md)
   * [Страны Premium](our-products/residential-proxies/premium-available-countries.md)
-  * [Как устанавливать резидентские прокси в программу](our-products/residential-proxies/how-to-use-residential-proxies.md)
 * [Датацентр прокси](our-products/datacenter-proxies.md)
 * [Мобильные прокси](our-products/mobile-proxies.md)
 * [ISP прокси](our-products/isp-proxies.md)

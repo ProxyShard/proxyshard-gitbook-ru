@@ -32,13 +32,13 @@ icon: fingerprint
 | **iOS**        | Отпечаток iOS                  |
 | **Android**    | Отпечаток Android              |
 
-### Дашборд ISP прокси с поддержкой p0f
+### Дашборд ISP и Datacenter прокси с поддержкой p0f
 
-<figure><img src="../.gitbook/assets/p0f-dashboard.png" alt=""><figcaption><p>Вкладка p0f в настройках ISP прокси</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/p0f-dashboard.png" alt=""><figcaption><p>Вкладка p0f в настройках ISP и Datacenter прокси</p></figcaption></figure>
 
 ### Панель выбора отпечатка
 
-Ниже представлен скриншот примера настройки p0f из заказа ISP прокси
+На скриншоте показан заказ ISP прокси. Такая же панель настройки p0f доступна в заказах Datacenter.
 
 <figure><img src="../.gitbook/assets/p0f-panel.png" alt=""><figcaption><p>Выбор ОС для подмены сетевого отпечатка</p></figcaption></figure>
 
@@ -72,7 +72,7 @@ icon: fingerprint
 * [Датацентр прокси](datacenter-proxies.md)
 * [ISP прокси](isp-proxies.md)
 * [Мобильные прокси](mobile-proxies.md)
-* [Premium Residential](residential-proxies/premium-residential.md) - фильтрация устройств по параметру [Device OS](residential-proxies/#opisanie-polei-nastroek), без подмены p0f
+* [Premium Residential](residential-proxies/premium-residential.md) - фильтрация устройств по параметру [Device OS](residential-proxies/#nastroika-proksi), без подмены p0f
 
 {% hint style="warning" %}
 На некоторых [мобильных прокси](mobile-proxies.md) подмена p0f недоступна. Полный список ограничений смотрите на странице [Ограничения](restrictions.md).
