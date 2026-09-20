@@ -1,5 +1,5 @@
 ---
-icon: '1'
+icon: server
 ---
 
 # Приобретение ISP / Datacentre

@@ -12,6 +12,8 @@ icon: server
 
 Пошаговая инструкция по покупке и оплате: [Приобретение ISP / Datacentre](../site-navigation/buying-and-renewing/buying-datacenter-proxies.md).
 
+Актуальные ограничения продукта приведены на странице [Ограничения](restrictions.md).
+
 ## Характеристики
 
 | Параметр            | Значение                                                                  |

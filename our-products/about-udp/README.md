@@ -31,9 +31,9 @@ icon: shield-exclamation
 | [Datacenter](../datacenter-proxies.md) | ✓ Во всех локациях |
 | [ISP](../isp-proxies.md) | ✓ Во всех локациях |
 | [Mobile](../mobile-proxies.md) | ✓ |
-| [Standard Residential](../residential-proxies/standard-residential.md) | ✓ Кроме США; действуют ограничения по портам |
-| [Unlimited Residential](../residential-proxies/unlimited-residential-proxy.md) | ✓ Кроме США; действуют ограничения по портам |
-| [Premium Residential](../residential-proxies/premium-residential.md) | ✓ Во всех локациях, кроме отдельных городов и устройств macOS/iOS |
+| [Standard Residential](../residential-proxies/standard-residential.md) | ✓ Кроме США; действуют [ограничения по портам](../restrictions.md) |
+| [Unlimited Residential](../residential-proxies/unlimited-residential-proxy.md) | ✓ Кроме США; действуют [ограничения по портам](../restrictions.md) |
+| [Premium Residential](../residential-proxies/premium-residential.md) | ✓ Во всех локациях, [кроме отдельных городов и устройств macOS/iOS](../restrictions.md) |
 
 Для передачи UDP используйте SOCKS5 и приложение с поддержкой `UDP ASSOCIATE`. Подходящие варианты перечислены в разделе [Программные решения для включения WebRTC](webrtc-software-solutions.md).
 

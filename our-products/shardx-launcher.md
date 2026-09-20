@@ -4,6 +4,13 @@ icon: fingerprint
 
 # ShardX Launcher
 
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/shardx-cover_black.svg" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/shardx-cover_white.svg" alt="Логотип ShardX Launcher">
+  </picture>
+</figure>
+
 <mark style="color:purple;">**ShardX Browser**</mark> - наш антидетект-браузер: создавайте профили с уникальными отпечатками (fingerprint), привязывайте к каждому прокси и работайте с десятками аккаунтов как разные люди на разных устройствах. Поверх ручного режима есть локальное **API автоматизации** для Puppeteer / Playwright.
 
 ## Скачать и установить
