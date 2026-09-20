@@ -1,7 +1,7 @@
 # Table of contents
 
-* [Proxyshard GitBook](README.md)
-* [Что такое Proxyshard](about-proxyshard.md)
+* [ProxyShard GitBook](README.md)
+* [Что такое ProxyShard](about-proxyshard.md)
 * [Связь с нами](contact-us.md)
 
 ## Наши продукты <a href="#our-products" id="our-products"></a>
