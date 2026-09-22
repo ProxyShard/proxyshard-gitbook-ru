@@ -18,7 +18,7 @@ redirects:
   instrukciya-po-ispolzovaniyu/brauzery/chrome/zeroomega: setup-guides/browsers/chrome/zeroomega
   nashi-produkty/o-protokole-udp: our-products/about-udp
   nashi-produkty/mobilnye-proksi: our-products/mobile-proxies
-  nashi-produkty/rezidentskie-proksi/kak-ispolzovat-residential-proksi: our-products/residential-proxies/how-to-use-residential-proxies
+  nashi-produkty/rezidentskie-proksi/kak-ispolzovat-residential-proksi: our-products/residential-proxies#nastroika-proksi
   nashi-produkty/rezidentskie-proksi/spisok-dostupnykh-stran: our-products/residential-proxies/available-countries
   nashi-produkty/ogranicheniya: our-products/restrictions
   nashi-produkty/datacentr-proksi: our-products/datacenter-proxies
@@ -147,7 +147,7 @@ redirects:
   nashi-produkty/residential-proxies/premium-residential: our-products/residential-proxies/premium-residential
   nashi-produkty/residential-proxies/available-countries: our-products/residential-proxies/available-countries
   nashi-produkty/residential-proxies/premium-available-countries: our-products/residential-proxies/premium-available-countries
-  nashi-produkty/residential-proxies/how-to-use-residential-proxies: our-products/residential-proxies/how-to-use-residential-proxies
+  nashi-produkty/residential-proxies/how-to-use-residential-proxies: our-products/residential-proxies#nastroika-proksi
   nashi-produkty/datacenter-proxies: our-products/datacenter-proxies
   nashi-produkty/mobile-proxies: our-products/mobile-proxies
   nashi-produkty/isp-proxies: our-products/isp-proxies

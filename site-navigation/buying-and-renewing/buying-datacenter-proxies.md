@@ -2,13 +2,13 @@
 icon: server
 ---
 
-# Приобретение ISP / Datacentre
+# Приобретение датацентр-прокси
 
 ## Покупка прокси
 
-Чтобы приобрести [датацентр-прокси](https://dashboard.proxyshard.com/datacenter-proxy) или [ISP-прокси](https://dashboard.proxyshard.com/isp-proxy):
+Чтобы приобрести [датацентр-прокси](https://dashboard.proxyshard.com/datacenter-proxy):
 
-1. Откройте раздел `Datacenter Proxy` или `ISP Proxy` в зависимости от нужного типа прокси.
+1. Откройте раздел `Datacenter Proxy`.
 2. В поле `Proxy region` выберите страну прокси.
 3. В поле `Billing cycle` выберите период оплаты.
 4. В поле `Number of proxies` укажите количество прокси.

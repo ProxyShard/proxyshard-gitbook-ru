@@ -10,7 +10,7 @@ icon: server
 
 {% embed url="https://dashboard.proxyshard.com/en/datacenter-proxy" %}
 
-Пошаговая инструкция по покупке и оплате: [Приобретение ISP / Datacentre](../site-navigation/buying-and-renewing/buying-datacenter-proxies.md).
+Пошаговая инструкция по покупке и оплате: [Приобретение датацентр-прокси](../site-navigation/buying-and-renewing/buying-datacenter-proxies.md).
 
 Актуальные ограничения продукта приведены на странице [Ограничения](restrictions.md).
 
@@ -55,7 +55,7 @@ icon: server
   </picture>
 </figure>
 
-Оплата и продление заказа описаны в инструкции [Приобретение ISP / Datacentre](../site-navigation/buying-and-renewing/buying-datacenter-proxies.md).
+Оплата и продление заказа описаны в инструкции [Приобретение датацентр-прокси](../site-navigation/buying-and-renewing/buying-datacenter-proxies.md).
 
 {% hint style="info" %}
 После оплаты подождите 1-2 минуты, пока заказ синхронизируется и прокси начнут работать.

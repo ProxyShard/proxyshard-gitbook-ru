@@ -40,8 +40,9 @@
 
 * [Пополнение баланса](site-navigation/top-up-balance.md)
 * [Приобретение и продление прокси](site-navigation/buying-and-renewing/README.md)
-  * [Приобретение ISP / Datacentre](site-navigation/buying-and-renewing/buying-datacenter-proxies.md)
+  * [Приобретение датацентр-прокси](site-navigation/buying-and-renewing/buying-datacenter-proxies.md)
   * [Приобретение резидентских прокси](site-navigation/buying-and-renewing/buying-residential-proxies.md)
+  * [Приобретение ISP-прокси](site-navigation/buying-and-renewing/buying-isp-proxies.md)
   * [Приобретение мобильных прокси](site-navigation/buying-and-renewing/buying-mobile-proxies.md)
 * [Поиск заказов (Product tag)](site-navigation/order-search-product-tag.md)
 * [Счета](site-navigation/invoices.md)

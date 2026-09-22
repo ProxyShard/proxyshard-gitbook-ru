@@ -4,37 +4,55 @@ icon: server
 
 # Приобретение ISP-прокси
 
-## Покупка прокси
-
-При приобретении [<mark style="color:purple;">ISP</mark>](https://dashboard.proxyshard.com/isp-proxy) прокси укажите:
-
-* Страну прокси
-* Цикл аренды (неделя\месяц\полгода\год)
-* Количество прокси
-* Переключать автопродления (при активации, будет каждый цикл аренды списывать средства автоматически, возможно отключение внутри заказа)
-* Промокод, при наличии.
-
-<figure><img src="../../.gitbook/assets/image (49).png" alt="" width="563"><figcaption></figcaption></figure>
-
-После приобретения, заказ автоматически откроется и будет доступен в панели "<mark style="color:purple;">Active Product</mark>" или в "[<mark style="color:purple;">My orders</mark>](https://dashboard.proxyshard.com/products)"
-
-<figure><img src="../../.gitbook/assets/image (50).png" alt="" width="563"><figcaption></figcaption></figure>
-
-{% hint style="warning" %}
-Прокси начнут работать в течении 1-2 минут, это время требуется для синхронизации заказа
+{% hint style="info" %}
+Для оплаты заказа на балансе должны быть [средства](../top-up-balance.md).
 {% endhint %}
 
-## Продление ISP прокси
+## Покупка прокси
 
-Продление продукта возможно автоматически и ручное\
-\
-При автоматической оплате, за 1-2 часа, заказ попытается автоматически произвести продление.\
-Если средств для продления хватает, то прокси автоматически продлеваются, при нехватки средств, прокси перестают работать и будут ожидать пополнение счета в <mark style="color:purple;">течении трех дней</mark>.\
-\
-При отключенной функции автоматического продления, прокси будут ожидать (Статус <mark style="color:$warning;">On-hold</mark>) ручной оплаты, для этого в заказе требуется нажать ![](<../../.gitbook/assets/image (55).png>)
+Чтобы приобрести [ISP-прокси](https://dashboard.proxyshard.com/isp-proxy):
 
-<figure><img src="../../.gitbook/assets/image (52).png" alt="" width="521"><figcaption></figcaption></figure>
+1. Откройте раздел `ISP Proxy`.
+2. В поле `Proxy region` выберите страну прокси.
+3. В поле `Billing cycle` выберите период оплаты.
+4. В поле `Number of proxies` укажите количество прокси.
+5. Включите `Auto renew`, если хотите автоматически продлевать заказ.
+6. При необходимости включите `Enable p0f settings` и укажите количество слотов в поле `Total slots`.
+7. Если у вас есть промокод, введите его в поле `Promocode` и нажмите `Apply`.
+8. Проверьте стоимость заказа и нажмите `Buy now`.
+
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/isp-purchase-form_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/isp-purchase-form_white.png" alt="Форма покупки ISP-прокси">
+  </picture>
+</figure>
+
+## Оплата и активация
+
+После нажатия `Buy now` откроется счёт со статусом `Unpaid`. Проверьте сумму в строке `Total amount`, затем нажмите `Pay with Wallet`. Оплата проходит так же, как в [инструкции для датацентр-прокси](buying-datacenter-proxies.md#oplata-zakaza).
+
+После оплаты заказ появится в блоке `Active products` и в разделе [`My orders`](https://dashboard.proxyshard.com/products).
+
+{% hint style="warning" %}
+Прокси начнут работать в течение 1-2 минут. Это время требуется для синхронизации заказа.
+{% endhint %}
+
+## Управление и продление заказа
+
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/isp-order-details_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/isp-order-details_white.png" alt="Управление заказом ISP-прокси">
+  </picture>
+</figure>
+
+Если включена функция `Auto renew`, система попытается продлить заказ за 1-2 часа до окончания оплаченного периода. При достаточном балансе средства спишутся автоматически.
+
+Если автоматическое продление отключено или на балансе недостаточно средств, заказ получит статус `On-hold`. Для ручного продления откройте заказ, нажмите `Renew` и оплатите выставленный счёт.
+
+Описание `Status`, `Product tag`, данных доступа, настроек p0f и остальных полей приведено в разделе [Поля заказа](../../our-products/isp-proxies.md#polya-zakaza).
 
 {% hint style="danger" %}
-Прокси со статусом "<mark style="color:$danger;">Canceled</mark>" продлить невозможно, данный статус наступает по истечении трех дней с момента неуплаты заказа.
+Заказ в статусе `Canceled` продлить нельзя. Этот статус присваивается через три дня после неоплаты заказа.
 {% endhint %}

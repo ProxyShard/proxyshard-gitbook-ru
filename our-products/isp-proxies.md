@@ -14,7 +14,7 @@ ISP прокси поддерживают подмену сетевого отп
 
 {% embed url="https://dashboard.proxyshard.com/en/isp-proxy" %}
 
-Пошаговая инструкция по покупке и оплате: [Приобретение ISP / Datacentre](../site-navigation/buying-and-renewing/buying-datacenter-proxies.md).
+Пошаговая инструкция по покупке и оплате: [Приобретение ISP-прокси](../site-navigation/buying-and-renewing/buying-isp-proxies.md).
 
 Актуальные ограничения продукта приведены на странице [Ограничения](restrictions.md).
 
@@ -60,7 +60,7 @@ ISP прокси поддерживают подмену сетевого отп
   </picture>
 </figure>
 
-Оплата и продление заказа описаны в инструкции [Приобретение ISP / Datacentre](../site-navigation/buying-and-renewing/buying-datacenter-proxies.md).
+Оплата и продление заказа описаны в инструкции [Приобретение ISP-прокси](../site-navigation/buying-and-renewing/buying-isp-proxies.md).
 
 {% hint style="info" %}
 После оплаты подождите 1-2 минуты, пока заказ синхронизируется и прокси начнут работать.
