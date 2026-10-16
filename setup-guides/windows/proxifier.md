@@ -1,49 +1,79 @@
 # Proxifier
 
 {% hint style="danger" %}
-Данное решение не поддерживает туннелирование по UDP!
+Proxifier не поддерживает проксирование UDP-трафика.
 {% endhint %}
 
 {% hint style="info" %}
-Данная программа является платной, её пробный период составляет 31 день.
+Proxifier является платной программой. Пробный период составляет 31 день.
 {% endhint %}
 
-## Установка **Proxifier.**
+## Установка
 
-Перейдите по [ссылке](https://www.proxifier.com/download/) для загрузки Proxifier. Затем установите и запустите программу
+Откройте [страницу загрузки Proxifier](https://www.proxifier.com/download/), скачайте `ProxifierSetup.exe` и установите программу.
 
-<figure><img src="../../.gitbook/assets/image (29) (1).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/proxifier-website-download_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/proxifier-website-download_white.png" alt="Загрузка Proxifier">
+  </picture>
+</figure>
 
-## Настройка Proxifier
+## Добавление прокси
 
-Для начала работы требуется указать прокси сервер, откройте вкладку <mark style="color:purple;">Proxy Servers</mark>
+1. Запустите Proxifier.
+2. Откройте меню `Profile` и выберите `Proxy Servers...`.
 
-<figure><img src="../../.gitbook/assets/image (28) (1).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/proxifier-menu-proxy-servers_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/proxifier-menu-proxy-servers_white.png" alt="Пункт Proxy Servers в Proxifier">
+  </picture>
+</figure>
 
-## **Добавление прокси**
+В окне `Proxy Servers` нажмите `Add...` и заполните форму:
 
-Добавьте подключение через кнопку Add
+- `Address`: IP-адрес или домен прокси;
+- `Port`: порт подключения;
+- `Protocol`: `SOCKS Version 5` или `HTTPS` для HTTP-прокси;
+- `Authentication`: включите `Enable`, затем укажите `Username` и `Password`.
 
-Произведите вставку данных подключения с указанием требуемого протокола подключения и нажмите сохранить
-
-<figure><img src="../../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Image00003 (8).PNG" alt=""><figcaption></figcaption></figure>
-
-Обязательно произведите проверку перед сохранением. Если проверка не проходит, вероятней всего данные для подключения не верные или указанный протокол не соответствует порту из заказа.
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/proxifier-add-proxy-dialog_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/proxifier-add-proxy-dialog_white.png" alt="Добавление прокси-сервера в Proxifier">
+  </picture>
+</figure>
 
 {% hint style="info" %}
-**С примером настройки прокси вы можете ознакомиться в разделе [Инструкция по настройке](../getting-started.md)**
+Расположение данных подключения описано в [общей инструкции](../getting-started.md).
 {% endhint %}
 
-## Настройка правил маршрутизации
+Нажмите `Check`. После сообщения `Proxy is ready to work with Proxifier!` закройте окно проверки кнопкой `OK` и сохраните сервер.
 
-Перед стартом работы еще требуется настройка маршрутизации, для этого перейдите Proxification Rule и укажите прокси настройки. В нашем примере мы будем проксировать все приложения на компьютере, укажите обязательно в правиле через что должен идти трафик правила
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/proxifier-proxy-check-success_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/proxifier-proxy-check-success_white.png" alt="Успешная проверка прокси в Proxifier">
+  </picture>
+</figure>
 
-<figure><img src="../../.gitbook/assets/Image00002 (10).PNG" alt=""><figcaption></figcaption></figure>
+## Настройка маршрутизации
 
-В правилах проксирования укажите ранее созданную прокси, чтоб трафик мог проходить через прокси
+Откройте меню `Profile` и выберите `Proxification Rules...`.
 
-<figure><img src="../../.gitbook/assets/Image00001 (8).PNG" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/proxifier-menu-proxification-rules_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/proxifier-menu-proxification-rules_white.png" alt="Открытие Proxification Rules">
+  </picture>
+</figure>
 
-**Готово! Теперь вы можете использовать приложение.**
+В строке `Default` откройте список в столбце `Action`, выберите добавленный SOCKS5-прокси и нажмите `OK`. После этого трафик приложений будет направляться через выбранный сервер.
+
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/proxifier-rules-configuration_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/proxifier-rules-configuration_white.png" alt="Выбор прокси для правила Default">
+  </picture>
+</figure>

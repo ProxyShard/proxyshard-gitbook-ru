@@ -9,15 +9,30 @@ icon: telegram
 
 Для настройки прокси в <mark style="color:purple;">Telegram</mark> перейдите в Settings.
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/telegram-desktop-menu-settings_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/telegram-desktop-menu-settings_white.png" alt="">
+  </picture>
+</figure>
 
 Затем откройте "Расширенные" настройки
 
-<figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/telegram-desktop-settings-advanced_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/telegram-desktop-settings-advanced_white.png" alt="">
+  </picture>
+</figure>
 
 Выберите тип подключения "TCP"
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/telegram-desktop-connection-type_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/telegram-desktop-connection-type_white.png" alt="">
+  </picture>
+</figure>
 
 Далее укажите подключение к прокси
 
@@ -27,11 +42,21 @@ icon: telegram
 **С примером настройки прокси вы можете ознакомиться в разделе [Инструкция по настройке](getting-started.md)**
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/telegram-desktop-use-custom-proxy_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/telegram-desktop-use-custom-proxy_white.png" alt="">
+  </picture>
+</figure>
 
 Затем проверьте подключение и сохраните
 
-<figure><img src="../.gitbook/assets/image (225).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/telegram-desktop-proxy-connected_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/telegram-desktop-proxy-connected_white.png" alt="">
+  </picture>
+</figure>
 
 **Готово! Теперь вы можете пользоваться Telegram с нашими прокси.**
 
@@ -39,14 +64,29 @@ icon: telegram
 
 Для настройки прокси на телефоне, требуется открыть настройки и выбрать пункт "Data and Storage"
 
-<figure><img src="../.gitbook/assets/photo_2026-04-11_02-42-22.jpg" alt="" width="375"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/telegram-ios-settings-data-storage_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/telegram-ios-settings-data-storage_white.png" alt="">
+  </picture>
+</figure>
 
 После выбрать пункт "Proxy"
 
-<figure><img src="../.gitbook/assets/photo_2026-04-11_02-42-30.jpg" alt="" width="375"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/telegram-ios-connection-proxy_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/telegram-ios-connection-proxy_white.png" alt="">
+  </picture>
+</figure>
 
 Укажите протокол SOCKS5 и впишите данные для подключения к прокси
 
-<figure><img src="../.gitbook/assets/photo_2026-04-11_02-40-30.jpg" alt="" width="375"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/telegram-ios-proxy-socks5-form_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/telegram-ios-proxy-socks5-form_white.png" alt="">
+  </picture>
+</figure>
 
 Обязательно сохраните настройку и дальше вы можете использовать прокси внутри _Telegram._

@@ -1,108 +1,140 @@
 ---
-description: Лучший браузер с поддержкой UDP прокси
+description: Антидетект-браузер с поддержкой UDP-прокси
 ---
 
-# 🔥 Vision браузер
+# Vision Browser
 
 {% hint style="success" %}
-Данное решение поддерживает туннелирование по UDP!
+Vision Browser поддерживает TCP- и UDP-трафик через SOCKS5-прокси.
 {% endhint %}
 
-## **Установка и загрузка браузера **<mark style="color:$success;">**Vision**</mark>**.**
+## Установка и регистрация
 
-Перейдите по [ссылке](https://browser.vision/r/ecf2408f-02de-4e4f-bc24-be368ac32325) для загрузки браузера и произведите регистрацию, данные при регистрации потребуются для входа в сам антидетект браузер.
+Откройте [сайт Vision Browser](https://browser.vision/r/ecf2408f-02de-4e4f-bc24-be368ac32325), скачайте приложение и установите его.
 
-{% embed url="https://browser.vision/r/ecf2408f-02de-4e4f-bc24-be368ac32325" %}
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/vision-website-download_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/vision-website-download_white.png" alt="Загрузка Vision Browser">
+  </picture>
+</figure>
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+Создайте аккаунт. Эти данные потребуются для входа в приложение.
 
-Регистрация аккаунта:
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/vision-sign-up_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/vision-sign-up_white.png" alt="Регистрация в Vision Browser">
+  </picture>
+</figure>
 
-<figure><img src="../../.gitbook/assets/image (111).png" alt=""><figcaption></figcaption></figure>
+При оплате тарифа можно использовать промокод `PROXYSHARD` со скидкой 20%.
 
-На сайте в вы можете привязать свой <mark style="color:blue;">телеграмм</mark> аккаунт для бесплатного пробного периода на 4 дня.\
-Для этого перейдите в [профиль](https://my.browser.vision/) и привяжите свой аккаунт
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/vision-plan-promo-code_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/vision-plan-promo-code_white.png" alt="Промокод PROXYSHARD в Vision Browser">
+  </picture>
+</figure>
 
-{% embed url="https://my.browser.vision/" %}
+## Создание первого профиля
 
-В дальнейшем для приобретения подписки, вы можете воспользоваться нашим промокодом со скидкой на 20% - _<mark style="color:purple;">**PROXYSHARD**</mark>_
+1. Откройте `Profiles`.
+2. Перейдите в `Folders` и нажмите `Create folder`.
 
-<figure><img src="../../.gitbook/assets/image (114).png" alt=""><figcaption><p>Продление подписки аккаунта</p></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/vision-folders-create_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/vision-folders-create_white.png" alt="Создание папки профилей в Vision Browser">
+  </picture>
+</figure>
 
-## **Настройка первого профиля браузера**
+Укажите название папки и сохраните её.
 
-После загрузки и установки браузера, авторизуйтесь через ранее созданный аккаунт.
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/vision-folder-create-form_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/vision-folder-create-form_white.png" alt="Название папки профилей">
+  </picture>
+</figure>
 
-Далее вам потребуется создать папку, в которой будет хранится профиль браузера, прокси и прочие настройки рабочего окружения:
+В созданной папке нажмите `Create profile`.
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/vision-profiles-create-profile_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/vision-profiles-create-profile_white.png" alt="Создание профиля Vision Browser">
+  </picture>
+</figure>
 
-Создайте папку для профилей
+В панели ProxyShard сгенерируйте один прокси в формате SOCKS5 и скопируйте данные подключения.
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/vision-residential-generate-single_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/vision-residential-generate-single_white.png" alt="Генерация SOCKS5-прокси в ProxyShard">
+  </picture>
+</figure>
 
-Затем создайте новый профиль браузера через "<mark style="color:purple;">Create profile</mark>":
+В настройках профиля Vision откройте вкладку `SOCKS`, вставьте данные прокси, проверьте соединение и нажмите `Save`.
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/vision-create-profile-socks_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/vision-create-profile-socks_white.png" alt="Настройка SOCKS5-прокси в профиле Vision">
+  </picture>
+</figure>
 
-Укажите имя профиля и другие настройки и нажмите "<mark style="color:purple;">New</mark> <mark style="color:purple;">profile</mark>". При настройке профиля, доступна опция добавления прокси сразу на профиль.
+<figure><img src="../../.gitbook/assets/vision-folder-profile-created.png" alt="Созданный профиль Vision Browser"><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+## Добавление списка прокси
 
-Добавлять прокси надо именно <mark style="color:purple;">SOCKS5</mark>, так как именно в нем доступна работа UDP ASSOC
+Откройте вкладку `Proxies` и нажмите `Add proxy`.
 
-<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/vision-proxies-add-proxy_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/vision-proxies-add-proxy_white.png" alt="Добавление прокси в Vision Browser">
+  </picture>
+</figure>
 
-{% hint style="danger" %}
-Мы крайне настоятельно рекомендуем использовать ISP прокси, так как они являются самыми гибкими и подходят под все задачи
-{% endhint %}
+В панели ProxyShard сгенерируйте список прокси в формате SOCKS5 и скопируйте его.
 
-{% embed url="https://dashboard.proxyshard.com/en/isp-proxy" %}
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/vision-residential-generate-list_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/vision-residential-generate-list_white.png" alt="Генерация списка SOCKS5-прокси">
+  </picture>
+</figure>
 
-Готово! Ваш профиль создан и можно начинать работать.
+Вставьте список в поле добавления. После импорта убедитесь, что подключения имеют статус `Online`.
 
-<figure><img src="../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/vision-proxies-imported-list_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/vision-proxies-imported-list_white.png" alt="Импортированный список прокси в Vision Browser">
+  </picture>
+</figure>
 
-## **Добавление списка прокси из заказа в программу.**
+Чтобы назначить прокси существующему профилю, нажмите значок в столбце `Proxy`.
 
-{% hint style="info" %}
-**С примером настройки прокси вы можете ознакомиться в разделе** [**Инструкция по настройке**](../getting-started.md)
-{% endhint %}
+<figure><img src="../../.gitbook/assets/vision-profiles-proxy-column.png" alt="Столбец Proxy в списке профилей"><figcaption></figcaption></figure>
 
-Далее перейдите в <mark style="color:$success;">Vision</mark> и откройте вкладку "<mark style="color:purple;">Proxies</mark>" и нажмите "<mark style="color:purple;">Create proxy</mark>"
+Выберите `Select proxy`, укажите нужное подключение и выполните проверку.
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/vision-edit-profile-select-proxy.png" alt="Выбор прокси для профиля Vision"><figcaption></figcaption></figure>
 
-Перед добавление прокси, мы советуем в панели вашего заказа указать тип форматирования прокси и протокол подключения SOCKS5.
+После сохранения прокси появится в строке профиля.
 
-<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/vision-profile-proxy-assigned.png" alt="Прокси назначен профилю Vision"><figcaption></figcaption></figure>
 
-В окне добавления прокси нажмите вкладку "<mark style="color:purple;">Mass Proxy Creation</mark>" и загрузите ранее скопированные прокси и нажмите "<mark style="color:purple;">Create</mark>":
+## Проверка WebRTC
 
-<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+Запустите профиль и откройте [ProxyShard IP Checker](https://proxyshard.com/ip-checker). Адреса TCP и WebRTC должны совпадать.
 
-После того, как вы добавите прокси, перейдите на вкладку "Profiles" и нажмите возле интересующего вас профиля "<mark style="color:purple;">+</mark>" в столбце Proxy:
-
-<figure><img src="../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
-
-Перейдите в "<mark style="color:purple;">Select proxy</mark>" и укажите ранее добавленный вами прокси:
-
-<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
-
-Теперь вы можете запустить ваш профиль с прокси:
-
-<figure><img src="../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
-
-## Проверка работы WebRTC
-
-Проверим утечку WebRTC и оценка качества профиля через наш [чекер](../../our-products/ip-checker.md)
-
-{% embed url="https://proxyshard.com/ip-checker" %}
-
-<figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
-
-Адрес WebRTC отображается верный, Browser Score = 0
-
-#### Готово! Теперь вы можете приступить к работе
-
-<mark style="color:$success;">Vision</mark><mark style="color:yellow;">&</mark><mark style="color:purple;">Shard</mark>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/vision-webrtc-check_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/vision-webrtc-check_white.png" alt="Проверка TCP и WebRTC в профиле Vision Browser">
+  </picture>
+</figure>

@@ -18,19 +18,40 @@
 
 ## Настройка V2Box
 
-Откройте приложение и перейдите во вкладку "<mark style="color:purple;">Configs</mark>" и через "➕" создайте новую конфигурацию
+1. Откройте вкладку `Configs`.
+2. Нажмите `+`, чтобы создать конфигурацию.
 
-<figure><img src="../../.gitbook/assets/photo_2026-04-11_02-42-34.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/v2box-ios-configs-add_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/v2box-ios-configs-add_white.png" alt="">
+  </picture>
+</figure>
 
-<figure><img src="../../.gitbook/assets/photo_2026-04-11_02-42-38.png" alt="" width="373"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/v2box-ios-add-manual-config_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/v2box-ios-add-manual-config_white.png" alt="">
+  </picture>
+</figure>
 
 Укажите тип подключения <mark style="color:purple;">SOCKS</mark>
 
-<figure><img src="../../.gitbook/assets/photo_2026-04-11_02-42-42.png" alt="" width="367"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/v2box-ios-protocol-socks_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/v2box-ios-protocol-socks_white.png" alt="">
+  </picture>
+</figure>
 
 Из заказа укажите ваши прокси в поля программы
 
-<figure><img src="../../.gitbook/assets/photo_2026-04-11_02-42-49.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/v2box-ios-server-form_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/v2box-ios-server-form_white.png" alt="">
+  </picture>
+</figure>
 
 {% hint style="info" %}
 **С примером настройки прокси вы можете ознакомиться в разделе [Инструкция по настройке](../getting-started.md)**
@@ -38,7 +59,12 @@
 
 Сохраните вашу конфигурацию и перейдите обратно в "<mark style="color:purple;">Configs</mark>", в нем обязательно нужно нажать на ваш конфиг и подключится
 
-<figure><img src="../../.gitbook/assets/photo_2026-04-11_02-42-52.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/v2box-ios-connected_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/v2box-ios-connected_white.png" alt="">
+  </picture>
+</figure>
 
 \
 **Готово! Теперь вы можете проверить прокси на нашем** [**чекере**](https://proxyshard.com/proxy-tester)

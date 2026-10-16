@@ -1,45 +1,69 @@
-# ProxyCap
+# ProxyCap (NetDetour)
 
 {% hint style="success" %}
-Данное решение поддерживает туннелирование по UDP!
+NetDetour поддерживает проксирование TCP- и UDP-трафика.
 {% endhint %}
 
 {% hint style="info" %}
-Данная программа является устаревшей и платной, её пробный период составляет 30 дней
+NetDetour является актуальным продолжением ProxyCap. Программа платная, пробный период составляет 30 дней.
 {% endhint %}
 
-## Установка ProxyCap
+## Установка
 
-Перейдите по [ссылке](https://www.proxycap.com/download.html) для загрузки ProxyCap
+Откройте [страницу загрузки](https://www.proxycap.com/download.html), нажмите `Download NetDetour` и установите программу.
 
-Произведите установку и затем запустите программу.
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/proxycap-netdetour-website-download_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/proxycap-netdetour-website-download_white.png" alt="Загрузка NetDetour">
+  </picture>
+</figure>
 
-<figure><img src="../../.gitbook/assets/image (99).png" alt=""><figcaption></figcaption></figure>
+## Добавление прокси
 
-## **Настройка** ProxyCap
+1. Нажмите значок `Proxifying Settings` в верхней панели.
+2. Откройте вкладку `Proxies`.
+3. Выберите тип `SOCKS5` и нажмите `Add...`.
 
-Далее перейдите во вкладку <mark style="color:purple;">Proxies</mark> и добавьте новое подключение через значок ![](<../../.gitbook/assets/image (98).png>)
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/proxycap-netdetour-settings-add-proxy_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/proxycap-netdetour-settings-add-proxy_white.png" alt="Добавление SOCKS5-прокси в NetDetour">
+  </picture>
+</figure>
 
-<figure><img src="../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
+Заполните форму `New SOCKS5 Proxy Server`:
 
-## **Настройка профиля подключения**
+- `Name`: любое понятное название;
+- `Host`: IP-адрес или домен прокси;
+- `Port`: порт подключения;
+- `Proxy requires authentication`: включите этот пункт;
+- `Use Username/Password authentication`: укажите логин и пароль.
 
-Укажите прокси из заказа в соответствующие поля
+Нажмите `OK`, чтобы сохранить сервер.
 
-<figure><img src="../../.gitbook/assets/Image00001 (4).PNG" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/proxycap-netdetour-proxy-server-config_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/proxycap-netdetour-proxy-server-config_white.png" alt="Параметры SOCKS5-прокси в NetDetour">
+  </picture>
+</figure>
 
 {% hint style="info" %}
-**С примером настройки прокси вы можете ознакомиться в разделе [Инструкция по настройке](../getting-started.md)**
+Расположение данных подключения описано в [общей инструкции](../getting-started.md).
 {% endhint %}
 
-## **Настройка правил маршрутизации**
+## Создание правила
 
-Для работы прокси требуется обязательное добавление правила маршрутизации.
+1. В окне `Proxifying Settings` откройте вкладку `Rules`.
+2. Нажмите `New...`.
+3. На шаге `Rule Action` выберите `Tunnel through proxy`.
+4. В списке `Proxy` укажите добавленное подключение.
+5. Нажмите `Next >`, выберите нужные приложения или оставьте правило для всех программ, затем сохраните его.
 
-Чтобы добавить правила, откройте вкладку "<mark style="color:purple;">Rules</mark>" и укажите настройки как на скриншоте, обязательно установив <mark style="color:purple;">Rule Action</mark>, <mark style="color:purple;">Proxy</mark> и остальные параметры по необходимости. 
-
-Вы можете установить отдельное проксирование процессов задав путь программы в поле <mark style="color:purple;">Program</mark>
-
-<figure><img src="../../.gitbook/assets/Image00003 (4).PNG" alt=""><figcaption></figcaption></figure>
-
-**Готово! Теперь вы можете приступать к использованию!**
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/proxycap-netdetour-rule-action-wizard_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/proxycap-netdetour-rule-action-wizard_white.png" alt="Настройка правила Tunnel through proxy">
+  </picture>
+</figure>
