@@ -7,64 +7,62 @@ description: Прокси для Mozilla Firefox
 ## Установка расширения FoxyProxy
 
 {% hint style="warning" %}
-Данное решение не поддерживает туннелирование по UDP!
+FoxyProxy работает только с TCP-трафиком.
 {% endhint %}
 
-Перейдите по [ссылке](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/?utm_source=addons.mozilla.org\&utm_medium=referral\&utm_content=search) для загрузки расширения "<mark style="color:purple;">FoxyProxy</mark>"
+Установите [FoxyProxy Standard](https://addons.mozilla.org/firefox/addon/foxyproxy-standard/) из Firefox Add-ons.
 
-{% embed url="https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search" %}
+{% embed url="https://addons.mozilla.org/firefox/addon/foxyproxy-standard/" %}
 
 <figure>
   <picture>
     <source srcset="../../../.gitbook/assets/foxyproxy-addon-page_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../../.gitbook/assets/foxyproxy-addon-page_white.png" alt="">
+    <img src="../../../.gitbook/assets/foxyproxy-addon-page_white.png" alt="Страница FoxyProxy Standard в Firefox Add-ons">
   </picture>
 </figure>
 
-Установите и затем откройте параметры расширения
+После установки откройте FoxyProxy и перейдите в настройки расширения.
 
 <figure>
   <picture>
     <source srcset="../../../.gitbook/assets/foxyproxy-options-popup-disable_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../../.gitbook/assets/foxyproxy-options-popup-disable_white.png" alt="">
+    <img src="../../../.gitbook/assets/foxyproxy-options-popup-disable_white.png" alt="Переход в настройки FoxyProxy">
   </picture>
 </figure>
 
-## **Настройка расширения**
+## Настройка прокси
 
-Перейдите во вкладку "<mark style="color:purple;">Proxies</mark>" и через кнопку "<mark style="color:purple;">Add</mark>" добавьте новое прокси-соединение
+Откройте раздел `Proxies` и нажмите `Add`.
 
 <figure>
   <picture>
     <source srcset="../../../.gitbook/assets/foxyproxy-add-proxy-form_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../../.gitbook/assets/foxyproxy-add-proxy-form_white.png" alt="">
+    <img src="../../../.gitbook/assets/foxyproxy-add-proxy-form_white.png" alt="Добавление прокси в FoxyProxy">
   </picture>
 </figure>
 
 {% hint style="info" %}
-**С примером настройки прокси вы можете ознакомиться в разделе [Инструкция по настройке](../../getting-started.md)**
+Формат данных и пример заказа описаны в разделе [Начало работы](../../getting-started.md).
 {% endhint %}
 
-## **Установка прокси подключения**
-
-Установите прокси из заказа в соответствующие поля (IP/Hostname:PORT:USERNAM:PASSWORD), Title и тип протокола. Затем нажмите кнопку "<mark style="color:purple;">Save</mark>"
+Укажите название профиля в поле `Title`. Затем выберите тип прокси и заполните поля `Hostname`, `Port`, `Username` и `Password` данными из `Proxy List` вашего заказа. Нажмите `Save`.
 
 <figure>
   <picture>
     <source srcset="../../../.gitbook/assets/foxyproxy-proxy-config-filled_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../../.gitbook/assets/foxyproxy-proxy-config-filled_white.png" alt="">
+    <img src="../../../.gitbook/assets/foxyproxy-proxy-config-filled_white.png" alt="Заполненный профиль прокси в FoxyProxy">
   </picture>
 </figure>
 
-## **Завершение настройки и подключение**
+## Подключение
 
-Откройте повторно расширение и укажите ваше ранее созданное подключение.
+Откройте FoxyProxy и выберите созданный профиль.
 
 <figure>
   <picture>
     <source srcset="../../../.gitbook/assets/foxyproxy-options-popup-proxyshard_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../../.gitbook/assets/foxyproxy-options-popup-proxyshard_white.png" alt="">
+    <img src="../../../.gitbook/assets/foxyproxy-options-popup-proxyshard_white.png" alt="Выбор профиля прокси в FoxyProxy">
   </picture>
 </figure>
 
-**Теперь все готово, вы можете приступать к использованию прокси.**
+Прокси подключён и готов к работе в Mozilla Firefox.

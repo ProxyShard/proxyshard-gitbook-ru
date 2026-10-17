@@ -7,7 +7,7 @@ icon: puzzle-piece
 
 Наше фирменное расширение <mark style="color:purple;">**ProxyShard – Smart Proxy Manager**</mark> для управления прокси прямо из браузера. Устанавливается напрямую из **Chrome Web Store**.
 
-{% embed url="https://chromewebstore.google.com/detail/proxyshard-%E2%80%93-smart-proxy/ohlcikccaeapbfpmejhckfjjddkcflbe" %}
+{% embed url="https://chromewebstore.google.com/detail/ohlcikccaeapbfpmejhckfjjddkcflbe" %}
 
 ## Подробная инструкция
 

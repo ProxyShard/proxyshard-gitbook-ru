@@ -6,42 +6,41 @@ icon: android
 
 ## Настройка Super Proxy
 
-Скачайте приложение через ссылку:
+Установите Super Proxy из Google Play.
 
-{% embed url="https://play.google.com/store/apps/details?id=com.scheler.superproxy&hl" %}
+{% embed url="https://play.google.com/store/apps/details?id=com.scheler.superproxy" %}
 
 ## Создание профиля
 
-Затем откройте приложение и добавьте прокси через "<mark style="color:purple;">Add proxy</mark>"
+Откройте приложение и нажмите `Add proxy`.
 
 <figure>
   <picture>
     <source srcset="../../.gitbook/assets/super-proxy-android-add-proxy_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../.gitbook/assets/super-proxy-android-add-proxy_white.png" alt="">
+    <img src="../../.gitbook/assets/super-proxy-android-add-proxy_white.png" alt="Добавление прокси в Super Proxy">
   </picture>
 </figure>
 
-Из заказа установите прокси в соотвествующие поля и укажите тип протокола подключения
+Укажите название профиля в поле `Profile name`, выберите протокол и заполните поля `Server`, `Port`, `Username` и `Password` данными из `Proxy List` вашего заказа. Затем сохраните профиль.
 
 <figure>
   <picture>
     <source srcset="../../.gitbook/assets/super-proxy-android-proxy-form_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../.gitbook/assets/super-proxy-android-proxy-form_white.png" alt="">
+    <img src="../../.gitbook/assets/super-proxy-android-proxy-form_white.png" alt="Настройка прокси в Super Proxy">
   </picture>
 </figure>
 
 {% hint style="info" %}
-**С примером настройки прокси вы можете ознакомиться в разделе [Инструкция по настройке](../getting-started.md)**
+Формат данных и пример заказа описаны в разделе [Начало работы](../getting-started.md).
 {% endhint %}
 
-Сохраните настройки и запустите программу
+Выберите созданный профиль и запустите подключение.
 
 <figure>
   <picture>
     <source srcset="../../.gitbook/assets/super-proxy-android-start_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../.gitbook/assets/super-proxy-android-start_white.png" alt="">
+    <img src="../../.gitbook/assets/super-proxy-android-start_white.png" alt="Запуск прокси в Super Proxy">
   </picture>
 </figure>
 
-**Готово! Вы закончили настройку прокси через приложение "Super Proxy".**\
-**Теперь вы можете приступить к использованию наших прокси.**
+Прокси подключён и готов к работе в Super Proxy.

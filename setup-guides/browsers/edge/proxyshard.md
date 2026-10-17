@@ -11,7 +11,7 @@ icon: puzzle-piece
 При первой установке расширения из Chrome Web Store Edge может предложить «**Разрешить расширения из других магазинов**», подтвердите это разрешение.
 {% endhint %}
 
-{% embed url="https://chromewebstore.google.com/detail/proxyshard-%E2%80%93-smart-proxy/ohlcikccaeapbfpmejhckfjjddkcflbe" %}
+{% embed url="https://chromewebstore.google.com/detail/ohlcikccaeapbfpmejhckfjjddkcflbe" %}
 
 ## Подробная инструкция
 

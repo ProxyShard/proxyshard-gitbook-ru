@@ -4,97 +4,92 @@ description: Прокси для Opera
 
 # ZeroOmega
 
-## **Установка и настройка** ZeroOmega
+## Установка ZeroOmega
 
 {% hint style="warning" %}
-Данное решение не поддерживает туннелирование по UDP! Крайне советуем рассмотреть для этих целей [<mark style="color:green;">Vision</mark>](../../antidetect-browsers/vision-browser.md)
+ZeroOmega работает только с TCP-трафиком. Для работы с UDP используйте [Vision Browser](../../antidetect-browsers/vision-browser.md).
 {% endhint %}
 
-Так как Opera поддерживает Chrome-расширения, мы рекомендуем воспользоваться **ZeroOmega**
+Установите [ZeroOmega](https://chromewebstore.google.com/detail/pfnededegaaopdmhkdmcofjmoldfiped) из Chrome Web Store.
 
-Для браузера Opera есть расширение [**ZeroOmega**](https://chromewebstore.google.com/detail/Proxy%20SwitchyOmega%203%20\(ZeroOmega\)/pfnededegaaopdmhkdmcofjmoldfiped)**,** произведите его установку
-
-{% embed url="https://chromewebstore.google.com/detail/Proxy%20SwitchyOmega%203%20(ZeroOmega)/pfnededegaaopdmhkdmcofjmoldfiped" %}
+{% embed url="https://chromewebstore.google.com/detail/pfnededegaaopdmhkdmcofjmoldfiped" %}
 
 <figure>
   <picture>
     <source srcset="../../../.gitbook/assets/opera-zeroomega-web-store_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../../.gitbook/assets/opera-zeroomega-web-store_white.png" alt="">
+    <img src="../../../.gitbook/assets/opera-zeroomega-web-store_white.png" alt="Установка ZeroOmega в Opera">
   </picture>
 </figure>
 
-После установки расширения, у вас справа сверху станет доступно установленное расширение, нажмите на него и для удобства пользования, закрепите расширение.
+После установки откройте меню расширений и закрепите ZeroOmega на панели браузера.
 
 <figure>
   <picture>
     <source srcset="../../../.gitbook/assets/opera-zeroomega-extensions-menu_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../../.gitbook/assets/opera-zeroomega-extensions-menu_white.png" alt="">
+    <img src="../../../.gitbook/assets/opera-zeroomega-extensions-menu_white.png" alt="Закрепление ZeroOmega на панели Opera">
   </picture>
 </figure>
 
-\
-Откройте параметры расширения
+Откройте ZeroOmega и выберите `Options`.
 
-<figure><img src="../../../.gitbook/assets/opera-zeroomega-popup-options.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/opera-zeroomega-popup-options.png" alt="Открытие настроек ZeroOmega"><figcaption></figcaption></figure>
 
-В интерфейсе настройки Zero Omega создайте новый профиль и присвойте ему любое имя
+В разделе `Profiles` нажмите `New profile...`.
 
 <div align="center"><figure>
   <picture>
     <source srcset="../../../.gitbook/assets/opera-zeroomega-new-profile_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../../.gitbook/assets/opera-zeroomega-new-profile_white.png" alt="">
+    <img src="../../../.gitbook/assets/opera-zeroomega-new-profile_white.png" alt="Создание профиля ZeroOmega">
   </picture>
 </figure></div>
 
-Тут укажите произвольное имя профиля
+Введите название профиля, выберите `Proxy Profile` и нажмите `Create`.
 
 <figure>
   <picture>
     <source srcset="../../../.gitbook/assets/opera-zeroomega-new-profile-dialog_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../../.gitbook/assets/opera-zeroomega-new-profile-dialog_white.png" alt="">
+    <img src="../../../.gitbook/assets/opera-zeroomega-new-profile-dialog_white.png" alt="Название и тип профиля ZeroOmega">
   </picture>
 </figure>
 
-Далее откроется интерфейс настройки серверов, тут вам необходимо взять из заказа в "Proxy list" сами прокси и вручную вставить IP (или DNS) сервера, порт, логин и пароль.\
-Логин и пароль задаются в кнопке со значком замка 🔒.
+В настройках профиля выберите протокол и укажите адрес сервера и порт из `Proxy List` вашего заказа. Чтобы добавить логин и пароль, нажмите значок замка.
 
 <figure>
   <picture>
     <source srcset="../../../.gitbook/assets/opera-zeroomega-proxy-server_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../../.gitbook/assets/opera-zeroomega-proxy-server_white.png" alt="">
+    <img src="../../../.gitbook/assets/opera-zeroomega-proxy-server_white.png" alt="Адрес и порт прокси в ZeroOmega">
   </picture>
 </figure>
 
-Тут необходимо вставить логин и пароль прокси.
+Введите логин и пароль прокси, затем подтвердите изменения.
 
 <figure>
   <picture>
     <source srcset="../../../.gitbook/assets/opera-zeroomega-proxy-auth_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../../.gitbook/assets/opera-zeroomega-proxy-auth_white.png" alt="">
+    <img src="../../../.gitbook/assets/opera-zeroomega-proxy-auth_white.png" alt="Авторизация прокси в ZeroOmega">
   </picture>
 </figure>
 
 {% hint style="info" %}
-**С примером настройки прокси вы можете ознакомиться в разделе [Инструкция по настройке](../../getting-started.md)**
+Формат данных и пример заказа описаны в разделе [Начало работы](../../getting-started.md).
 {% endhint %}
 
-Затем примените настройки 
+Нажмите `Apply changes`, чтобы сохранить профиль.
 
 <figure>
   <picture>
     <source srcset="../../../.gitbook/assets/opera-zeroomega-apply-changes_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../../.gitbook/assets/opera-zeroomega-apply-changes_white.png" alt="">
+    <img src="../../../.gitbook/assets/opera-zeroomega-apply-changes_white.png" alt="Сохранение профиля ZeroOmega">
   </picture>
 </figure>
 
-В сплывающем окне расширения выберите прокси которые вы ранее настроили
+Откройте ZeroOmega на панели браузера и выберите созданный профиль.
 
 <figure>
   <picture>
     <source srcset="../../../.gitbook/assets/opera-zeroomega-profile-active_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../../.gitbook/assets/opera-zeroomega-profile-active_white.png" alt="">
+    <img src="../../../.gitbook/assets/opera-zeroomega-profile-active_white.png" alt="Активный профиль ZeroOmega">
   </picture>
 </figure>
 
-**Готово! Вы закончили настройку прокси через расширение.**\
-**Теперь вы можете приступить к использованию прокси.**
+Прокси подключён и готов к работе в Opera.
