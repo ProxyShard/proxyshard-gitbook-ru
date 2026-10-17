@@ -189,7 +189,7 @@ Reverse DNS запись для вашего IP (PTR-запись). Показы
 {% endhint %}
 
 {% hint style="warning" %}
-**Нормально для датацентр / ISP прокси:** ISP type = `datacenter/hosting`. Это ожидаемо и для большинства задач не является проблемой.
+**Нормально для датацентр-прокси:** ISP type = `datacenter/hosting`. Это ожидаемо и для большинства задач не является проблемой.
 {% endhint %}
 
 {% hint style="danger" %}

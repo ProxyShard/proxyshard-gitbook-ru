@@ -30,6 +30,11 @@ icon: git-alt
 
 * [V2Box](../../setup-guides/ios-android/v2box.md)
 
+<mark style="color:purple;">**iOS:**</mark>
+
+* [V2Box](../../setup-guides/ios-android/v2box.md)
+* [Potatso](../../setup-guides/ios-android/potatso.md)
+
 <mark style="color:purple;">**Linux:**</mark>
 
 * proxychains-NG + go-tun2socks
@@ -41,7 +46,6 @@ icon: git-alt
 * SocksDroid
 * [Super Proxy](../../setup-guides/ios-android/super-proxy.md)
 * [V2Box](../../setup-guides/ios-android/v2box.md)
-* [Potatso](../../setup-guides/ios-android/potatso.md)
 
 {% hint style="info" %}
 Актуальный список приложений доступен в [Инструкции по использованию](../../setup-guides/getting-started.md).
