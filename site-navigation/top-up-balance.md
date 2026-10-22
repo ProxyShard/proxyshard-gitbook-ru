@@ -4,7 +4,7 @@ icon: dollar-sign
 
 # Пополнение баланса
 
-Баланс используется для покупки продуктов, продления заказов и оплаты дополнительного трафика. Пополнить его можно банковской картой или через Google Pay с помощью Stripe, а также криптовалютой через Cryptomus.
+Баланс используется для покупки продуктов, продления заказов и оплаты дополнительного трафика. Минимальная сумма пополнения составляет **$5**.
 
 Чтобы пополнить баланс:
 
@@ -20,13 +20,14 @@ icon: dollar-sign
   </picture>
 </figure>
 
-В списке `Payment method` доступны `Credit Card / Google Pay` и `Cryptomus (Crypto)`.
+В списке `Payment method` доступны:
 
-<figure>
-  <picture>
-    <source srcset="../.gitbook/assets/wallet-payment-methods_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/wallet-payment-methods_white.png" alt="Выбор способа оплаты">
-  </picture>
-</figure>
+* `Credit Card / Google Pay` - банковская карта или Google Pay. Платёж обрабатывается через Stripe.
+* `Nowpayments (Crypto)` - оплата криптовалютой.
+* `USDT TRC20` - отдельный способ оплаты для USDT в сети TRC20 (TRON).
+
+{% hint style="warning" %}
+Для оплаты USDT в сети TRC20 выберите именно `USDT TRC20`. Платёжная система взимает процентную комиссию, поэтому минимальная сумма такого платежа составляет **$21**.
+{% endhint %}
 
 В блоке `History` отображаются сумма, статус и дата каждого пополнения. Нажмите `Open`, чтобы открыть счет и при необходимости скачать его в формате PDF.
