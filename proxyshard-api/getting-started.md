@@ -29,9 +29,3 @@ API ProxyShard позволяет получать информацию о пр�
 ```http
 Authorization: Bearer <API_KEY>
 ```
-
-## Спецификация OpenAPI
-
-{% file src="../proxy-shard-user-api.openapi.yaml" %}
-Скачать спецификацию OpenAPI ProxyShard
-{% endfile %}

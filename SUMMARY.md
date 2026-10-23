@@ -126,7 +126,7 @@
 * ```yaml
   props:
     models: true
-    downloadLink: false
+    downloadLink: true
   type: builtin:openapi
   dependencies:
     spec:
@@ -140,7 +140,7 @@
 * ```yaml
   props:
     models: true
-    downloadLink: false
+    downloadLink: true
   type: builtin:openapi
   dependencies:
     spec:
@@ -148,4 +148,3 @@
         kind: openapi
         spec: shardbrowser-api
   ```
-* [Спецификация OpenAPI](shardx-launcher-api/openapi-specification.md)
