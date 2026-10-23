@@ -108,14 +108,14 @@ redirects:
   setup-guides/checker-proxy: our-products/proxy-tester
 
   # ProxyShard API group migration (2026-07-14)
-  polzovatelskoe-api: proxyshard-api/datacenter-and-isp-proxies
+  polzovatelskoe-api: proxyshard-api/getting-started
   polzovatelskoe-api/datacenter-and-isp-proxies: proxyshard-api/datacenter-and-isp-proxies
   polzovatelskoe-api/residential-proxies: proxyshard-api/residential-proxies
   polzovatelskoe-api/general: proxyshard-api/general
   polzovatelskoe-api/models: proxyshard-api/models
 
   # Temporary combined API group split (2026-07-14)
-  api-specifications: proxyshard-api/datacenter-and-isp-proxies
+  api-specifications: proxyshard-api/getting-started
   api-specifications/datacenter-and-isp-proxies: proxyshard-api/datacenter-and-isp-proxies
   api-specifications/residential-proxies: proxyshard-api/residential-proxies
   api-specifications/general: proxyshard-api/general

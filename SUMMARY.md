@@ -122,10 +122,11 @@
 
 ## API ProxyShard <a href="#proxyshard-api" id="proxyshard-api"></a>
 
+* [Начало работы](proxyshard-api/getting-started.md)
 * ```yaml
   props:
     models: true
-    downloadLink: true
+    downloadLink: false
   type: builtin:openapi
   dependencies:
     spec:
@@ -139,7 +140,7 @@
 * ```yaml
   props:
     models: true
-    downloadLink: true
+    downloadLink: false
   type: builtin:openapi
   dependencies:
     spec:
@@ -147,3 +148,4 @@
         kind: openapi
         spec: shardbrowser-api
   ```
+* [Спецификация OpenAPI](shardx-launcher-api/openapi-specification.md)

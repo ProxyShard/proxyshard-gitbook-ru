@@ -25,10 +25,10 @@ servers:
 security:
   - bearerAuth: []
 tags:
-  - name: Datacenter & ISP Proxies
-    description: Операции для датацентровых и ISP прокси
   - name: General
     description: Общие операции (профиль, заказы, справочники)
+  - name: Datacenter & ISP Proxies
+    description: Операции для датацентровых и ISP прокси
   - name: Residential Proxies
     description: Операции для резидентских прокси
   - name: Service
