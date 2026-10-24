@@ -30,7 +30,7 @@
       {
         "id": "api",
         "title": { "ru": "API", "eng": "API", "ua": "API", "cn": "API" },
-        "groups": ["proxyshard-api", "shardx-launcher-api"]
+        "groups": ["api-and-integrations", "proxyshard-api", "shardx-launcher-api"]
       }
     ],
     "links": [],
