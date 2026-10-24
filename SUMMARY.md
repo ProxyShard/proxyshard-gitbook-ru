@@ -123,6 +123,9 @@
 ## API и интеграции <a href="#api-and-integrations" id="api-and-integrations"></a>
 
 * [Начало работы](proxyshard-api/getting-started.md)
+
+## API ProxyShard <a href="#proxyshard-api" id="proxyshard-api"></a>
+
 * ```yaml
   props:
     models: true
@@ -134,6 +137,8 @@
         kind: openapi
         spec: proxysharddoc-api
   ```
+
+## API ShardX Launcher <a href="#shardx-launcher-api" id="shardx-launcher-api"></a>
 
 * ```yaml
   props:
