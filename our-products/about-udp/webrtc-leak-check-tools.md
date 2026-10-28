@@ -4,9 +4,9 @@ icon: check-to-slot
 
 # Через что можно проверить утечку WebRTC
 
-Проверить WebRTC можно через ProxyShard IP Checker или сторонний сервис Ipbinding. Начните с нашего инструмента: он показывает внешний IP, адрес WebRTC и результат проверки UDP в одном отчёте.
+Проверить WebRTC можно через ShardX IP Checker или сторонний сервис Ipbinding. Начните с нашего инструмента: он показывает внешний IP, адрес WebRTC и результат проверки UDP в одном отчёте.
 
-## 1. ProxyShard IP Checker
+## 1. ShardX IP Checker
 
 {% embed url="https://proxyshard.com/ip-checker" %}
 

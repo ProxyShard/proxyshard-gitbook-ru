@@ -12,7 +12,7 @@ icon: fire
 
 ISP прокси поддерживают подмену сетевого отпечатка <mark style="color:purple;">p0f</mark>.
 
-{% embed url="https://dashboard.proxyshard.com/en/isp-proxy" %}
+{% embed url="https://dashboard.shardx.com/en/isp-proxy" %}
 
 Пошаговая инструкция по покупке и оплате: [Приобретение ISP-прокси](../site-navigation/buying-and-renewing/buying-isp-proxies.md).
 

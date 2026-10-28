@@ -15,7 +15,7 @@ icon: house-signal
 Адреса выдаются на реальных домашних IP. Сессия может смениться в любой момент, если устройство в пуле выйдет из сети раздачи трафика. Если вам нужен **статический IP** - смотрите [Datacenter](../datacenter-proxies.md) или [ISP прокси](../isp-proxies.md).
 {% endhint %}
 
-{% embed url="https://dashboard.proxyshard.com/en/residential-main" %}
+{% embed url="https://dashboard.shardx.com/en/residential-main" %}
 
 Пошаговая инструкция по покупке и оплате: [Приобретение резидентских прокси](../../site-navigation/buying-and-renewing/buying-residential-proxies.md).
 
@@ -115,7 +115,7 @@ icon: house-signal
 host:port:username:password
 ```
 
-* `host` указывает сервер подключения, например `relay-eu.proxyshard.com`.
+* `host` указывает сервер подключения, например `relay-eu.shardx.com`.
 * `port` выбирается для подключения к серверу и сам по себе не определяет конечный IP.
 * `username` содержит параметры таргетинга и идентификатор сессии `sid`.
 * `password` используется для авторизации.

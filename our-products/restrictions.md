@@ -26,7 +26,7 @@ Stripe и PayPal доступны на датацентровых и ISP-про�
 
 Дополнительные ограничения на резидентских прокси:
 
-* На [Standard Residential](https://docs.proxyshard.com/our-products/residential-proxies/standard-residential) / [Unlimited Residential](https://docs.proxyshard.com/our-products/residential-proxies/unlimited-residential-proxy) / [Premium Residential](https://docs.proxyshard.com/our-products/residential-proxies/premium-residential) недоступны сервисы Microsoft и Apple.
+* На [Standard Residential](https://docs.shardx.com/our-products/residential-proxies/standard-residential) / [Unlimited Residential](https://docs.shardx.com/our-products/residential-proxies/unlimited-residential-proxy) / [Premium Residential](https://docs.shardx.com/our-products/residential-proxies/premium-residential) недоступны сервисы Microsoft и Apple.
 
 ***
 

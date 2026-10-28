@@ -67,12 +67,12 @@ Vision Browser поддерживает TCP- и UDP-трафик через SOCK
   </picture>
 </figure>
 
-В панели ProxyShard сгенерируйте один прокси в формате SOCKS5 и скопируйте данные подключения.
+В панели ShardX сгенерируйте один прокси в формате SOCKS5 и скопируйте данные подключения.
 
 <figure>
   <picture>
     <source srcset="../../.gitbook/assets/vision-residential-generate-single_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../.gitbook/assets/vision-residential-generate-single_white.png" alt="Генерация SOCKS5-прокси в ProxyShard">
+    <img src="../../.gitbook/assets/vision-residential-generate-single_white.png" alt="Генерация SOCKS5-прокси в ShardX">
   </picture>
 </figure>
 
@@ -98,7 +98,7 @@ Vision Browser поддерживает TCP- и UDP-трафик через SOCK
   </picture>
 </figure>
 
-В панели ProxyShard сгенерируйте список прокси в формате SOCKS5 и скопируйте его.
+В панели ShardX сгенерируйте список прокси в формате SOCKS5 и скопируйте его.
 
 <figure>
   <picture>
@@ -130,7 +130,7 @@ Vision Browser поддерживает TCP- и UDP-трафик через SOCK
 
 ## Проверка WebRTC
 
-Запустите профиль и откройте [ProxyShard IP Checker](https://proxyshard.com/ip-checker). Адреса TCP и WebRTC должны совпадать.
+Запустите профиль и откройте [ShardX IP Checker](https://proxyshard.com/ip-checker). Адреса TCP и WebRTC должны совпадать.
 
 <figure>
   <picture>

@@ -2,30 +2,30 @@
 icon: hand-wave
 ---
 
-# ProxyShard GitBook
+# ShardX GitBook
 
 <figure>
   <picture>
     <source srcset=".gitbook/assets/docs-cover_black.svg" media="(prefers-color-scheme: dark)">
-    <img src=".gitbook/assets/docs-cover_white.svg" alt="Документация ProxyShard">
+    <img src=".gitbook/assets/docs-cover_white.svg" alt="Документация ShardX">
   </picture>
 </figure>
 
-Здесь вы найдёте всё, что нужно для работы с нашими прокси: описание продуктов, инструкции по настройке, ответы на частые вопросы и документацию по API.
+Здесь вы найдёте всё, что нужно для работы с прокси ShardX (ранее ProxyShard): описание продуктов, инструкции по настройке, ответы на частые вопросы и документацию по API.
 
 {% hint style="info" %}
-**English version:** [docs.proxyshard.com/eng](https://docs.proxyshard.com/eng/)
+**English version:** [docs.shardx.com/eng](https://docs.shardx.com/eng/)
 
-**Русская версия:** [docs.proxyshard.com](https://docs.proxyshard.com/)
+**Русская версия:** [docs.shardx.com](https://docs.shardx.com/)
 
-**Українська версія:** [docs.proxyshard.com/ua](https://docs.proxyshard.com/ua/)
+**Українська версія:** [docs.shardx.com/ua](https://docs.shardx.com/ua/)
 
-**简体中文版:** [docs.proxyshard.com/cn](https://docs.proxyshard.com/cn/)
+**简体中文版:** [docs.shardx.com/cn](https://docs.shardx.com/cn/)
 {% endhint %}
 
 ***
 
-* [Что такое Proxyshard](about-proxyshard.md) - коротко о сервисе и наших продуктах
+* [Что такое ShardX](about-shardx.md) - коротко о сервисе и наших продуктах
 * [Инструкция по настройке](setup-guides/getting-started.md) - как подключить прокси на вашем устройстве
 * [FAQ](faq-and-support/faq/) - ответы на частые вопросы
 

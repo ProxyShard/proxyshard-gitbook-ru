@@ -23,6 +23,6 @@ icon: at
 <figure>
   <picture>
     <source srcset=".gitbook/assets/contact-page_black.png" media="(prefers-color-scheme: dark)">
-    <img src=".gitbook/assets/contact-page_white.png" alt="Форма связи на сайте ProxyShard">
+    <img src=".gitbook/assets/contact-page_white.png" alt="Форма связи на сайте ShardX">
   </picture>
 </figure>

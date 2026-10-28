@@ -1,7 +1,7 @@
 # Table of contents
 
-* [ProxyShard GitBook](README.md)
-* [Что такое ProxyShard](about-proxyshard.md)
+* [ShardX GitBook](README.md)
+* [Что такое ShardX](about-shardx.md)
 * [Связь с нами](contact-us.md)
 
 ## Наши продукты <a href="#our-products" id="our-products"></a>
@@ -21,7 +21,7 @@
 
 * [Proxy Tester](our-products/proxy-tester.md)
 * [IP Checker](our-products/ip-checker.md)
-* [ProxyShard Extension](our-products/proxyshard-extension.md)
+* [ShardX Extension](our-products/shardx-extension.md)
 * [ShardBrowser](our-products/shardx-launcher.md)
 * [Спецификации API](our-products/api-specifications.md)
 
@@ -71,7 +71,7 @@
   * [Extensions](setup-guides/shardx-browser/extensions.md)
   * [Bookmarks](setup-guides/shardx-browser/bookmarks.md)
   * [Automation](setup-guides/shardx-browser/automation.md)
-  * [ProxyShard Dashboard](setup-guides/shardx-browser/proxyshard-dashboard.md)
+  * [ShardX Dashboard](setup-guides/shardx-browser/shardx-dashboard.md)
 * [Windows](setup-guides/windows/README.md)
   * [Proxifier](setup-guides/windows/proxifier.md)
   * [v2rayN](setup-guides/windows/v2rayn.md)
@@ -96,23 +96,23 @@
   * [AdsPower](setup-guides/antidetect-browsers/adspower.md)
 * [Браузеры](setup-guides/browsers/README.md)
   * [Chrome](setup-guides/browsers/chrome/README.md)
-    * [ProxyShard Extension](setup-guides/browsers/chrome/proxyshard.md)
+    * [ShardX Extension](setup-guides/browsers/chrome/shardx.md)
     * [ZeroOmega](setup-guides/browsers/chrome/zeroomega.md)
   * [Edge](setup-guides/browsers/edge/README.md)
-    * [ProxyShard Extension](setup-guides/browsers/edge/proxyshard.md)
+    * [ShardX Extension](setup-guides/browsers/edge/shardx.md)
     * [ZeroOmega](setup-guides/browsers/edge/zeroomega.md)
   * [Opera](setup-guides/browsers/opera/README.md)
-    * [ProxyShard Extension](setup-guides/browsers/opera/proxyshard.md)
+    * [ShardX Extension](setup-guides/browsers/opera/shardx.md)
     * [ZeroOmega](setup-guides/browsers/opera/zeroomega.md)
   * [Brave](setup-guides/browsers/brave/README.md)
-    * [ProxyShard Extension](setup-guides/browsers/brave/proxyshard.md)
+    * [ShardX Extension](setup-guides/browsers/brave/shardx.md)
   * [Yandex Browser](setup-guides/browsers/yandex/README.md)
-    * [ProxyShard Extension](setup-guides/browsers/yandex/proxyshard.md)
+    * [ShardX Extension](setup-guides/browsers/yandex/shardx.md)
   * [Vivaldi](setup-guides/browsers/vivaldi/README.md)
-    * [ProxyShard Extension](setup-guides/browsers/vivaldi/proxyshard.md)
+    * [ShardX Extension](setup-guides/browsers/vivaldi/shardx.md)
   * [Safari](setup-guides/browsers/safari.md)
   * [Mozilla Firefox](setup-guides/browsers/mozilla-firefox/README.md)
-    * [ProxyShard Extension](setup-guides/browsers/mozilla-firefox/proxyshard.md)
+    * [ShardX Extension](setup-guides/browsers/mozilla-firefox/shardx.md)
     * [FoxyProxy](setup-guides/browsers/mozilla-firefox/foxyproxy.md)
 * [Telegram](setup-guides/telegram.md)
 * [MikroTik прокси](setup-guides/mikrotik-proxy.md)
@@ -130,7 +130,7 @@
 
 * [Начало работы](proxyshard-api/getting-started.md)
 
-## API ProxyShard <a href="#proxyshard-api" id="proxyshard-api"></a>
+## API ShardX <a href="#shardx-api" id="shardx-api"></a>
 
 * ```yaml
   props:

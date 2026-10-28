@@ -13,7 +13,7 @@ icon: git-alt
 * [<mark style="color:$success;">Vision</mark>](../../setup-guides/antidetect-browsers/vision-browser.md): доступное и надёжное решение среди платных браузеров с поддержкой UDP, QUIC, Smart Fingerprint и других полезных функций. Более 60% команд на нашем сайте выбирают именно его.
 
 {% hint style="success" %}
-Связка наших [ISP Proxy](https://dashboard.proxyshard.com/en/isp-proxy) и браузера [Vision](../../setup-guides/antidetect-browsers/vision-browser.md) является одним из рекомендуемых вариантов для работы с UDP через прокси. ISP Proxy также поддерживает смену сетевого отпечатка [p0f](../p0f-spoofing.md).
+Связка наших [ISP Proxy](https://dashboard.shardx.com/en/isp-proxy) и браузера [Vision](../../setup-guides/antidetect-browsers/vision-browser.md) является одним из рекомендуемых вариантов для работы с UDP через прокси. ISP Proxy также поддерживает смену сетевого отпечатка [p0f](../p0f-spoofing.md).
 {% endhint %}
 
 * [<mark style="color:$tint;">ShardBrowser</mark>](../shardx-launcher.md): наше решение с открытым исходным кодом, большим выбором профилей и корректной поддержкой UDP и QUIC.

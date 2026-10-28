@@ -1,8 +1,8 @@
 # ============================================================================
-# ProxyShard User API: OpenAPI 3.0.3.
+# ShardX User API: OpenAPI 3.0.3.
 #
 # ИСТОЧНИК ПРАВДЫ по публичному API. Раньше спека жила только в GitBook
-# (docs.proxyshard.com/proxyshard-api/*), из-за чего расходилась с кодом
+# (docs.shardx.com/proxyshard-api/*), из-за чего расходилась с кодом
 # незаметно: ответы ручек уже отдавали message и proxy_password, а спека
 # продолжала обещать старую форму.
 #
@@ -18,10 +18,10 @@
 # ============================================================================
 openapi: 3.0.3
 info:
-  title: "Биллинг пользовательского API ProxyShard"
+  title: "Биллинг пользовательского API ShardX"
   version: 1.1.0
 servers:
-  - url: https://user-api.proxyshard.com
+  - url: https://user-api.shardx.com
 security:
   - bearerAuth: []
 tags:

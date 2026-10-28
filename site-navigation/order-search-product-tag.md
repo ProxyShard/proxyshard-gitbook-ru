@@ -25,7 +25,7 @@ icon: magnifying-glass
   </picture>
 </figure>
 
-Введите тег в поле `Search` и нажмите `Search`. Поиск доступен как на странице выбранного продукта, так и в разделе [`My orders`](https://dashboard.proxyshard.com/products).
+Введите тег в поле `Search` и нажмите `Search`. Поиск доступен как на странице выбранного продукта, так и в разделе [`My orders`](https://dashboard.shardx.com/products).
 
 <figure>
   <picture>

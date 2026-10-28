@@ -8,7 +8,7 @@ icon: server
 
 <mark style="color:purple;">Датацентровые прокси</mark>, как и <mark style="color:purple;">ISP</mark>, выдаются одному пользователю без скрытого шейринга. Адреса относятся к типу <mark style="color:purple;">IPv4</mark> и поддерживают <mark style="color:purple;">UDP</mark>.
 
-{% embed url="https://dashboard.proxyshard.com/en/datacenter-proxy" %}
+{% embed url="https://dashboard.shardx.com/en/datacenter-proxy" %}
 
 Пошаговая инструкция по покупке и оплате: [Приобретение датацентр-прокси](../site-navigation/buying-and-renewing/buying-datacenter-proxies.md).
 

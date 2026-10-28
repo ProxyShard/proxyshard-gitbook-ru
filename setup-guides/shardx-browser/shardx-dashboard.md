@@ -1,26 +1,26 @@
 ---
-description: Аккаунт ProxyShard в приложении ShardBrowser
+description: Аккаунт ShardX в приложении ShardBrowser
 icon: gauge
 ---
 
-# ProxyShard Dashboard
+# ShardX Dashboard
 
-Раздел <mark style="color:purple;">**ProxyShard**</mark> подключает ваш аккаунт [ProxyShard](https://proxyshard.com) к приложению: баланс, трафик, заказы и покупка прокси доступны прямо в ShardBrowser.
+Раздел <mark style="color:purple;">**ShardX**</mark> подключает ваш аккаунт [ShardX](https://proxyshard.com) к приложению: баланс, трафик, заказы и покупка прокси доступны прямо в ShardBrowser.
 
-Чтобы подключить аккаунт, скопируйте API-ключ на [вкладке API Key в личном кабинете ProxyShard](https://dashboard.proxyshard.com/en/profile?tab=api-key) и вставьте его в поле блока <mark style="color:purple;">**Connect your ProxyShard account**</mark>.
+Чтобы подключить аккаунт, скопируйте API-ключ на [вкладке API Key в личном кабинете ShardX](https://dashboard.shardx.com/en/profile?tab=api-key) и вставьте его в поле блока <mark style="color:purple;">**Connect your ShardX account**</mark>.
 
 <figure>
   <picture>
     <source srcset="../../.gitbook/assets/shardbrowser-proxyshard-connect_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../.gitbook/assets/shardbrowser-proxyshard-connect_white.png" alt="Раздел ProxyShard">
+    <img src="../../.gitbook/assets/shardbrowser-proxyshard-connect_white.png" alt="Раздел ShardX">
   </picture>
-  <figcaption>Раздел ProxyShard</figcaption>
+  <figcaption>Раздел ShardX</figcaption>
 </figure>
 
 Нажмите <mark style="color:purple;">**Save**</mark>.
 
 {% hint style="info" %}
-API-ключ хранится на вашем компьютере и отправляется только в ProxyShard. Не передавайте его посторонним.
+API-ключ хранится на вашем компьютере и отправляется только в ShardX. Не передавайте его посторонним.
 {% endhint %}
 
 <figure>
@@ -44,7 +44,7 @@ API-ключ хранится на вашем компьютере и отпра
 <figure>
   <picture>
     <source srcset="../../.gitbook/assets/shardbrowser-proxyshard-dashboard_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../.gitbook/assets/shardbrowser-proxyshard-dashboard_white.png" alt="Панель аккаунта ProxyShard">
+    <img src="../../.gitbook/assets/shardbrowser-proxyshard-dashboard_white.png" alt="Панель аккаунта ShardX">
   </picture>
-  <figcaption>Панель аккаунта ProxyShard</figcaption>
+  <figcaption>Панель аккаунта ShardX</figcaption>
 </figure>

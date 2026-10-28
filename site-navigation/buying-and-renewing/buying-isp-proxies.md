@@ -10,7 +10,7 @@ icon: server
 
 ## Покупка прокси
 
-Чтобы приобрести [ISP-прокси](https://dashboard.proxyshard.com/isp-proxy):
+Чтобы приобрести [ISP-прокси](https://dashboard.shardx.com/isp-proxy):
 
 1. Откройте раздел `ISP Proxy`.
 2. В поле `Proxy region` выберите страну прокси.
@@ -32,7 +32,7 @@ icon: server
 
 После нажатия `Buy now` откроется счёт со статусом `Unpaid`. Проверьте сумму в строке `Total amount`, затем нажмите `Pay with Wallet`. Оплата проходит так же, как в [инструкции для датацентр-прокси](buying-datacenter-proxies.md#oplata-zakaza).
 
-После оплаты заказ появится в блоке `Active products` и в разделе [`My orders`](https://dashboard.proxyshard.com/products).
+После оплаты заказ появится в блоке `Active products` и в разделе [`My orders`](https://dashboard.shardx.com/products).
 
 {% hint style="warning" %}
 Прокси станут доступны в течение 1-2 минут, пока заказ синхронизируется.

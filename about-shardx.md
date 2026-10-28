@@ -1,18 +1,18 @@
 ---
-description: Коротко о сервисе и продуктах ProxyShard
+description: Коротко о сервисе и продуктах ShardX
 icon: question
 ---
 
-# Что такое ProxyShard
+# Что такое ShardX
 
-<mark style="color:purple;">**ProxyShard**</mark> объединяет резидентские, датацентр, ISP и мобильные прокси с инструментами для браузерной работы, проверки и автоматизации. Датацентр и ISP адреса закрепляются за одним клиентом и не используются совместно. Доступность UDP, смены p0f и других функций зависит от продукта и локации.
+<mark style="color:purple;">**ShardX**</mark> (ранее ProxyShard) объединяет резидентские, датацентр, ISP и мобильные прокси с инструментами для браузерной работы, проверки и автоматизации. Датацентр и ISP адреса закрепляются за одним клиентом и не используются совместно. Доступность UDP, смены p0f и других функций зависит от продукта и локации.
 
 <figure>
   <picture>
     <source srcset=".gitbook/assets/proxyshard-products_black.svg" media="(prefers-color-scheme: dark)">
-    <img src=".gitbook/assets/proxyshard-products_white.svg" alt="Продукты и инструменты ProxyShard">
+    <img src=".gitbook/assets/proxyshard-products_white.svg" alt="Продукты и инструменты ShardX">
   </picture>
-  <figcaption><p>Прокси, браузерные инструменты и сервисы проверки ProxyShard</p></figcaption>
+  <figcaption><p>Прокси, браузерные инструменты и сервисы проверки ShardX</p></figcaption>
 </figure>
 
 ***
@@ -35,7 +35,7 @@ IP-адреса домашних и мобильных провайдеров с
 
 Прокси мобильных операторов с выбором страны и оператора. IP можно менять по ссылке, а доступные параметры зависят от выбранного тарифа и локации.
 
-### [<mark style="color:purple;">ProxyShard Extension</mark>](our-products/proxyshard-extension.md)
+### [<mark style="color:purple;">ShardX Extension</mark>](our-products/shardx-extension.md)
 
 Расширение для Chrome, Firefox и браузеров на Chromium. Позволяет хранить профили, переключать и проверять прокси, а также запускать ротацию мобильного IP по таймеру или сочетанию клавиш.
 

@@ -31,7 +31,7 @@ icon: sim-card
   </picture>
 </figure>
 
-После оплаты заказ появится в блоке `Active products` и в разделе [`My orders`](https://dashboard.proxyshard.com/products). Нажмите `Open`, чтобы перейти к настройкам заказа.
+После оплаты заказ появится в блоке `Active products` и в разделе [`My orders`](https://dashboard.shardx.com/products). Нажмите `Open`, чтобы перейти к настройкам заказа.
 
 <figure>
   <picture>

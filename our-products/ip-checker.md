@@ -4,7 +4,7 @@ icon: magnifying-glass
 
 # IP Checker
 
-<mark style="color:purple;">ProxyShard IP Checker</mark> - бесплатный инструмент для проверки вашего IP-адреса, геолокации, данных браузера и обнаружения утечек WebRTC, а также уникальной оценки качества профиля!
+<mark style="color:purple;">ShardX IP Checker</mark> - бесплатный инструмент для проверки вашего IP-адреса, геолокации, данных браузера и обнаружения утечек WebRTC, а также уникальной оценки качества профиля!
 
 {% embed url="https://proxyshard.com/ip-checker" %}
 

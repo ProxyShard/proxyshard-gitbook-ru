@@ -6,7 +6,7 @@ icon: circle-question
 # Популярные вопросы
 
 {% hint style="warning" %}
-Список продуктов, локаций, операторов и цен может меняться. Перед покупкой сверяйтесь с актуальными страницами в [дашборде](https://dashboard.proxyshard.com/).
+Список продуктов, локаций, операторов и цен может меняться. Перед покупкой сверяйтесь с актуальными страницами в [дашборде](https://dashboard.shardx.com/).
 {% endhint %}
 
 ***
@@ -114,7 +114,7 @@ UDP поддерживается на Datacenter, ISP, Mobile, Standard Resident
 * В среднем оператор обновляет адрес **раз в сутки**.
 * Оператор может инициировать смену пула в произвольный момент, и адрес сменится раньше.
 
-Это особенность работы мобильного интернета и **не находится в нашем управлении**. Если требуется ротация по таймеру или по нажатию хоткея - используйте функцию [IP Rotation в нашем расширении](../../our-products/proxyshard-extension.md).
+Это особенность работы мобильного интернета и **не находится в нашем управлении**. Если требуется ротация по таймеру или по нажатию хоткея - используйте функцию [IP Rotation в нашем расширении](../../our-products/shardx-extension.md).
 
 ***
 
@@ -163,7 +163,7 @@ UDP поддерживается на Datacenter, ISP, Mobile, Standard Resident
 **Способ 2.** Поменять <mark style="color:purple;">**SID**</mark> вручную в строке подключения. Например, в строке:
 
 ```
-relay-eu.proxyshard.com:8080:plan-limited-country-any-sid-8dbryym0a32i:7nnrpl63344545gx
+relay-eu.shardx.com:8080:plan-limited-country-any-sid-8dbryym0a32i:7nnrpl63344545gx
 ```
 
 в логине есть фрагмент `sid-8dbryym0a32i`. Если поменять в нём один символ, например на `sid-8dbryym0a324`, то IP-адрес сменится. То же самое происходит «под капотом», когда вы нажимаете <mark style="color:purple;">Generate proxy</mark>.
@@ -271,7 +271,7 @@ ISP прокси доступны в следующих локациях:
 | 🇨🇦 Канада | Rogers |
 | 🇮🇩 Индонезия | Telkomsel |
 
-Список регулярно расширяется. Актуальные локации и стоимость доступны на странице покупки [Mobile proxy](https://dashboard.proxyshard.com/en/mobile-proxy).
+Список регулярно расширяется. Актуальные локации и стоимость доступны на странице покупки [Mobile proxy](https://dashboard.shardx.com/en/mobile-proxy).
 
 ***
 
@@ -287,7 +287,7 @@ ISP прокси доступны в следующих локациях:
 | **Mobile** | **от $4 / день, $55 / месяц** | зависит от страны и оператора |
 
 {% hint style="info" %}
-Точная цена и доступные периоды по каждому тарифу отображаются непосредственно на странице покупки в [дашборде](https://dashboard.proxyshard.com/).
+Точная цена и доступные периоды по каждому тарифу отображаются непосредственно на странице покупки в [дашборде](https://dashboard.shardx.com/).
 {% endhint %}
 
 ***
@@ -299,13 +299,13 @@ ISP прокси доступны в следующих локациях:
 Примеры строк подключения:
 
 ```
-mobile.eu.proxyshard.com:1234:aabbbcc:password
-resident.eu.proxyshard.com:8080:plan-limited-country-NL-sid-ABXdedq:AAAbbbbCC
+mobile.proxy-eu.shardx.com:1234:aabbbcc:password
+relay-eu.shardx.com:8080:plan-limited-country-NL-sid-ABXdedq:AAAbbbbCC
 ```
 
 Если вашему софту обязательно нужен именно IPv4, домен можно **опросить (resolve)** и подставить полученный адрес вместо доменного имени.
 
-**Способ 1. Через сайт.** Откройте [www.nslookup.io](https://www.nslookup.io), введите домен из строки подключения и получите список IPv4-адресов. Например, если запрос вернул `172.67.72.239`, то вместо `mobile.eu.proxyshard.com` можно поставить этот IP:
+**Способ 1. Через сайт.** Откройте [www.nslookup.io](https://www.nslookup.io), введите домен из строки подключения и получите список IPv4-адресов. Например, если запрос вернул `172.67.72.239`, то вместо `mobile.proxy-eu.shardx.com` можно поставить этот IP:
 
 ```
 172.67.72.239:1234:aabbbcc:password
@@ -314,7 +314,7 @@ resident.eu.proxyshard.com:8080:plan-limited-country-NL-sid-ABXdedq:AAAbbbbCC
 **Способ 2. Вручную из терминала.** В Windows или Linux выполните:
 
 ```
-nslookup mobile.eu.proxyshard.com
+nslookup mobile.proxy-eu.shardx.com
 ```
 
 В ответе в разделе **Addresses** будут IPv4-адреса - берите любой и подставляйте вместо домена.

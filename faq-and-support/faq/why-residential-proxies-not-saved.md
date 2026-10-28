@@ -25,14 +25,14 @@ icon: arrows-rotate
 Допустим, вы сгенерировали немецкие прокси:
 
 ```
-relay-eu.proxyshard.com:8080:plan-limited-country-de-sid-aaaaaaaaa:xxxxxxxxx
+relay-eu.shardx.com:8080:plan-limited-country-de-sid-aaaaaaaaa:xxxxxxxxx
 ```
 
 Разберём строку подключения:
 
 | Часть                     | Значение                                                                           |
 | ------------------------- | ---------------------------------------------------------------------------------- |
-| `relay-eu.proxyshard.com` | Сервер балансировки нагрузки (relay)                                               |
+| `relay-eu.shardx.com` | Сервер балансировки нагрузки (relay)                                               |
 | `8080`                    | Порт сервера                                                                       |
 | `plan-limited`            | Тариф прокси (`limited` - обычные, `unlimited` - безлимитные, `premium` - премиум) |
 | `country-de`              | Страна подключения: Германия (`de`)                                                |
