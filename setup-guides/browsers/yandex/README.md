@@ -7,4 +7,4 @@ icon: yandex
 
 Расширения для Яндекс.Браузера. Браузер построен на движке Chromium и **напрямую поддерживает** установку расширений из Chrome Web Store.
 
-* [🔥 ShardX Extension](proxyshard.md)
+* [🔥 ShardX Extension](shardx.md)

@@ -7,5 +7,5 @@ icon: edge
 
 Расширения для браузера Edge
 
-* [🔥 ShardX Extension](proxyshard.md)
+* [🔥 ShardX Extension](shardx.md)
 * [ZeroOmega](zeroomega.md)

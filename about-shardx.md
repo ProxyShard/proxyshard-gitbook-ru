@@ -9,8 +9,8 @@ icon: question
 
 <figure>
   <picture>
-    <source srcset=".gitbook/assets/proxyshard-products_black.svg" media="(prefers-color-scheme: dark)">
-    <img src=".gitbook/assets/proxyshard-products_white.svg" alt="Продукты и инструменты ShardX">
+    <source srcset=".gitbook/assets/shardx-products_black.svg" media="(prefers-color-scheme: dark)">
+    <img src=".gitbook/assets/shardx-products_white.svg" alt="Продукты и инструменты ShardX">
   </picture>
   <figcaption><p>Прокси, браузерные инструменты и сервисы проверки ShardX</p></figcaption>
 </figure>

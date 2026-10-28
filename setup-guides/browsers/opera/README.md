@@ -7,5 +7,5 @@ icon: opera
 
 Расширения для браузера Opera
 
-* [🔥 ShardX Extension](proxyshard.md)
+* [🔥 ShardX Extension](shardx.md)
 * [ZeroOmega](zeroomega.md)

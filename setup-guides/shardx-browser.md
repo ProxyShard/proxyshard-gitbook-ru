@@ -7,14 +7,18 @@ icon: browser
 
 <figure>
   <picture>
-    <source srcset="../.gitbook/assets/shardx-cover_black.svg" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/shardx-cover_white.svg" alt="Логотип ShardBrowser">
+    <source srcset="../.gitbook/assets/shardbrowser-cover_black.svg" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/shardbrowser-cover_white.svg" alt="Логотип ShardBrowser">
   </picture>
 </figure>
 
 {% hint style="info" %}
 ShardBrowser представляет собой антидетект-браузер на базе Chromium от команды ShardX. Каждый профиль получает собственный отпечаток (fingerprint) реального устройства и отдельный прокси, поэтому сайты воспринимают профили как разные компьютеры. Программа распространяется бесплатно и поставляется «как есть». При серьёзных проблемах создайте сообщение об ошибке на [GitHub](https://github.com/ProxyShard/ShardBrowser/issues).
 {% endhint %}
+
+Официальный сайт ShardBrowser: [shardbrowser.com](https://shardbrowser.com/).
+
+<figure><img src="../.gitbook/assets/shardbrowser-website.png" alt="Официальный сайт ShardBrowser"><figcaption>Официальный сайт ShardBrowser</figcaption></figure>
 
 ## Системные требования для Windows
 

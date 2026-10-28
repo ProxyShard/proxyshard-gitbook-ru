@@ -7,5 +7,5 @@ icon: firefox-browser
 
 Расширения для браузера Mozilla Firefox
 
-* [🔥 ShardX Extension](proxyshard.md)
+* [🔥 ShardX Extension](shardx.md)
 * [FoxyProxy](foxyproxy.md)

@@ -1,8 +1,6 @@
 ---
 description: Настройка прокси на MikroTik
 icon: router
-cover: https://mikrotik.ru/image/catalog/routeros7/mikrotik.png
-coverY: 0
 ---
 
 # MikroTik прокси
@@ -138,7 +136,7 @@ add key=SOCKS5_INTERFACE list=proxy1 value=xray_eth
 add key=SOCKS5_PASSWORD list=proxy1 value=password_proxy 
 add key=SOCKS5_PORT list=proxy1 value=port_proxy 
 add key=SOCKS5_UDP_MODE list=proxy1 value=udp 
-add key=SOCKS5_USERNAME list=proxy1 value=pasword_proxy
+add key=SOCKS5_USERNAME list=proxy1 value=username_proxy
 ```
 
 <figure><img src="../.gitbook/assets/Image00004.PNG" alt=""><figcaption></figcaption></figure>
@@ -150,7 +148,7 @@ add key=SOCKS5_USERNAME list=proxy1 value=pasword_proxy
 {% endhint %}
 
 {% hint style="info" %}
-Обратите внимание, тестовое подключение производится через SOCKS5! Для того чтобы узнать порт подключения SOCKS, требуется нажать _**Show socks5**_ внутри заказа
+Тестовое подключение выполняется через SOCKS5. Датацентровые и ISP-прокси используют один порт для HTTP и SOCKS5. В `SOCKS5_PORT` укажите порт из блока `Proxy List`. Переключать формат заказа не требуется.
 {% endhint %}
 
 ## **Добавление контейнера**
