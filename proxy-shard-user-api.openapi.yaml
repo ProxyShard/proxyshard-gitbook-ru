@@ -19,7 +19,7 @@
 openapi: 3.0.3
 info:
   title: "Биллинг пользовательского API ShardX"
-  version: 1.1.0
+  version: 1.3.1
 servers:
   - url: https://user-api.shardx.com
 security:
@@ -38,6 +38,77 @@ components:
     bearerAuth:
       type: http
       scheme: bearer
+  parameters:
+    IdempotencyKey:
+      in: header
+      name: Idempotency-Key
+      required: false
+      description: |
+        Необязательный. Уникальный идентификатор логической операции (1–128 символов из `[A-Za-z0-9_.:-]`), например UUID.
+        Повторяя запрос, исход которого неизвестен (таймаут, обрыв соединения), отправляйте ТОТ ЖЕ ключ: уже выполненный запрос НЕ выполняется повторно, возвращается его исходный ответ.
+
+        Принимается на ВСЕХ изменяющих методах (`POST`/`PUT`/`PATCH`/`DELETE`) этого API: покупка, продление, докупка трафика, дополнения и любые методы, добавленные позже; явно указан на методах, которые списывают деньги.
+
+        * Все методы, кроме операций с саб-пользователями: сохранённый ответ возвращается повторно с заголовком `Idempotency-Replayed: true` в течение 7 дней. `409`: запрос с этим ключом ещё выполняется (`idempotency_state: in_progress`) или не завершился, и его исход нужно проверить вручную (`idempotency_state: unknown`; повторно он не выполняется). `422`: ключ уже использован с другим запросом. Ответ `429` от ограничителя частоты ключ не расходует, повторяйте с тем же ключом.
+        * Методы саб-пользователей (создание, `data/add`, `data/subtract`): ключ передаётся провайдеру прокси, и повтор в течение 24 часов не изменит квоту дважды. `409`: операция ещё выполняется или ключ использован с другими данными.
+
+        Без заголовка запросы выполняются как обычно, без этих гарантий.
+      schema:
+        type: string
+        maxLength: 128
+        pattern: ^[A-Za-z0-9_.:-]+$
+  responses:
+    BadRequest:
+      description: |
+        Некорректный запрос; причина в `message`. Большинство проверок отвечает JSON (`ApiError`), некоторые отвечают простым текстом (`Content-Type: text/plain`): `Invalid proxy type`, `User don't have active order with this proxy type`, `User resident not set for user` (методы резидентских прокси), `Addon not available for this product`, `Invalid addons_json` и проверки количества дополнений (методы дополнений, покупка и расчёт с дополнениями), а также ошибки прокси-сервера в `signature/set` и `del-np/set`.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'
+        text/plain:
+          schema:
+            type: string
+            example: Invalid proxy type
+    Unauthorized:
+      description: 'Нет API-ключа или он недействителен: `Missing or invalid Authorization header`, `Invalid API key`, `API key mismatch`'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'
+    ServerError:
+      description: |
+        Внутренняя ошибка. `500` приходит и тогда, когда заказ (или другая нужная запись) не найден или не принадлежит вашему аккаунту; что именно, сказано в `message`, например `Order not found`.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'
+    UpstreamError:
+      description: 'Провайдер прокси недоступен или ответил ошибкой (`Upstream error: <status>`)'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'
+    RateLimited:
+      description: |
+        Больше одного запроса за 3 секунды от аккаунта. Тело ответа простым текстом (`Too many requests, retry in <N>s`), в заголовке `x-ratelimit-after` время ожидания в секундах. Idempotency-Key не расходуется: повторяйте с тем же ключом.
+      content:
+        text/plain:
+          schema:
+            type: string
+            example: Too many requests, retry in 2s
+    IdempotencyConflict:
+      description: |
+        Запрос с этим Idempotency-Key ещё выполняется (`idempotency_state: in_progress`) или не завершился, и его исход нужно проверить вручную (`idempotency_state: unknown`)
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'
+    IdempotencyMismatch:
+      description: Этот Idempotency-Key уже использован с другим запросом
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'
   schemas:
     ActiveProxyItem:
       type: object
@@ -76,6 +147,21 @@ components:
           type: boolean
         message:
           type: string
+        rejected:
+          type: boolean
+          description: 'Операции с саб-пользователями: `true`, если провайдер отклонил операцию и ничего не изменилось'
+        idempotency_state:
+          type: string
+          enum:
+            - in_progress
+            - unknown
+          description: Только в `409` от проверки Idempotency-Key
+        order_id:
+          type: integer
+          description: 'Только в `502` от покупки и add-bandwidth: оплаченный заказ'
+        refunded:
+          type: boolean
+          description: 'Только в `502` от покупки и add-bandwidth: `true`, если оплата вернулась на кошелёк, `false`, если возврат ещё не прошёл (обратитесь в поддержку)'
       required:
         - success
         - message
@@ -122,6 +208,7 @@ components:
         quantity:
           type: integer
           minimum: 1
+          maximum: 100000
           default: 1
         promo_code:
           type: string
@@ -150,6 +237,7 @@ components:
         quantity:
           type: integer
           minimum: 1
+          maximum: 100000
           default: 1
         promo_code:
           type: string
@@ -173,6 +261,7 @@ components:
         quantity:
           type: integer
           minimum: 1
+          maximum: 100000
           default: 1
         promo_code:
           type: string
@@ -223,6 +312,7 @@ components:
         quantity:
           type: integer
           minimum: 1
+          maximum: 100000
           default: 1
         promo_code:
           type: string
@@ -319,7 +409,7 @@ components:
       properties:
         amount:
           type: integer
-          description: Объём в ГБ
+          description: Объём в ГБ (1 ГБ = 1 073 741 824 байт), не больше 100 000
         promo_code:
           type: string
           nullable: true
@@ -343,6 +433,7 @@ components:
         - name
     CreateSubUserPayload:
       type: object
+      description: Нужно указать `data` или `data_bytes`; при обоих используется `data_bytes`.
       properties:
         proxy_type:
           type: string
@@ -350,11 +441,14 @@ components:
           type: string
         data:
           type: integer
-          description: Объём в ГБ
+          description: Объём в ГБ (1 ГБ = 1 073 741 824 байт), не больше 100 000
+        data_bytes:
+          type: integer
+          format: int64
+          description: Объём в байтах (точно; приоритетнее `data`), не больше 100 000 ГБ
       required:
         - proxy_type
         - name
-        - data
     ChangeSubUserPasswordPayload:
       type: object
       properties:
@@ -364,15 +458,96 @@ components:
         - proxy_type
     ModifyTrafficPayload:
       type: object
+      description: Нужно указать `data` или `data_bytes`; при обоих используется `data_bytes`.
       properties:
         proxy_type:
           type: string
         data:
           type: integer
-          description: Объём в ГБ
+          description: Объём в ГБ (1 ГБ = 1 073 741 824 байт), не больше 100 000
+        data_bytes:
+          type: integer
+          format: int64
+          description: Объём в байтах (точно; приоритетнее `data`), не больше 100 000 ГБ
       required:
         - proxy_type
-        - data
+    AnalyticsSeries:
+      type: object
+      description: |
+        Ответ провайдера без изменений. Его вид зависит от `kind`:
+        * `overall`: `results` содержат интервалы времени `{timestamp, data, requests}`, пустые интервалы приходят с нулями; на коротком окне интервалы почасовые, на длинном посуточные;
+        * `domains`: `results` содержат хосты `{hostname, data, requests}` по убыванию `data`; `count` нет;
+        * `connections`: `results` содержат открытые сейчас соединения `{user_id, package_id, server_ip, connections}`; периода (`timezone`, `start`, `end`) нет.
+      properties:
+        count:
+          type: integer
+          description: Всего результатов (`overall`)
+        next:
+          type: string
+          nullable: true
+          description: Ссылка на следующую страницу
+        previous:
+          type: string
+          nullable: true
+          description: Ссылка на предыдущую страницу
+        timezone:
+          type: string
+        start:
+          type: string
+          format: date-time
+        end:
+          type: string
+          format: date-time
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              timestamp:
+                type: string
+                format: date-time
+                description: Начало интервала (`overall`)
+              hostname:
+                type: string
+                description: Хост назначения (`domains`)
+              data:
+                type: integer
+                format: int64
+                description: Байты (`overall`, `domains`)
+              requests:
+                type: integer
+                description: Запросы (`overall`, `domains`)
+              user_id:
+                type: string
+                description: ID аккаунта или саб-пользователя (`connections`)
+              package_id:
+                type: string
+                description: ID пакета (`connections`)
+              server_ip:
+                type: string
+                description: IP шлюза, на котором открыты соединения (`connections`)
+              connections:
+                type: integer
+                description: Открытых соединений (`connections`)
+    SubUserOrderState:
+      type: object
+      nullable: true
+      description: Состояние квоты саб-пользователя ПОСЛЕ операции (null, если провайдер не вернул заказ)
+      properties:
+        proxy_password:
+          type: string
+        data:
+          type: integer
+          format: int64
+          description: Выделенная квота в байтах
+        data_spent:
+          type: integer
+          format: int64
+          description: Израсходовано байт
+        data_remain:
+          type: integer
+          format: int64
+          description: Осталось байт (при перерасходе может быть отрицательным)
     Country:
       type: object
       properties:
@@ -556,18 +731,32 @@ paths:
                 required:
                   - success
                   - data
+        '400':
+          description: У заказа ещё нет данных доступа к прокси (`Missing authtoken in order`)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
         '403':
           description: Метод недоступен для этого заказа
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '502':
+          $ref: '#/components/responses/UpstreamError'
   /user/api/orders/{order_id}/del-np/set:
     post:
       tags:
         - Datacenter & ISP Proxies
       summary: "Установить удаление для каждого IP-адреса (del-np)"
-      description: "Только для прокси дата-центров и ISP. После обновления заказа поля `quantity` и `price_paid` пересчитываются."
+      description: |
+        Только для прокси дата-центров и ISP.
+        Отмеченные прокси работают до конца оплаченного периода и удаляются при следующем продлении. Поля заказа `quantity` и `price_paid` сейчас НЕ меняются: продление списывает плату за оставшиеся прокси (пропорциональную долю цены заказа) и затем обновляет их. См. `renewal_quantity` и `renewal_price` в GET /user/api/orders/{order_id}.
       parameters:
         - in: path
           name: order_id
@@ -613,6 +802,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiError'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /user/api/orders/{order_id}/signature/set:
     post:
       tags:
@@ -675,6 +868,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiError'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /user/api/orders/{order_id}/addons/calculate:
     get:
       tags:
@@ -727,13 +924,22 @@ paths:
                   add_total:
                     type: integer
                     description: "Общая сумма за эту покупку в центах"
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /user/api/orders/{order_id}/addons/purchase:
     post:
       tags:
         - Datacenter & ISP Proxies
       summary: "Купить дополнение"
-      description: "Списывает средства с кошелька и добавляет к заказу указанное количество единиц дополнения. Заказ должен иметь статус **active**. Сейчас доступен только ключ `p0f_slots`."
+      description: |
+        Списывает средства с кошелька и добавляет к заказу указанное количество единиц дополнения. Заказ должен иметь статус **active**. Сейчас доступен только ключ `p0f_slots`.
+        Отправляйте заголовок `Idempotency-Key`, чтобы повтор был безопасен (списываются деньги).
       parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
         - in: path
           name: order_id
           required: true
@@ -775,6 +981,20 @@ paths:
                     description: "Обновленный список дополнений, хранящийся в заказе."
                     items:
                       $ref: '#/components/schemas/AddonLine'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '409':
+          description: Одновременно шло другое изменение дополнений этого заказа (повторите), или запрос с этим Idempotency-Key ещё выполняется
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+        '422':
+          $ref: '#/components/responses/IdempotencyMismatch'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /user/api/orders/{order_id}/addons/schedule:
     post:
       tags:
@@ -797,18 +1017,19 @@ paths:
               required:
                 - addon_key
                 - action
-                - next_qty
               properties:
                 addon_key:
                   type: string
                 action:
                   type: string
+                  description: '`downgrade`: уменьшить количество при следующем продлении; `cancel`: убрать дополнение при следующем продлении'
                   enum:
                     - downgrade
+                    - cancel
                 next_qty:
                   type: integer
-                  description: "Целевое количество после продления. Должно быть меньше текущего количества."
-                  minimum: 1
+                  description: 'Обязателен для `downgrade`: количество после продления, меньше текущего (0 убирает все единицы)'
+                  minimum: 0
       responses:
         '200':
           description: "Понижение запланировано"
@@ -825,6 +1046,18 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/AddonLine'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          description: Заказ не найден
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /user/api/orders/{order_id}/addons/schedule/cancel:
     post:
       tags:
@@ -865,12 +1098,25 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/AddonLine'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /user/api/orders/purchase:
     post:
       tags:
         - General
       summary: Создать и оплатить заказ
-      description: "Покупка по имени продукта, локации и циклу.\nДля Datacenter/ISP; location обязателен.\nДля Standart Residential Proxy; location не требуется.\n"
+      description: |
+        Покупка по имени продукта, локации и циклу.
+        Для Datacenter/ISP location обязателен.
+        Для Standart Residential Proxy location не требуется.
+
+        Отправляйте заголовок `Idempotency-Key`, чтобы повтор был безопасен: без него повтор после таймаута может дважды списать деньги и выдать прокси.
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
       requestBody:
         required: true
         content:
@@ -897,6 +1143,26 @@ paths:
                 $ref: '#/components/schemas/ApiError'
         '401':
           description: Неавторизован
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+        '403':
+          description: Этот платёжный цикл недоступен для вашего аккаунта
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+        '409':
+          $ref: '#/components/responses/IdempotencyConflict'
+        '422':
+          $ref: '#/components/responses/IdempotencyMismatch'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '502':
+          description: Не удалось проверить наличие, или прокси не выдались после оплаты; тогда `order_id` и `refunded` показывают, вернулась ли оплата
           content:
             application/json:
               schema:
@@ -976,6 +1242,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiError'
+        '403':
+          description: Этот платёжный цикл недоступен для вашего аккаунта
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /user/api/orders/change-billing-cycle/{order_id}:
     post:
       tags:
@@ -1039,6 +1313,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiError'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /user/api/orders/edit-auto-renewal/{order_id}:
     post:
       tags:
@@ -1081,6 +1357,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiError'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /user/api/proxies/products:
     get:
       tags:
@@ -1104,6 +1382,8 @@ paths:
                 required:
                   - success
                   - products
+        '401':
+          $ref: '#/components/responses/Unauthorized'
   /user/api/proxies/available-count:
     get:
       tags:
@@ -1119,6 +1399,10 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/AvailableCountResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '502':
+          $ref: '#/components/responses/UpstreamError'
   /user/api/me:
     get:
       tags:
@@ -1131,6 +1415,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiMeResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /user/api/orders:
     get:
       tags:
@@ -1213,6 +1501,10 @@ paths:
                 required:
                   - success
                   - orders
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /user/api/orders/{id}:
     get:
       tags:
@@ -1264,7 +1556,19 @@ paths:
                         description: "Слоты, в настоящее время занятые подписанными прокси"
                       p0f_slots_next:
                         type: integer
-                        description: "Слоты, которые будут активны после следующего продления"
+                        description: Слоты, которые будут активны после следующего продления (не больше renewal_quantity)
+                      renewal_quantity:
+                        type: integer
+                        description: Прокси в следующем периоде (меньше quantity, если часть отмечена del-np)
+                      renewal_price:
+                        type: integer
+                        description: Сколько спишет следующее продление, в центах (renewal_base_price + renewal_addons_price)
+                      renewal_base_price:
+                        type: integer
+                        description: Часть следующего продления за прокси, в центах (пропорциональная доля price_paid)
+                      renewal_addons_price:
+                        type: integer
+                        description: Часть следующего продления за дополнения, в центах (с учётом запланированных изменений)
                       status:
                         type: string
                       created_at:
@@ -1285,13 +1589,21 @@ paths:
                 required:
                   - success
                   - order
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /user/api/orders/{id}/renew:
     post:
       tags:
         - General
       summary: Продлить заказ
-      description: "Продление доступно только при статусе заказа `on-hold`."
+      description: |
+        Продление доступно только при статусе заказа `on-hold`.
+        Повторный запрос для уже продлённого заказа отвечает `200` с `Order already renewed`.
+        Отправляйте заголовок `Idempotency-Key`, чтобы повтор был безопасен (списываются деньги).
       parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
         - in: path
           name: id
           required: true
@@ -1319,6 +1631,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiError'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '409':
+          description: Заказ уже оплачен за текущий период, изменился во время продления (повторите), или запрос с этим Idempotency-Key ещё выполняется
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+        '422':
+          $ref: '#/components/responses/IdempotencyMismatch'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /user/api/orders/{id}/tag:
     post:
       tags:
@@ -1357,12 +1681,17 @@ paths:
                 required:
                   - success
                   - message
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /user/api/orders/{id}/add-bandwidth:
     post:
       tags:
         - Residential Proxies
       summary: Купить дополнительный трафик (Residential)
       parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
         - in: path
           name: id
           required: true
@@ -1390,6 +1719,24 @@ paths:
                 required:
                   - success
                   - message
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '409':
+          $ref: '#/components/responses/IdempotencyConflict'
+        '422':
+          $ref: '#/components/responses/IdempotencyMismatch'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '502':
+          description: Трафик не добавился после оплаты; `order_id` и `refunded` показывают, вернулась ли оплата
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
   /user/api/proxies/profile:
     get:
       tags:
@@ -1400,7 +1747,7 @@ paths:
         - in: query
           name: proxy_type
           required: true
-          description: "Тип прокси (стандарт | премиум)"
+          description: Тип прокси (standart | premium | unlimited)
           schema:
             type: string
       responses:
@@ -1432,17 +1779,170 @@ paths:
                   - data_spent
                   - proxy_password
         '400':
-          description: "Резидент пользователя не установлен/неверный тип прокси"
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiError'
+          $ref: '#/components/responses/BadRequest'
         '401':
-          description: "Требуется авторизация"
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '502':
+          $ref: '#/components/responses/UpstreamError'
+  /user/api/proxies/analytics/{kind}:
+    get:
+      tags:
+        - Residential Proxies
+      summary: Статистика аккаунта
+      description: |
+        Статистика трафика самого аккаунта.
+
+        `kind`:
+        * `overall`: трафик и запросы по интервалам за период;
+        * `domains`: трафик и запросы по хостам назначения за период;
+        * `connections`: соединения, открытые прямо сейчас (без периода).
+
+        По умолчанию учитывается только собственный трафик аккаунта. Передайте `include_sub_users=true`, чтобы добавить всех саб-пользователей аккаунта.
+      parameters:
+        - in: path
+          name: kind
+          required: true
+          description: overall | domains | connections
+          schema:
+            type: string
+            enum:
+              - overall
+              - domains
+              - connections
+        - in: query
+          name: proxy_type
+          required: true
+          description: Тип прокси (standart | premium | unlimited)
+          schema:
+            type: string
+        - in: query
+          name: start
+          required: false
+          description: Начало окна, включительно (ISO 8601, `YYYY-MM-DD HH:MM:SS` или Unix timestamp). Для `connections` не учитывается.
+          schema:
+            type: string
+        - in: query
+          name: end
+          required: false
+          description: Конец окна, не включительно; по умолчанию текущий момент. Для `connections` не учитывается.
+          schema:
+            type: string
+        - in: query
+          name: timezone
+          required: false
+          description: Часовой пояс IANA для границ интервалов, по умолчанию UTC
+          schema:
+            type: string
+        - in: query
+          name: include_sub_users
+          required: false
+          description: Учитывать аккаунт вместе со всеми его саб-пользователями (по умолчанию false)
+          schema:
+            type: boolean
+        - in: query
+          name: limit
+          required: false
+          description: Размер страницы
+          schema:
+            type: integer
+        - in: query
+          name: offset
+          required: false
+          description: Сколько результатов пропустить
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Успешно
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/AnalyticsSeries'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '502':
+          $ref: '#/components/responses/UpstreamError'
+  /user/api/proxies/sub-user/{user_id}/analytics/{kind}:
+    get:
+      tags:
+        - Residential Proxies
+      summary: Статистика саб-пользователя
+      description: |
+        Та же статистика для одного саб-пользователя аккаунта. Доступ проверяет провайдер: запрос идёт от имени аккаунта, а он видит только своих саб-пользователей.
+      parameters:
+        - in: path
+          name: user_id
+          required: true
+          description: ID саб-пользователя у провайдера
+          schema:
+            type: string
+        - in: path
+          name: kind
+          required: true
+          description: overall | domains | connections
+          schema:
+            type: string
+            enum:
+              - overall
+              - domains
+              - connections
+        - in: query
+          name: proxy_type
+          required: true
+          description: Тип прокси (standart | premium | unlimited)
+          schema:
+            type: string
+        - in: query
+          name: start
+          required: false
+          description: Начало окна, включительно (ISO 8601, `YYYY-MM-DD HH:MM:SS` или Unix timestamp). Для `connections` не учитывается.
+          schema:
+            type: string
+        - in: query
+          name: end
+          required: false
+          description: Конец окна, не включительно; по умолчанию текущий момент. Для `connections` не учитывается.
+          schema:
+            type: string
+        - in: query
+          name: timezone
+          required: false
+          description: Часовой пояс IANA для границ интервалов, по умолчанию UTC
+          schema:
+            type: string
+        - in: query
+          name: limit
+          required: false
+          description: Размер страницы
+          schema:
+            type: integer
+        - in: query
+          name: offset
+          required: false
+          description: Сколько результатов пропустить
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Успешно
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnalyticsSeries'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '502':
+          $ref: '#/components/responses/UpstreamError'
   /user/api/proxies/sub-users:
     get:
       tags:
@@ -1452,7 +1952,7 @@ paths:
         - in: query
           name: proxy_type
           required: true
-          description: Тип прокси (standart | premium)
+          description: Тип прокси (standart | premium | unlimited)
           schema:
             type: string
         - in: query
@@ -1465,6 +1965,12 @@ paths:
           required: false
           schema:
             type: integer
+        - in: query
+          name: search
+          required: false
+          description: Поиск у провайдера по имени или логину саб-пользователя
+          schema:
+            type: string
       responses:
         '200':
           description: Успешно
@@ -1502,6 +2008,14 @@ paths:
                         - data
                         - data_spent
                         - data_remain
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '502':
+          $ref: '#/components/responses/UpstreamError'
   /user/api/proxies/sub-user/{user_id}:
     get:
       tags:
@@ -1516,7 +2030,7 @@ paths:
         - in: query
           name: proxy_type
           required: true
-          description: Тип прокси (standart | premium)
+          description: Тип прокси (standart | premium | unlimited)
           schema:
             type: string
       responses:
@@ -1531,9 +2045,12 @@ paths:
                     type: boolean
                   data:
                     type: array
+                    description: Пусто, если саб-пользователя нет
                     items:
                       type: object
                       properties:
+                        user_id:
+                          type: string
                         first_name:
                           type: string
                         proxy_password:
@@ -1542,11 +2059,27 @@ paths:
                           type: integer
                         data_spent:
                           type: integer
+                        data_remain:
+                          type: integer
                       required:
+                        - user_id
                         - first_name
                         - proxy_password
                         - data
                         - data_spent
+                        - data_remain
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '502':
+          description: Ошибка провайдера (саб-пользователь может существовать, повторите запрос)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
     delete:
       tags:
         - Residential Proxies
@@ -1573,6 +2106,18 @@ paths:
                 required:
                   - success
                   - message
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '502':
+          description: Провайдер не удалил саб-пользователя (он ещё существует). Удаление уже удалённого саб-пользователя считается успехом.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
     patch:
       tags:
         - Residential Proxies
@@ -1586,7 +2131,7 @@ paths:
         - in: query
           name: proxy_type
           required: true
-          description: Тип прокси (standart | premium)
+          description: Тип прокси (standart | premium | unlimited)
           schema:
             type: string
       requestBody:
@@ -1611,16 +2156,25 @@ paths:
                 required:
                   - success
                   - message
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /user/api/proxies/sub-user:
     post:
       tags:
         - Residential Proxies
       summary: Создать саб-пользователя
+      description: |
+        Квота задаёт виртуальный лимит поверх общего пула трафика аккаунта: её назначение не списывает трафик из пула, трафик расходуется только когда саб-пользователь реально пользуется прокси.
       parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
         - in: query
           name: proxy_type
           required: true
-          description: Тип прокси (standart | premium)
+          description: Тип прокси (standart | premium | unlimited)
           schema:
             type: string
       requestBody:
@@ -1629,14 +2183,19 @@ paths:
           application/json:
             schema:
               type: object
+              description: Нужно указать `data` или `data_bytes`; при обоих используется `data_bytes`.
               properties:
                 name:
                   type: string
                 data:
                   type: integer
+                  description: Объём в ГБ (1 ГБ = 1 073 741 824 байт), не больше 100 000
+                data_bytes:
+                  type: integer
+                  format: int64
+                  description: Объём в байтах (точно; приоритетнее `data`), не больше 100 000 ГБ
               required:
                 - name
-                - data
       responses:
         '200':
           description: Успешно
@@ -1662,18 +2221,43 @@ paths:
                           type: integer
                         data_spent:
                           type: integer
+                        data_remain:
+                          type: integer
                       required:
                         - user_id
                         - first_name
                         - proxy_password
                         - data
                         - data_spent
+        '400':
+          description: 'Ошибка проверки, или провайдер отклонил запрос (`rejected: true`); ничего не создано'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '409':
+          description: Запрос с этим Idempotency-Key ещё выполняется или ключ использован с другими данными
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '502':
+          description: 'Провайдер недоступен: исход НЕИЗВЕСТЕН; повторите с тем же Idempotency-Key'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
   /user/api/proxies/sub-user/{user_id}/data/add:
     post:
       tags:
         - Residential Proxies
       summary: Добавить трафик саб-пользователю
       parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
         - in: path
           name: user_id
           required: true
@@ -1682,7 +2266,7 @@ paths:
         - in: query
           name: proxy_type
           required: true
-          description: Тип прокси (standart | premium)
+          description: Тип прокси (standart | premium | unlimited)
           schema:
             type: string
       requestBody:
@@ -1691,12 +2275,15 @@ paths:
           application/json:
             schema:
               type: object
+              description: Нужно указать `data` или `data_bytes`; при обоих используется `data_bytes`.
               properties:
                 data:
                   type: integer
-                  description: Объём в ГБ
-              required:
-                - data
+                  description: Объём в ГБ (1 ГБ = 1 073 741 824 байт), не больше 100 000
+                data_bytes:
+                  type: integer
+                  format: int64
+                  description: Объём в байтах (точно; приоритетнее `data`), не больше 100 000 ГБ
       responses:
         '200':
           description: Успешно
@@ -1710,15 +2297,40 @@ paths:
                   message:
                     type: string
                     example: Traffic added to sub user successfully
+                  order:
+                    $ref: '#/components/schemas/SubUserOrderState'
                 required:
                   - success
                   - message
+        '400':
+          description: 'Ошибка проверки, или провайдер отклонил операцию (`rejected: true`); квота НЕ изменилась'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '409':
+          description: Запрос с этим Idempotency-Key ещё выполняется или ключ использован с другими данными
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '502':
+          description: 'Провайдер недоступен: исход НЕИЗВЕСТЕН; повторите с тем же Idempotency-Key'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
   /user/api/proxies/sub-user/{user_id}/data/subtract:
     post:
       tags:
         - Residential Proxies
       summary: Списать трафик у саб-пользователя
       parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
         - in: path
           name: user_id
           required: true
@@ -1727,7 +2339,7 @@ paths:
         - in: query
           name: proxy_type
           required: true
-          description: Тип прокси (standart | premium)
+          description: Тип прокси (standart | premium | unlimited)
           schema:
             type: string
       requestBody:
@@ -1736,12 +2348,15 @@ paths:
           application/json:
             schema:
               type: object
+              description: Нужно указать `data` или `data_bytes`; при обоих используется `data_bytes`.
               properties:
                 data:
                   type: integer
-                  description: Объём в ГБ
-              required:
-                - data
+                  description: Объём в ГБ (1 ГБ = 1 073 741 824 байт), не больше 100 000
+                data_bytes:
+                  type: integer
+                  format: int64
+                  description: Объём в байтах (точно; приоритетнее `data`), не больше 100 000 ГБ
       responses:
         '200':
           description: Успешно
@@ -1755,9 +2370,33 @@ paths:
                   message:
                     type: string
                     example: Traffic subtracted from sub user successfully
+                  order:
+                    $ref: '#/components/schemas/SubUserOrderState'
                 required:
                   - success
                   - message
+        '400':
+          description: 'Ошибка проверки, или провайдер отклонил операцию (`rejected: true`); квота НЕ изменилась'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '409':
+          description: Запрос с этим Idempotency-Key ещё выполняется или ключ использован с другими данными
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '502':
+          description: 'Провайдер недоступен: исход НЕИЗВЕСТЕН; повторите с тем же Idempotency-Key'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
   /user/api/proxies/sub-user/{user_id}/password:
     post:
       tags:
@@ -1772,7 +2411,7 @@ paths:
         - in: query
           name: proxy_type
           required: true
-          description: Тип прокси (standart | premium)
+          description: Тип прокси (standart | premium | unlimited)
           schema:
             type: string
       responses:
@@ -1788,9 +2427,25 @@ paths:
                   message:
                     type: string
                     example: Sub user password changed successfully
+                  proxy_password:
+                    type: string
+                    nullable: true
+                    description: Новый пароль прокси
                 required:
                   - success
                   - message
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '502':
+          description: Провайдер не сменил пароль (старый всё ещё действует)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
   /user/api/proxies/countries:
     get:
       tags:
@@ -1800,7 +2455,7 @@ paths:
         - in: query
           name: proxy_type
           required: true
-          description: Тип прокси (standart | premium)
+          description: Тип прокси (standart | premium | unlimited)
           schema:
             type: string
       responses:
@@ -1810,6 +2465,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PagedCountriesResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /user/api/proxies/regions:
     get:
       tags:
@@ -1819,7 +2480,7 @@ paths:
         - in: query
           name: proxy_type
           required: true
-          description: Тип прокси (standart | premium)
+          description: Тип прокси (standart | premium | unlimited)
           schema:
             type: string
         - in: query
@@ -1835,6 +2496,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PagedRegionsResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /user/api/proxies/cities:
     get:
       tags:
@@ -1844,7 +2511,7 @@ paths:
         - in: query
           name: proxy_type
           required: true
-          description: Тип прокси (standart | premium)
+          description: Тип прокси (standart | premium | unlimited)
           schema:
             type: string
         - in: query
@@ -1866,6 +2533,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PagedCitiesResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /user/api/proxies/isps:
     get:
       tags:
@@ -1907,22 +2580,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/PagedIspsResponse'
         '400':
-          description: "proxy_type не `premium`, резидентность пользователя не установлена ​​или у пользователя нет активного заказа на пакет."
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiError'
-              examples:
-                notPremium:
-                  value:
-                    success: false
-                    message: ISP targeting is available for the premium package only
+          $ref: '#/components/responses/BadRequest'
         '401':
-          description: "Требуется авторизация"
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiError'
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /health:
     get:
       tags:
