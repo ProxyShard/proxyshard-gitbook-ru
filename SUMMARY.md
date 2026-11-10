@@ -1,6 +1,6 @@
 # Table of contents
 
-* [ShardX GitBook](README.md)
+* [Документация ShardX](README.md)
 * [Что такое ShardX](about-shardx.md)
 * [Связь с нами](contact-us.md)
 

@@ -1,8 +1,9 @@
 ---
+description: "Резидентские, датацентр, ISP и мобильные прокси ShardX: подключение, настройка в браузерах и программах, FAQ и API"
 icon: hand-wave
 ---
 
-# ShardX GitBook
+# Документация ShardX
 
 <figure>
   <picture>
