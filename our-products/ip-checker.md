@@ -6,7 +6,7 @@ icon: magnifying-glass
 
 <mark style="color:purple;">ShardX IP Checker</mark> - бесплатный инструмент для проверки вашего IP-адреса, геолокации, данных браузера и обнаружения утечек WebRTC, а также уникальной оценки качества профиля!
 
-{% embed url="https://proxyshard.com/ip-checker" %}
+{% embed url="https://shardx.com/ip-checker" %}
 
 <figure>
   <picture>

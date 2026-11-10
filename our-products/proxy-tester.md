@@ -6,7 +6,7 @@ icon: vial
 
 <mark style="color:purple;">ShardX Proxy Tester</mark> позволяет быстро проверить работоспособность прокси прямо в браузере без установки дополнительного ПО. Для прокси SOCKS5 сервис также проверяет поддержку UDP.
 
-{% embed url="https://proxyshard.com/proxy-tester" %}
+{% embed url="https://shardx.com/proxy-tester" %}
 
 ***
 
@@ -19,7 +19,7 @@ icon: vial
 
 ## Как пользоваться
 
-1. Откройте [proxyshard.com/proxy-tester](https://proxyshard.com/proxy-tester)
+1. Откройте [proxyshard.com/proxy-tester](https://shardx.com/proxy-tester)
 2. Вставьте один или несколько прокси в поле <mark style="color:purple;">**Proxy list**</mark>, каждый с новой строки
 3. Нажмите <mark style="color:purple;">**Test Proxy**</mark>
 4. Дождитесь результата в таблице <mark style="color:purple;">**Proxy check history**</mark> ниже

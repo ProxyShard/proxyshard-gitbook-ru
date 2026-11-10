@@ -17,7 +17,7 @@ icon: at
 
 \
 \
-Или форму на [сайте](https://proxyshard.com/contacts)\
+Или форму на [сайте](https://shardx.com/contacts)\
 Если у вас возникнут вопросы, мы будем рады вам помочь в Live-Chat
 
 <figure>

@@ -5,7 +5,7 @@ icon: gauge
 
 # ShardX Dashboard
 
-Раздел <mark style="color:purple;">**ShardX**</mark> подключает ваш аккаунт [ShardX](https://proxyshard.com) к приложению: баланс, трафик, заказы и покупка прокси доступны прямо в ShardBrowser.
+Раздел <mark style="color:purple;">**ShardX**</mark> подключает ваш аккаунт [ShardX](https://shardx.com) к приложению: баланс, трафик, заказы и покупка прокси доступны прямо в ShardBrowser.
 
 Чтобы подключить аккаунт, скопируйте API-ключ на [вкладке API Key в личном кабинете ShardX](https://dashboard.shardx.com/en/profile?tab=api-key) и вставьте его в поле блока <mark style="color:purple;">**Connect your ShardX account**</mark>.
 

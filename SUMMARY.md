@@ -119,12 +119,12 @@
 
 ## Купить <a href="#buy" id="buy"></a>
 
-* [Купить резидентские прокси](https://proxyshard.com/residential-proxy)
-* [Купить датацентр прокси](https://proxyshard.com/datacenter-proxy)
-* [Купить ISP прокси](https://proxyshard.com/isp-proxy)
-* [Купить мобильные прокси](https://proxyshard.com/mobile-proxy)
-* [IP Чекер](https://proxyshard.com/ip-checker)
-* [Proxy Tester](https://proxyshard.com/proxy-tester)
+* [Купить резидентские прокси](https://shardx.com/residential-proxy)
+* [Купить датацентр прокси](https://shardx.com/datacenter-proxy)
+* [Купить ISP прокси](https://shardx.com/isp-proxy)
+* [Купить мобильные прокси](https://shardx.com/mobile-proxy)
+* [IP Чекер](https://shardx.com/ip-checker)
+* [Proxy Tester](https://shardx.com/proxy-tester)
 
 ## API и интеграции <a href="#api-and-integrations" id="api-and-integrations"></a>
 

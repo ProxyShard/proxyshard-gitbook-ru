@@ -130,7 +130,7 @@ Vision Browser поддерживает TCP- и UDP-трафик через SOCK
 
 ## Проверка WebRTC
 
-Запустите профиль и откройте [ShardX IP Checker](https://proxyshard.com/ip-checker). Адреса TCP и WebRTC должны совпадать.
+Запустите профиль и откройте [ShardX IP Checker](https://shardx.com/ip-checker). Адреса TCP и WebRTC должны совпадать.
 
 <figure>
   <picture>

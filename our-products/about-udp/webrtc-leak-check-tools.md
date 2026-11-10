@@ -8,7 +8,7 @@ icon: check-to-slot
 
 ## 1. ShardX IP Checker
 
-{% embed url="https://proxyshard.com/ip-checker" %}
+{% embed url="https://shardx.com/ip-checker" %}
 
 ### Нормальный результат
 

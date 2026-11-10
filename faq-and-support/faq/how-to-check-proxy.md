@@ -12,7 +12,7 @@ icon: flask-vial
 
 Самый быстрый вариант. 
 
-Откройте наш [Proxy Tester](https://proxyshard.com/proxy-tester), вставьте прокси в поле и нажмите **Test Proxy**.
+Откройте наш [Proxy Tester](https://shardx.com/proxy-tester), вставьте прокси в поле и нажмите **Test Proxy**.
 
 Подробнее о возможностях и форматах читайте в статье [Proxy Tester](../../our-products/proxy-tester.md).
 
