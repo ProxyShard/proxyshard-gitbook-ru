@@ -7,7 +7,7 @@ description: Прокси для Opera
 ## Установка ZeroOmega
 
 {% hint style="warning" %}
-ZeroOmega работает только с TCP-трафиком. Для работы с UDP используйте [Vision Browser](../../antidetect-browsers/vision-browser.md).
+ZeroOmega работает только с TCP-трафиком. Для работы с UDP используйте [Vision Browser](../../antidetect-browsers/vision-browser.md) или бесплатный [ShardBrowser](../../../our-products/shardx-launcher.md).
 {% endhint %}
 
 Установите [ZeroOmega](https://chromewebstore.google.com/detail/pfnededegaaopdmhkdmcofjmoldfiped) из Chrome Web Store.

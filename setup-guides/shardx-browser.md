@@ -1,6 +1,6 @@
 ---
-description: Установка ShardBrowser, добавление прокси и запуск первого профиля
-icon: browser
+description: Антидетект-браузер ShardBrowser с уникальными отпечатками и локальным API для автоматизации профилей через Puppeteer / Playwright
+icon: fingerprint
 ---
 
 # ShardBrowser
@@ -12,217 +12,86 @@ icon: browser
   </picture>
 </figure>
 
+<mark style="color:purple;">**ShardBrowser**</mark> - наш антидетект-браузер. Создавайте отдельные профили с уникальными отпечатками (fingerprint), назначайте каждому профилю свой прокси и работайте с десятками аккаунтов так, чтобы каждый выглядел как отдельный пользователь со своим устройством. Для автоматизации доступно локальное API с поддержкой Puppeteer / Playwright.
+
+Официальный сайт: [shardbrowser.com](https://shardbrowser.com/).
+
+## Скачать и установить
+
+<mark style="color:violet;">**Пошаговая инструкция по установке, настройке прокси и созданию первого профиля:**</mark>
+
+{% content-ref url="../our-products/shardx-launcher.md" %}
+[ShardBrowser - установка и настройка](../our-products/shardx-launcher.md)
+{% endcontent-ref %}
+
+#### Что умеет ShardBrowser:
+
+* Генерирует уникальные отпечатки под <mark style="color:purple;">Windows</mark>, <mark style="color:purple;">macOS</mark> и <mark style="color:purple;">Linux</mark> (navigator, screen, client hints, WebGL / WebGPU и т.д.)
+* Шум по отдельным векторам: <mark style="color:purple;">canvas, WebGL, audio, client rects, шрифты, сенсоры</mark>
+* Неограниченное число профилей с раскладкой по папкам
+* Привязка прокси к профилю (<mark style="color:purple;">SOCKS5 / HTTP / HTTPS</mark>) с автотестом при добавлении
+* Локальное **HTTP API** для полной автоматизации
+* Управление через **CDP** (Chrome DevTools Protocol) - Puppeteer, Playwright и аналоги
+* Экспорт и импорт cookies между профилями
+* Отдельный **MCP-сервер**, чтобы профилем мог управлять ИИ-агент
+
+## Отпечатки и анти-детект
+
+Для каждого профиля ShardBrowser подставляет согласованный набор параметров: User-Agent, платформу, число ядер и объём памяти (никогда не больше, чем у реальной машины), разрешение экрана, Sec-CH-UA и прочее. Сверху накладывается **шум** по отдельным векторам - canvas, WebGL, audio, client rects, шрифты, сенсоры. Каждый блок шума включается независимо, так что отпечаток профиля стабилен внутри сессий, но отличается от других профилей и от вашего реального устройства.
+
 {% hint style="info" %}
-ShardBrowser представляет собой антидетект-браузер на базе Chromium от команды ShardX. Каждый профиль получает собственный отпечаток (fingerprint) реального устройства и отдельный прокси, поэтому сайты воспринимают профили как разные компьютеры. Программа распространяется бесплатно и поставляется «как есть». При серьёзных проблемах создайте сообщение об ошибке на [GitHub](https://github.com/ProxyShard/ShardBrowser/issues).
+Отпечаток генерируется уникальным и не привязан к железу: число ядер CPU и объём RAM подгоняются под хост и не завышаются, экран обрезается под реальный дисплей. Это снижает риск детекта на нестыковках.
 {% endhint %}
 
-Официальный сайт ShardBrowser: [shardbrowser.com](https://shardbrowser.com/).
+## Прокси, QUIC и WebRTC
 
-<figure><img src="../.gitbook/assets/shardbrowser-website.png" alt="Официальный сайт ShardBrowser"><figcaption>Официальный сайт ShardBrowser</figcaption></figure>
+ShardBrowser особенно хорошо работает в связке с нашими прокси. При **каждом** запуске профиля, ещё до старта браузера, привязанный прокси вживую проверяется на поддержку UDP-relay (SOCKS5 UDP\_ASSOCIATE):
 
-## Системные требования для Windows
+* если UDP работает - включается <mark style="color:purple;">QUIC</mark>, а WebRTC ходит через проксированный UDP-relay;
+* если UDP недоступен - QUIC отключается, а WebRTC принудительно переводится в режим **TCP-only**, чтобы реальный IP не утёк.
 
-| Компонент        | Минимум                                | Рекомендуется                                 |
-| ---------------- | -------------------------------------- | --------------------------------------------- |
-| ОС               | Windows 10 22H2 или Windows 11, 64-бит | Windows 11 64-бит                             |
-| Архитектура      | x64 / x86\_64                          | x64                                           |
-| Процессор        | Двухъядерный 64-бит, поддержка SSE3    | Четырёхъядерный и выше                        |
-| ОЗУ              | 4 ГБ                                   | 8 ГБ (16 ГБ при работе с множеством профилей) |
-| Место на диске   | 1 ГБ                                   | От 5 ГБ                                       |
-| Среда выполнения | Microsoft Edge WebView2                | Последняя версия                              |
+Поля часового пояса, локали и геолокации в режиме `auto` тоже подтягиваются вживую через прокси прямо на запуске.
 
----
+{% hint style="success" %}
+Связка ShardBrowser с нашими [**прокси с поддержкой UDP**](../our-products/about-udp/) закрывает утечку WebRTC на уровне браузера: UDP-трафик идёт через прокси, а не напрямую с вашего IP. Подробнее о самой проблеме читайте в разделе [**О протоколе UDP**](../our-products/about-udp/).
+{% endhint %}
 
-## Установка на Windows
+## Автоматизация: локальное API
 
-Скачайте последнюю версию:
+Внутри приложения поднимается локальный HTTP-сервер на <mark style="color:purple;">**127.0.0.1**</mark> (порт по умолчанию **40325**, меняется в _Settings → Automation API_). Снаружи он недоступен - только с вашей машины.
 
-{% embed url="https://github.com/ProxyShard/ShardBrowser/releases/latest" %}
-
-В разделе <mark style="color:purple;">**Assets**</mark> выберите установщик <mark style="color:purple;">`ShardBrowser.Launcher_<версия>_x64-setup.exe`</mark>. Если нужна версия без установки, скачайте <mark style="color:purple;">`ShardBrowser-Launcher-portable-win-x64.exe`</mark>.
-
-<figure>
-  <picture>
-    <source srcset="../.gitbook/assets/shardbrowser-github-release-assets_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/shardbrowser-github-release-assets_white.png" alt="Выберите x64-setup.exe в разделе Assets">
-  </picture>
-  <figcaption>Выберите x64-setup.exe в разделе Assets</figcaption>
-</figure>
-
-Запустите скачанный файл. <mark style="color:purple;">Windows SmartScreen</mark> может показать предупреждение. Нажмите <mark style="color:purple;">**More info**</mark>, затем <mark style="color:purple;">**Run anyway**</mark>.
-
-<figure>
-  <picture>
-    <source srcset="../.gitbook/assets/shardbrowser-windows-smartscreen_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/shardbrowser-windows-smartscreen_white.png" alt="SmartScreen - нажмите «Run anyway»">
-  </picture>
-  <figcaption>SmartScreen: нажмите «Run anyway»</figcaption>
-</figure>
-
-## Установка на macOS
-
-Скачайте файл <mark style="color:purple;">`ShardBrowser.Launcher_<версия>_aarch64.dmg`</mark> в разделе <mark style="color:purple;">**Assets**</mark>. Сборка предназначена для Mac с процессорами Apple Silicon.
-
-Откройте `.dmg` и перетащите <mark style="color:purple;">**ShardBrowser Launcher**</mark> в папку <mark style="color:purple;">**Applications**</mark>. Сборка не нотаризована, поэтому перед первым запуском выполните в терминале:
-
-```bash
-xattr -dr com.apple.quarantine "/Applications/ShardBrowser Launcher.app"
-```
-
-Также разрешить запуск можно в <mark style="color:purple;">**System Settings**</mark> → <mark style="color:purple;">**Privacy & Security**</mark> → <mark style="color:purple;">**Open Anyway**</mark>.
-
-## Установка на Linux
-
-В разделе <mark style="color:purple;">**Assets**</mark> доступны сборки `.AppImage`, `.deb` и `.rpm`. Для запуска AppImage выдайте файлу разрешение на выполнение:
-
-```bash
-chmod +x ShardBrowser.Launcher_<версия>_amd64.AppImage
-./ShardBrowser.Launcher_<версия>_amd64.AppImage
-```
-
-Пакет `.deb` можно установить командой:
-
-```bash
-sudo apt install ./ShardBrowser.Launcher_<версия>_amd64.deb
-```
-
-## Первый запуск
-
-После установки и запуска откроется главный экран <mark style="color:purple;">**All profiles**</mark>. Слева находится меню разделов: профили, прокси, отпечатки, расширения, закладки, автоматизация и кабинет ShardX.
-
-<figure>
-  <picture>
-    <source srcset="../.gitbook/assets/shardbrowser-profiles-empty_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/shardbrowser-profiles-empty_white.png" alt="Главный экран ShardBrowser">
-  </picture>
-  <figcaption>Главный экран ShardBrowser</figcaption>
-</figure>
-
----
-
-## Добавляем прокси
-
-Перейдите в раздел <mark style="color:purple;">**Proxies**</mark> и нажмите <mark style="color:purple;">**+ Add proxies**</mark>.
-
-<figure>
-  <picture>
-    <source srcset="../.gitbook/assets/shardbrowser-proxies-empty_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/shardbrowser-proxies-empty_white.png" alt="Раздел Proxies">
-  </picture>
-  <figcaption>Раздел Proxies</figcaption>
-</figure>
-
-В окне <mark style="color:purple;">**Add proxies**</mark> выберите тип в поле <mark style="color:purple;">**Type for lines without one**</mark> (по умолчанию <mark style="color:purple;">SOCKS5</mark>) и вставьте прокси по одному на строку. Поддерживаемые форматы:
+Все запросы, кроме `GET /health`, требуют **Bearer-токен** (постоянный JWT из настроек):
 
 ```
-host:port
-host:port:user:pass
-user:pass@host:port
-socks5://user:pass@host:port
+Authorization: Bearer <token>
 ```
 
-Строки, начинающиеся с `#`, игнорируются. Прокси, которые уже есть в списке (тот же тип, хост, порт, логин и пароль), будут пропущены.
+Кнопка **Regenerate token** в настройках мгновенно меняет секрет: новый токен начинает работать сразу, а все старые перестают действовать.
 
-<figure>
-  <picture>
-    <source srcset="../.gitbook/assets/shardbrowser-add-proxies-paste_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/shardbrowser-add-proxies-paste_white.png" alt="Вставьте прокси по одному на строку и нажмите «Preview»">
-  </picture>
-  <figcaption>Вставьте прокси по одному на строку и нажмите «Preview»</figcaption>
-</figure>
+Типичный сценарий автоматизации:
 
-Нажмите <mark style="color:purple;">**Preview**</mark>. В окне предпросмотра нажмите <mark style="color:purple;">**Test all**</mark>, чтобы проверить прокси перед добавлением. После теста каждый прокси получит статус и страну.
+1. `GET /fingerprint/new/{platform}` - получить готовый уникальный отпечаток (без сохранения).
+2. При желании - подправить отпечаток (например, включить шум по шрифтам или сменить режим WebRTC).
+3. `POST /profiles` - создать профиль с этим отпечатком (сохраняется как есть, без повторной рандомизации) и привязать прокси.
+4. `POST /profiles/{id}/start` - запустить профиль и получить **CDP-эндпоинт**.
+5. Подключиться к нему как `browserWSEndpoint = cdp.web_socket_debugger_url` в Puppeteer / Playwright.
+6. `POST /profiles/{id}/stop` - закрыть профиль.
 
-<figure>
-  <picture>
-    <source srcset="../.gitbook/assets/shardbrowser-add-proxies-preview_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/shardbrowser-add-proxies-preview_white.png" alt="Нажмите «Test all», затем «Add 1 proxy»">
-  </picture>
-  <figcaption>Нажмите «Test all», затем «Add 1 proxy»</figcaption>
-</figure>
+{% hint style="info" %}
+**Временные профили.** `POST /profiles/temporary` создаёт профиль с флагом `temporary`: он скрыт из общего списка и в интерфейсе, а после закрытия браузера удаляется автоматически (вместе с папкой данных). Удобно для одноразовых задач.
+{% endhint %}
 
-Прокси с меткой <mark style="color:purple;">**UDP**</mark> поддерживают <mark style="color:purple;">SOCKS5 UDP</mark>, а значит и <mark style="color:purple;">WebRTC</mark>, что очень полезно при работе с серьёзными антифрод-системами. Если метки <mark style="color:purple;">**UDP**</mark> нет, профиль переходит в режим <mark style="color:purple;">**TCP-only**</mark>: IP не утечёт, однако трафик может выглядеть подозрительно для продвинутых антифрод-систем. Мы крайне советуем использовать [прокси с поддержкой UDP](../our-products/about-udp/).
+Полное описание всех методов (профили, отпечатки, прокси, папки, cookies, запуск / остановка) с моделями данных и примерами смотрите в [спецификации API ShardX Launcher](https://docs.shardx.com/shardx-launcher-api/binding-and-lifecycle).
 
-Кнопка <mark style="color:purple;">**Select working only**</mark> оставит выбранными только рабочие прокси. Нажмите <mark style="color:purple;">**Add 1 proxy**</mark> - прокси появится в списке.
+## MCP-сервер для ИИ-агентов
 
----
+В комплекте идёт отдельный **MCP-сервер** (Model Context Protocol): он позволяет ИИ-клиенту управлять лаунчером через это же API, а самим браузером профиля - по CDP. Это отдельный Node-процесс, не часть HTTP API.
 
-## Создаём первый профиль
+Скачать его можно прямо из лаунчера (_Settings → MCP server → Download MCP server_). Настраивается двумя переменными: `SHARDX_API` (базовый URL API) и `SHARDX_TOKEN` (тот самый Bearer-токен). MCP-сервер даёт:
 
-Перейдите в раздел <mark style="color:purple;">**All profiles**</mark> и нажмите <mark style="color:purple;">**+ New profile**</mark>. Профиль можно также импортировать из буфера обмена кнопкой <mark style="color:purple;">**Import from clipboard**</mark>.
+* **API-инструменты** - тонкие обёртки над методами лаунчера (профили, отпечатки, прокси, папки, cookies, запуск / остановка);
+* **браузерные инструменты** поверх CDP - навигация, выполнение JS, скриншоты, клики, ввод текста, работа со вкладками и ожидания.
 
-<figure>
-  <picture>
-    <source srcset="../.gitbook/assets/shardbrowser-new-profile-button_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/shardbrowser-new-profile-button_white.png" alt="Раздел All profiles">
-  </picture>
-  <figcaption>Раздел All profiles</figcaption>
-</figure>
-
-Откроется окно <mark style="color:purple;">**New profile**</mark> с вкладками <mark style="color:purple;">**Basics**</mark>, <mark style="color:purple;">**Proxy**</mark>, <mark style="color:purple;">**Fingerprint**</mark> и <mark style="color:purple;">**Extensions**</mark>. На вкладке <mark style="color:purple;">**Basics**</mark> укажите имя профиля. Здесь же можно выбрать папку, теги, цвет, добавить заметку и загрузить файл cookies.
-
-<figure>
-  <picture>
-    <source srcset="../.gitbook/assets/shardbrowser-new-profile-basics_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/shardbrowser-new-profile-basics_white.png" alt="Укажите имя профиля">
-  </picture>
-  <figcaption>Укажите имя профиля</figcaption>
-</figure>
-
-На вкладке <mark style="color:purple;">**Proxy**</mark> выберите сохранённый прокси из списка. Через <mark style="color:purple;">**+ Add a new proxy**</mark> можно сразу добавить новый.
-
-<figure>
-  <picture>
-    <source srcset="../.gitbook/assets/shardbrowser-new-profile-proxy_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/shardbrowser-new-profile-proxy_white.png" alt="Выберите прокси для профиля">
-  </picture>
-  <figcaption>Выберите прокси для профиля</figcaption>
-</figure>
-
-На вкладке <mark style="color:purple;">**Fingerprint**</mark> параметры менять не обязательно - ShardBrowser сам подберёт отпечаток под выбранную ОС. При желании выберите <mark style="color:purple;">операционную систему</mark> (macOS, Windows, Linux, Android), конкретный отпечаток, видеокарту, количество ядер, память, частоту обновления и разрешение экрана.
-
-<figure>
-  <picture>
-    <source srcset="../.gitbook/assets/shardbrowser-new-profile-fingerprint_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/shardbrowser-new-profile-fingerprint_white.png" alt="Настройки отпечатка профиля">
-  </picture>
-  <figcaption>Настройки отпечатка профиля</figcaption>
-</figure>
-
-Нажмите <mark style="color:purple;">**Create profile**</mark>.
-
----
-
-## Запуск профиля
-
-Профиль появится в списке. Справа открывается карточка профиля: прокси, расширения, заметки, параметры отпечатка, часовой пояс и язык (по умолчанию определяются по прокси). Нажмите <mark style="color:purple;">**Start**</mark>.
-
-<figure>
-  <picture>
-    <source srcset="../.gitbook/assets/shardbrowser-profile-start_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/shardbrowser-profile-start_white.png" alt="Нажмите «Start», чтобы запустить профиль">
-  </picture>
-  <figcaption>Нажмите «Start», чтобы запустить профиль</figcaption>
-</figure>
-
-Браузер запустится с изолированным отпечатком и прокси. На стартовой странице `chrome://shardx` перечислены защиты профиля.
-
-<figure>
-  <picture>
-    <source srcset="../.gitbook/assets/shardbrowser-profile-browser-started_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/shardbrowser-profile-browser-started_white.png" alt="Профиль запущен">
-  </picture>
-  <figcaption>Профиль запущен</figcaption>
-</figure>
-
----
-
-## Возможные проблемы
-
-### Приложение не запускается
-
-Скорее всего, не установлен <mark style="color:purple;">Microsoft Edge WebView2 Runtime</mark>. Скачайте и установите его:
-
-{% embed url="https://developer.microsoft.com/en-us/microsoft-edge/webview2/consumer" %}
-
-На оригинальных образах Windows 10/11 WebView2 уже включён. На урезанных сборках он может быть удалён.
+{% hint style="warning" %}
+CDP (remote-debugging) включается **только** при запуске профиля через API. Запуски из интерфейса остаются без отладочного порта - так анти-детект не страдает.
+{% endhint %}

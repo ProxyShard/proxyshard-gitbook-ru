@@ -87,10 +87,10 @@ icon: fingerprint
 
 Для максимального результата рекомендуем использовать:
 
-* [**Vision Browser**](../setup-guides/antidetect-browsers/vision-browser.md) (антидетект-браузер с поддержкой UDP)
+* [**Vision Browser**](../setup-guides/antidetect-browsers/vision-browser.md) или бесплатный [**ShardBrowser**](shardx-launcher.md) — оба антидетект-браузера поддерживают UDP
 * **ISP-прокси от ShardX** с включённой подменой p0f
 
-В такой конфигурации Vision Browser отвечает за браузерный отпечаток, p0f за сетевой, а ISP-прокси предоставляет IP-адрес домашнего интернет-провайдера.
+В такой конфигурации Vision Browser или ShardBrowser отвечает за браузерный отпечаток, p0f за сетевой, а ISP-прокси предоставляет IP-адрес домашнего интернет-провайдера.
 
 ## Где доступно
 

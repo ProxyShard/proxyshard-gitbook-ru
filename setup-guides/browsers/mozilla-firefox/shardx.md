@@ -1,11 +1,11 @@
 ---
-description: Расширение ShardX для Mozilla Firefox
+description: ShardExtension для Mozilla Firefox
 icon: puzzle-piece
 ---
 
-# ShardX Extension
+# ShardExtension
 
-Наше фирменное расширение <mark style="color:purple;">**ShardX – Smart Proxy Manager**</mark> для управления прокси прямо из Mozilla Firefox. Устанавливается напрямую из **Firefox Add-ons**.
+Наше фирменное расширение <mark style="color:purple;">**ShardExtension**</mark> позволяет управлять прокси прямо в Mozilla Firefox и устанавливается из **Firefox Add-ons**.
 
 {% embed url="https://addons.mozilla.org/en-US/firefox/addon/proxyshard-smart-proxy-manager/" %}
 
@@ -17,6 +17,6 @@ icon: puzzle-piece
 
 Полное описание возможностей расширения, шаги по закреплению, настройке профилей под Residential / Datacenter / ISP прокси, а также включение IP-ротации для мобильных прокси находятся на отдельной странице:
 
-{% content-ref url="../../../our-products/shardx-extension.md" %}
-[shardx-extension.md](../../../our-products/shardx-extension.md)
+{% content-ref url="../../../our-products/shardextension.md" %}
+[shardextension.md](../../../our-products/shardextension.md)
 {% endcontent-ref %}

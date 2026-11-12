@@ -43,7 +43,7 @@ UDP поддерживается на Datacenter, ISP, Mobile, Standard Resident
 
 Да, **QUIC поддерживается** на всех прокси, где работает UDP (см. вопрос 2). Однако ваше программное обеспечение тоже должно уметь работать с QUIC.
 
-Например, в [Vision браузере](../../setup-guides/antidetect-browsers/vision-browser.md) для использования QUIC необходимо включить опцию <mark style="color:purple;">**Enable QUIC**</mark> в настройках.
+Например, в [Vision браузере](../../setup-guides/antidetect-browsers/vision-browser.md) для использования QUIC необходимо включить опцию <mark style="color:purple;">**Enable QUIC**</mark> в настройках. В бесплатном [ShardBrowser](../../our-products/shardx-launcher.md) поддержка QUIC и WebRTC настраивается автоматически после проверки прокси на UDP.
 
 ***
 
@@ -114,7 +114,7 @@ UDP поддерживается на Datacenter, ISP, Mobile, Standard Resident
 * В среднем оператор обновляет адрес **раз в сутки**.
 * Оператор может инициировать смену пула в произвольный момент, и адрес сменится раньше.
 
-Это особенность работы мобильного интернета и **не находится в нашем управлении**. Если требуется ротация по таймеру или по нажатию хоткея - используйте функцию [IP Rotation в нашем расширении](../../our-products/shardx-extension.md).
+Это особенность работы мобильного интернета, которую **мы не контролируем**. Если требуется ротация по таймеру или сочетанию клавиш, используйте функцию [IP Rotation в нашем расширении](../../our-products/shardextension.md).
 
 ***
 
@@ -181,7 +181,7 @@ relay-eu.shardx.com:8080:plan-limited-country-any-sid-8dbryym0a32i:7nnrpl6334454
 * В профиле «слипшийся» / повторяющийся fingerprint
 * Браузер выдаёт несовпадающие параметры (timezone, language, WebRTC и т.д.)
 
-**Что делать:** генерируйте новые отпечатки профиля при каждой проблеме, используйте качественные антидетект-решения (например [Vision браузер](../../setup-guides/antidetect-browsers/vision-browser.md)), и проверяйте утечки на [IP Checker](../../our-products/ip-checker.md).
+**Что делать:** генерируйте новые отпечатки профиля при каждой проблеме, используйте качественные антидетект-решения, например [Vision браузер](../../setup-guides/antidetect-browsers/vision-browser.md) или бесплатный [ShardBrowser](../../our-products/shardx-launcher.md), и проверяйте утечки на [IP Checker](../../our-products/ip-checker.md).
 
 ***
 
@@ -215,7 +215,7 @@ relay-eu.shardx.com:8080:plan-limited-country-any-sid-8dbryym0a32i:7nnrpl6334454
 
 Да, у нас есть полноценное пользовательское API.
 
-* **Спецификация и Try-it-out:** раздел [Пользовательское API](../../) в этом GitBook.
+* **Спецификация и Try-it-out:** раздел [Пользовательское API](../../proxyshard-api/getting-started.md) в этом GitBook.
 * **Примеры использования на русском:** [github.com/ProxyShard/proxyshard-api-examples-ru](https://github.com/ProxyShard/proxyshard-api-examples-ru)
 * **Примеры использования на английском:** [github.com/ProxyShard/proxyshard-api-examples](https://github.com/ProxyShard/proxyshard-api-examples)
 
@@ -237,19 +237,14 @@ ISP прокси доступны в следующих локациях:
 | 🇺🇸 США (Пенсильвания) |
 | 🇹🇷 Турция |
 | 🇺🇦 Украина |
+| 🇲🇩 Молдова |
+| 🇦🇹 Австрия |
 
 ***
 
 ## 21. Какие страны доступны на Datacenter прокси?
 
-Доступные локации:
-
-* 🇲🇩 Молдова
-* 🇺🇦 Украина
-* 🇳🇱 Нидерланды
-* 🇩🇪 Германия
-* 🇵🇱 Польша
-* 🇺🇸 США (в ближайшее время)
+Актуальный список стран смотрите на странице [Датацентр-прокси](../../our-products/datacenter-proxies.md) или непосредственно в разделе покупки [Datacenter Proxy](https://dashboard.shardx.com/en/datacenter-proxy).
 
 ***
 

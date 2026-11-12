@@ -1,7 +1,7 @@
 # AdsPower
 
 {% hint style="warning" %}
-AdsPower не поддерживает UDP-прокси. Для задач с UDP используйте [Vision Browser](vision-browser.md).
+AdsPower не поддерживает UDP-прокси. Для задач с UDP используйте [Vision Browser](vision-browser.md) или бесплатный [ShardBrowser](../../our-products/shardx-launcher.md).
 {% endhint %}
 
 ## Добавление прокси

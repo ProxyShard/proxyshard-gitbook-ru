@@ -6,7 +6,7 @@ icon: at
 
 ### Наши ресурсы:
 
-<mark style="color:blue;">Telegram</mark> - [https://t.me/proxyshard](https://t.me/proxyshard)\
+<mark style="color:blue;">Telegram</mark> - [https://t.me/shard_x](https://t.me/shard_x)\
 <mark style="color:purple;">Discord</mark> - [https://discord.gg/zKzzRKZheP](https://discord.gg/zKzzRKZheP)\
 Основная поддержка оказывается в Live-чате в правом нижнем углу <img src=".gitbook/assets/contact-support-icon.png" alt="Live-чат" data-size="line">
 

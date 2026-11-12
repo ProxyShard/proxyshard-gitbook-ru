@@ -195,6 +195,6 @@ Reverse DNS запись для вашего IP (PTR-запись). Показы
 {% hint style="danger" %}
 **Проблема:** Если WebRTC показывает IP, который отличается от прокси, нужно сразу устранить утечку. 
 
-Мы крайне настоятельно рекомендуем всем использовать крайне универсальный метод под любые задачи\
-ISP прокси + хороший антидетект-браузер, пример настройки на [Vision](../setup-guides/antidetect-browsers/vision-browser.md)
+Для большинства задач рекомендуем универсальную связку:\
+ISP-прокси + хороший антидетект-браузер: [Vision](../setup-guides/antidetect-browsers/vision-browser.md) или бесплатный [ShardBrowser](shardx-launcher.md)
 {% endhint %}

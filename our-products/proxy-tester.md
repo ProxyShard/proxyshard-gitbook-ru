@@ -19,7 +19,7 @@ icon: vial
 
 ## Как пользоваться
 
-1. Откройте [proxyshard.com/proxy-tester](https://shardx.com/proxy-tester)
+1. Откройте [shardx.com/proxy-tester](https://shardx.com/proxy-tester)
 2. Вставьте один или несколько прокси в поле <mark style="color:purple;">**Proxy list**</mark>, каждый с новой строки
 3. Нажмите <mark style="color:purple;">**Test Proxy**</mark>
 4. Дождитесь результата в таблице <mark style="color:purple;">**Proxy check history**</mark> ниже

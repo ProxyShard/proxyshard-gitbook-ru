@@ -35,7 +35,7 @@ IP-адреса домашних и мобильных провайдеров с
 
 Прокси мобильных операторов с выбором страны и оператора. IP можно менять по ссылке, а доступные параметры зависят от выбранного тарифа и локации.
 
-### [<mark style="color:purple;">ShardX Extension</mark>](our-products/shardx-extension.md)
+### [<mark style="color:purple;">ShardExtension</mark>](our-products/shardextension.md)
 
 Расширение для Chrome, Firefox и браузеров на Chromium. Позволяет хранить профили, переключать и проверять прокси, а также запускать ротацию мобильного IP по таймеру или сочетанию клавиш.
 
