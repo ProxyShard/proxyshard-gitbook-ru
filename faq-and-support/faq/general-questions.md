@@ -96,7 +96,7 @@ UDP поддерживается на Datacenter, ISP, Mobile, Standard Resident
 * Переход по персональной **Reset URL** ссылке из заказа
 
 {% hint style="warning" %}
-Если не использовать прокси, через **3 часа** порт уходит в энергосберегающий режим. Снять это ограничение нельзя, для возобновления работы достаточно снова дёрнуть Restart proxy или Reset URL.
+Если не использовать прокси, через **3 часа** порт уходит в энергосберегающий режим. Снять это ограничение нельзя. Чтобы возобновить работу, нажмите <mark style="color:purple;">**Restart proxy**</mark> или снова перейдите по ссылке <mark style="color:purple;">**Reset URL**</mark>.
 {% endhint %}
 
 ***
@@ -121,7 +121,7 @@ UDP поддерживается на Datacenter, ISP, Mobile, Standard Resident
 ## 11. Что такое TTL и Sticky на резидентских прокси?
 
 * <mark style="color:purple;">**TTL**</mark> (Time-To-Live) - время «жизни» сессии в секундах. По истечении TTL прокси-цепочка пересоздаётся и вы получаете новый IP. Диапазон от 60 до 86400 секунд.
-* <mark style="color:purple;">**Sticky / Random**</mark> - режим сессии. <mark style="color:purple;">Sticky</mark> старается удерживать один и тот же IP в рамках TTL, <mark style="color:purple;">Random</mark> выдаёт случайный IP при каждом новом подключении.
+* <mark style="color:purple;">**Sticky / Random**</mark> - режим сессии. <mark style="color:purple;">Sticky</mark> старается удерживать один и тот же IP в рамках TTL, <mark style="color:purple;">Random</mark> выдаёт случайный IP при каждом новом соединении.
 
 Полное описание всех параметров заказа резидентских прокси: [Настройка резидентских прокси](../../our-products/residential-proxies/#nastroika-proksi).
 
@@ -166,7 +166,7 @@ UDP поддерживается на Datacenter, ISP, Mobile, Standard Resident
 relay-eu.shardx.com:8080:plan-limited-country-any-sid-8dbryym0a32i:7nnrpl63344545gx
 ```
 
-в логине есть фрагмент `sid-8dbryym0a32i`. Если поменять в нём один символ, например на `sid-8dbryym0a324`, то IP-адрес сменится. То же самое происходит «под капотом», когда вы нажимаете <mark style="color:purple;">Generate proxy</mark>.
+в логине есть фрагмент `sid-8dbryym0a32i`. Если поменять в нём один символ, например на `sid-8dbryym0a324`, то IP-адрес сменится.
 
 <mark style="color:purple;">SID</mark> отвечает за подбор устройства и IP в рамках сессии подключения.
 {% endhint %}
@@ -178,7 +178,7 @@ relay-eu.shardx.com:8080:plan-limited-country-any-sid-8dbryym0a32i:7nnrpl6334454
 Капча от Google и Cloudflare чаще всего связана **не с самим прокси**, а с отпечатком браузера. Самые частые причины:
 
 * Используется устаревший или некачественный антидетект-браузер
-* В профиле «слипшийся» / повторяющийся fingerprint
+* Один и тот же fingerprint используется в нескольких профилях
 * Браузер выдаёт несовпадающие параметры (timezone, language, WebRTC и т.д.)
 
 **Что делать:** генерируйте новые отпечатки профиля при каждой проблеме, используйте качественные антидетект-решения, например [Vision браузер](../../setup-guides/antidetect-browsers/vision-browser.md) или бесплатный [ShardBrowser](../../our-products/shardx-launcher.md), и проверяйте утечки на [IP Checker](../../our-products/ip-checker.md).

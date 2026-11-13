@@ -5,7 +5,7 @@ icon: puzzle-piece
 
 # ShardExtension
 
-Наше фирменное расширение <mark style="color:purple;">**ShardExtension**</mark> устанавливается в Яндекс.Браузер напрямую из **Chrome Web Store** — никаких дополнительных действий не требуется.
+Наше фирменное расширение <mark style="color:purple;">**ShardExtension**</mark> устанавливается в Яндекс.Браузер напрямую из **Chrome Web Store**. Дополнительные действия не требуются.
 
 {% embed url="https://chromewebstore.google.com/detail/ohlcikccaeapbfpmejhckfjjddkcflbe" %}
 
