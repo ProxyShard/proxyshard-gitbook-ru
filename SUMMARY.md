@@ -91,6 +91,7 @@
   * [Potatso](setup-guides/ios-android/potatso.md)
   * [Super Proxy](setup-guides/ios-android/super-proxy.md)
 * [Антидетект браузеры](setup-guides/antidetect-browsers/README.md)
+  * [ShardBrowser](setup-guides/antidetect-browsers/shardbrowser.md)
   * [🔥 Vision браузер](setup-guides/antidetect-browsers/vision-browser.md)
   * [AdsPower](setup-guides/antidetect-browsers/adspower.md)
 * [Браузеры](setup-guides/browsers/README.md)
