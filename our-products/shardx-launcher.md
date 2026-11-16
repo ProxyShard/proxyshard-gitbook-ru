@@ -1,5 +1,5 @@
 ---
-description: Установка ShardBrowser, добавление прокси и запуск первого профиля
+description: Установка, настройка и возможности антидетект-браузера ShardBrowser
 icon: browser
 ---
 
@@ -20,7 +20,9 @@ ShardBrowser представляет собой антидетект-брауз
 
 <figure><img src="../.gitbook/assets/shardbrowser-website.png" alt="Официальный сайт ShardBrowser"><figcaption>Официальный сайт ShardBrowser</figcaption></figure>
 
-## Системные требования для Windows
+## Установка и настройка
+
+### Системные требования для Windows
 
 | Компонент        | Минимум                                | Рекомендуется                                 |
 | ---------------- | -------------------------------------- | --------------------------------------------- |
@@ -33,7 +35,7 @@ ShardBrowser представляет собой антидетект-брауз
 
 ---
 
-## Установка на Windows
+### Установка на Windows
 
 Скачайте последнюю версию:
 
@@ -59,13 +61,13 @@ ShardBrowser представляет собой антидетект-брауз
   <figcaption>SmartScreen: нажмите «Run anyway»</figcaption>
 </figure>
 
-## Установка на macOS
+### Установка на macOS
 
 Скачайте файл <mark style="color:purple;">`ShardBrowser.Launcher_<версия>_aarch64.dmg`</mark> в разделе <mark style="color:purple;">**Assets**</mark>. Сборка предназначена для Mac с процессорами Apple Silicon.
 
 Откройте `.dmg` и перетащите <mark style="color:purple;">**ShardBrowser Launcher**</mark> в папку <mark style="color:purple;">**Applications**</mark>. Приложение подписано сертификатом Apple Developer ID и нотаризовано, поэтому запускается как обычное приложение macOS.
 
-## Установка на Linux
+### Установка на Linux
 
 В разделе <mark style="color:purple;">**Assets**</mark> доступны сборки `.AppImage`, `.deb` и `.rpm`. Для запуска AppImage выдайте файлу разрешение на выполнение:
 
@@ -80,7 +82,7 @@ chmod +x ShardBrowser.Launcher_<версия>_amd64.AppImage
 sudo apt install ./ShardBrowser.Launcher_<версия>_amd64.deb
 ```
 
-## Первый запуск
+### Первый запуск
 
 После установки и запуска откроется главный экран <mark style="color:purple;">**All profiles**</mark>. Слева находится меню разделов: профили, прокси, отпечатки, расширения, закладки, автоматизация и кабинет ShardX.
 
@@ -94,7 +96,7 @@ sudo apt install ./ShardBrowser.Launcher_<версия>_amd64.deb
 
 ---
 
-## Добавляем прокси
+### Добавляем прокси
 
 Перейдите в раздел <mark style="color:purple;">**Proxies**</mark> и нажмите <mark style="color:purple;">**+ Add proxies**</mark>.
 
@@ -141,7 +143,7 @@ socks5://user:pass@host:port
 
 ---
 
-## Создаём первый профиль
+### Создаём первый профиль
 
 Перейдите в раздел <mark style="color:purple;">**All profiles**</mark> и нажмите <mark style="color:purple;">**+ New profile**</mark>. Профиль можно также импортировать из буфера обмена кнопкой <mark style="color:purple;">**Import from clipboard**</mark>.
 
@@ -187,7 +189,7 @@ socks5://user:pass@host:port
 
 ---
 
-## Запуск профиля
+### Запуск профиля
 
 Профиль появится в списке. Справа открывается карточка профиля: прокси, расширения, заметки, параметры отпечатка, часовой пояс и язык (по умолчанию определяются по прокси). Нажмите <mark style="color:purple;">**Start**</mark>.
 
@@ -211,12 +213,84 @@ socks5://user:pass@host:port
 
 ---
 
-## Возможные проблемы
+### Возможные проблемы
 
-### Приложение не запускается
+#### Приложение не запускается
 
 Скорее всего, не установлен <mark style="color:purple;">Microsoft Edge WebView2 Runtime</mark>. Скачайте и установите его:
 
 {% embed url="https://developer.microsoft.com/en-us/microsoft-edge/webview2/consumer" %}
 
 На оригинальных образах Windows 10/11 WebView2 уже включён. На урезанных сборках он может быть удалён.
+
+## Возможности
+
+* Генерация уникальных отпечатков под <mark style="color:purple;">Windows</mark>, <mark style="color:purple;">macOS</mark> и <mark style="color:purple;">Linux</mark> (navigator, screen, client hints, WebGL / WebGPU и т.д.)
+* Шум по отдельным векторам: <mark style="color:purple;">canvas, WebGL, audio, client rects, шрифты, сенсоры</mark>
+* Неограниченное число профилей с раскладкой по папкам
+* Привязка прокси к профилю (<mark style="color:purple;">SOCKS5 / HTTP / HTTPS</mark>) с автотестом при добавлении
+* Локальное **HTTP API** для полной автоматизации
+* Управление через **CDP** (Chrome DevTools Protocol) — Puppeteer, Playwright и аналоги
+* Экспорт и импорт cookies между профилями
+* Отдельный **MCP-сервер**, чтобы профилем мог управлять ИИ-агент
+
+### Отпечатки и антидетект
+
+Для каждого профиля ShardBrowser подставляет согласованный набор параметров: User-Agent, платформу, число ядер и объём памяти (никогда не больше, чем у реальной машины), разрешение экрана, Sec-CH-UA и прочее. Сверху накладывается **шум** по отдельным векторам: canvas, WebGL, audio, client rects, шрифты и сенсоры. Каждый блок шума включается независимо, поэтому отпечаток профиля стабилен внутри сессий, но отличается от других профилей и от вашего реального устройства.
+
+{% hint style="info" %}
+Отпечаток генерируется уникальным и не привязан к железу: число ядер CPU и объём RAM подгоняются под хост и не завышаются, экран ограничивается параметрами реального дисплея. Это снижает риск обнаружения нестыковок.
+{% endhint %}
+
+### Прокси, QUIC и WebRTC
+
+При каждом запуске профиля, ещё до старта браузера, привязанный прокси проверяется на поддержку UDP-relay (SOCKS5 UDP\_ASSOCIATE):
+
+* если UDP работает, включается <mark style="color:purple;">QUIC</mark>, а WebRTC использует проксированный UDP-relay;
+* если UDP недоступен, QUIC отключается, а WebRTC переводится в режим **TCP-only**, чтобы реальный IP не утёк.
+
+Поля часового пояса, локали и геолокации в режиме `auto` также определяются через прокси при запуске.
+
+{% hint style="success" %}
+Связка ShardBrowser с нашими [**прокси с поддержкой UDP**](about-udp/) закрывает утечку WebRTC на уровне браузера: UDP-трафик идёт через прокси, а не напрямую с вашего IP. Подробнее читайте в разделе [**О протоколе UDP**](about-udp/).
+{% endhint %}
+
+### Автоматизация: локальное API
+
+Внутри приложения запускается локальный HTTP-сервер на <mark style="color:purple;">**127.0.0.1**</mark> (порт по умолчанию **40325**, меняется в _Settings → Automation API_). Он доступен только с вашего компьютера.
+
+Все запросы, кроме `GET /health`, требуют **Bearer-токен** (постоянный JWT из настроек):
+
+```
+Authorization: Bearer <token>
+```
+
+Кнопка **Regenerate token** в настройках мгновенно меняет секрет: новый токен начинает работать сразу, а старые перестают действовать.
+
+Типичный сценарий автоматизации:
+
+1. `GET /fingerprint/new/{platform}` — получить готовый уникальный отпечаток без сохранения.
+2. При необходимости изменить отпечаток, например включить шум по шрифтам или сменить режим WebRTC.
+3. `POST /profiles` — создать профиль с этим отпечатком и привязать прокси.
+4. `POST /profiles/{id}/start` — запустить профиль и получить **CDP-эндпоинт**.
+5. Подключиться к нему как `browserWSEndpoint = cdp.web_socket_debugger_url` в Puppeteer / Playwright.
+6. `POST /profiles/{id}/stop` — закрыть профиль.
+
+{% hint style="info" %}
+**Временные профили.** `POST /profiles/temporary` создаёт скрытый профиль с флагом `temporary`. После закрытия браузера профиль и его папка данных удаляются автоматически.
+{% endhint %}
+
+Полное описание методов с моделями данных и примерами смотрите в [спецификации API ShardX Launcher](https://docs.shardx.com/shardx-launcher-api/binding-and-lifecycle).
+
+### MCP-сервер для ИИ-агентов
+
+В комплекте идёт отдельный **MCP-сервер** (Model Context Protocol). Он позволяет ИИ-клиенту управлять лаунчером через API, а браузером профиля — через CDP. Это отдельный Node-процесс, не часть HTTP API.
+
+Скачать его можно прямо из лаунчера (_Settings → MCP server → Download MCP server_). Для настройки используются две переменные: `SHARDX_API` (базовый URL API) и `SHARDX_TOKEN` (Bearer-токен). MCP-сервер предоставляет:
+
+* **API-инструменты** — обёртки над методами лаунчера для профилей, отпечатков, прокси, папок, cookies, запуска и остановки;
+* **браузерные инструменты** поверх CDP — навигацию, выполнение JS, скриншоты, клики, ввод текста, работу со вкладками и ожидания.
+
+{% hint style="warning" %}
+CDP (remote-debugging) включается **только** при запуске профиля через API. При запуске из интерфейса отладочный порт не используется.
+{% endhint %}
