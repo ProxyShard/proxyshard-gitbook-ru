@@ -1,4 +1,5 @@
 ---
+description: "Резидентские прокси ShardX: сравнение Standard, Premium и Unlimited, выбор тарифа, геолокации и режима ротации."
 icon: house-signal
 ---
 

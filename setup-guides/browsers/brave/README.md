@@ -1,5 +1,5 @@
 ---
-description: Brave Browser proxy
+description: "Способы настроить прокси ShardX в Brave через ShardExtension, расширение ZeroOmega или системные параметры."
 icon: shield-halved
 ---
 

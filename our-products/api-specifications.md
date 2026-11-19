@@ -1,3 +1,7 @@
+---
+description: "Справочник по API ShardX для управления прокси, заказами, профилями и автоматизацией ShardBrowser."
+---
+
 # Спецификации API
 
 Здесь собраны интерактивные справочники <mark style="color:$tint;">API ShardX</mark> и <mark style="color:$tint;">ShardX Launcher</mark>.

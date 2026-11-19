@@ -1,4 +1,5 @@
 ---
+description: "Инструкции по настройке HTTP и SOCKS5 прокси ShardX в Linux через графические и консольные программы."
 icon: linux
 ---
 

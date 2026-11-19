@@ -1,4 +1,5 @@
 ---
+description: "Пошаговая настройка HTTP или SOCKS5 прокси ShardX в приложении Potatso на iPhone и iPad."
 icon: apple
 ---
 

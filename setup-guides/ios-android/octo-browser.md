@@ -1,4 +1,5 @@
 ---
+description: "Настройка прокси ShardX в Octo Browser на iOS и Android: создание профиля, ввод данных и проверка IP."
 icon: octopus
 ---
 

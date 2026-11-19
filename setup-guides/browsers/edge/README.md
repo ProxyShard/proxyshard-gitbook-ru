@@ -1,5 +1,5 @@
 ---
-description: Edge proxy
+description: "Способы настроить прокси ShardX в Microsoft Edge через ShardExtension, ZeroOmega или системные параметры."
 icon: edge
 ---
 

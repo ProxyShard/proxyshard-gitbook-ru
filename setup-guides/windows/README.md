@@ -1,4 +1,5 @@
 ---
+description: "Инструкции по настройке HTTP и SOCKS5 прокси ShardX в Windows через Proxifier, v2rayN, NekoRay и другие программы."
 icon: windows
 ---
 

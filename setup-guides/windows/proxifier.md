@@ -1,3 +1,7 @@
+---
+description: "Настройка прокси ShardX в Proxifier для направления выбранных Windows-приложений через HTTP или SOCKS5."
+---
+
 # Proxifier
 
 {% hint style="danger" %}

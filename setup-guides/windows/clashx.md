@@ -1,3 +1,7 @@
+---
+description: "Настройка прокси ShardX в Clash for Windows: добавление конфигурации, системный прокси и проверка подключения."
+---
+
 # Clash for Windows
 
 {% hint style="success" %}

@@ -1,3 +1,7 @@
+---
+description: "Пошаговая настройка прокси ShardX в AdsPower: создание профиля, ввод данных прокси и проверка подключения."
+---
+
 # AdsPower
 
 {% hint style="warning" %}

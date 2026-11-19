@@ -1,4 +1,5 @@
 ---
+description: "Программные решения для безопасной работы WebRTC через прокси: ShardBrowser, Vision и другие варианты."
 icon: git-alt
 ---
 

@@ -1,4 +1,5 @@
 ---
+description: "Premium Residential прокси ShardX с точным геотаргетингом, ротацией IP и оплатой по использованному трафику."
 icon: crown
 ---
 

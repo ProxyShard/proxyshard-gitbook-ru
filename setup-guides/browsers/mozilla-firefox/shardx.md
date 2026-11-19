@@ -1,9 +1,9 @@
 ---
-description: ShardExtension для Mozilla Firefox
+description: "Установка ShardExtension в Mozilla Firefox, добавление прокси ShardX, переключение профилей и проверка IP."
 icon: puzzle-piece
 ---
 
-# ShardExtension
+# ShardExtension для Mozilla Firefox
 
 Наше фирменное расширение <mark style="color:purple;">**ShardExtension**</mark> позволяет управлять прокси прямо в Mozilla Firefox и устанавливается из **Firefox Add-ons**.
 

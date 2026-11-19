@@ -1,4 +1,8 @@
-# V2Box
+---
+description: "Пошаговая настройка прокси ShardX в V2Box на iOS и Android: добавление подключения и проверка внешнего IP."
+---
+
+# V2Box для iOS и Android
 
 {% hint style="success" %}
 V2Box поддерживает UDP-трафик.

@@ -1,9 +1,9 @@
 ---
-description: ShardExtension для Яндекс.Браузера
+description: "Установка ShardExtension в Яндекс.Браузере, добавление прокси ShardX, переключение профилей и проверка IP."
 icon: puzzle-piece
 ---
 
-# ShardExtension
+# ShardExtension для Яндекс.Браузера
 
 Наше фирменное расширение <mark style="color:purple;">**ShardExtension**</mark> устанавливается в Яндекс.Браузер напрямую из **Chrome Web Store**. Дополнительные действия не требуются.
 

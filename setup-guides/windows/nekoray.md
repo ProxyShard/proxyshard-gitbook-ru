@@ -1,3 +1,7 @@
+---
+description: "Пошаговая настройка HTTP или SOCKS5 прокси ShardX в NekoRay для Windows и проверка внешнего IP."
+---
+
 # NekoRay
 
 {% hint style="success" %}

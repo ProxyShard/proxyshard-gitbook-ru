@@ -1,5 +1,5 @@
 ---
-description: Yandex Browser proxy
+description: "Способы настроить прокси ShardX в Яндекс.Браузере через ShardExtension, расширения Chromium или параметры системы."
 icon: yandex
 ---
 

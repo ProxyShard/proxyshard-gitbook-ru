@@ -1,4 +1,5 @@
 ---
+description: "Standard Residential прокси ShardX с большим пулом IP, выбором страны и оплатой за использованный трафик."
 icon: house-signal
 ---
 

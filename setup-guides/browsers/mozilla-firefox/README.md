@@ -1,5 +1,5 @@
 ---
-description: Mozilla Firefox proxy
+description: "Способы настроить прокси ShardX в Mozilla Firefox через ShardExtension, FoxyProxy или параметры браузера."
 icon: firefox-browser
 ---
 

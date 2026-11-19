@@ -1,4 +1,5 @@
 ---
+description: "Проверка IP-адреса, геолокации, провайдера, типа сети, риска утечек и качества прокси в IP Checker ShardX."
 icon: magnifying-glass
 ---
 

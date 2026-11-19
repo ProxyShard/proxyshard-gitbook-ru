@@ -1,5 +1,5 @@
 ---
-description: Safari proxy
+description: "Настройка HTTP или SOCKS5 прокси ShardX для Safari через системные параметры сети в macOS."
 icon: safari
 ---
 

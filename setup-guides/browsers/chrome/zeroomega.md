@@ -1,8 +1,8 @@
 ---
-description: Прокси для Chrome
+description: "Пошаговая настройка HTTP или SOCKS5 прокси ShardX в расширении ZeroOmega для Google Chrome."
 ---
 
-# ZeroOmega
+# ZeroOmega для Google Chrome
 
 ## Установка ZeroOmega
 

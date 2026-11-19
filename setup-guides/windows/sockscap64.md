@@ -1,3 +1,7 @@
+---
+description: "Настройка SOCKS5-прокси ShardX в SocksCap64 для запуска выбранных Windows-программ через прокси."
+---
+
 # SocksCap64
 
 {% hint style="success" %}

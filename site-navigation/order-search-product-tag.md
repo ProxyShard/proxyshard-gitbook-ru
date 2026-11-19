@@ -1,4 +1,5 @@
 ---
+description: "Как найти нужный заказ ShardX по Product tag и быстро открыть связанные прокси и параметры подключения."
 icon: magnifying-glass
 ---
 

@@ -1,8 +1,8 @@
 ---
-description: Прокси для Opera
+description: "Пошаговая настройка HTTP или SOCKS5 прокси ShardX в расширении ZeroOmega для браузера Opera."
 ---
 
-# ZeroOmega
+# ZeroOmega для Opera
 
 ## Установка ZeroOmega
 

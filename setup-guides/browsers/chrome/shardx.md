@@ -1,9 +1,9 @@
 ---
-description: ShardExtension для Google Chrome
+description: "Установка ShardExtension в Google Chrome, добавление прокси ShardX, переключение профилей и проверка IP."
 icon: puzzle-piece
 ---
 
-# ShardExtension
+# ShardExtension для Google Chrome
 
 Наше фирменное расширение <mark style="color:purple;">**ShardExtension**</mark> позволяет управлять прокси прямо в браузере и устанавливается из **Chrome Web Store**.
 

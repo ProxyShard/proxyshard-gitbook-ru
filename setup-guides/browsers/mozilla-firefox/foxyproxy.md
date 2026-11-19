@@ -1,5 +1,5 @@
 ---
-description: Прокси для Mozilla Firefox
+description: "Пошаговая настройка HTTP или SOCKS5 прокси ShardX в расширении FoxyProxy для Mozilla Firefox."
 ---
 
 # FoxyProxy
