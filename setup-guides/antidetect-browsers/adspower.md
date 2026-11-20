@@ -4,10 +4,6 @@ description: "Пошаговая настройка прокси ShardX в AdsPo
 
 # AdsPower
 
-{% hint style="warning" %}
-AdsPower не поддерживает UDP-прокси. Для задач с UDP используйте [Vision Browser](vision-browser.md) или бесплатный [ShardBrowser](../../our-products/shardx-launcher.md).
-{% endhint %}
-
 ## Добавление прокси
 
 Откройте раздел `Proxies` и нажмите `Add Proxy`.
