@@ -1,5 +1,5 @@
 ---
-description: "Способы настроить прокси ShardX в Vivaldi через ShardExtension, расширения Chromium или системные параметры."
+description: "Способы настроить прокси ShardX в Vivaldi через ShardExtension: Proxy Manager, расширения Chromium или системные параметры."
 icon: circle-half-stroke
 ---
 
@@ -7,4 +7,4 @@ icon: circle-half-stroke
 
 Расширения для браузера Vivaldi. Vivaldi построен на движке Chromium и **напрямую поддерживает** установку расширений из Chrome Web Store.
 
-* [🔥 ShardExtension](shardx.md)
+* [🔥 ShardExtension: Proxy Manager](shardx.md)

@@ -1,11 +1,11 @@
 ---
-description: "Установка ShardExtension в Яндекс.Браузере, добавление прокси ShardX, переключение профилей и проверка IP."
+description: "Установка ShardExtension: Proxy Manager в Яндекс.Браузере, добавление прокси ShardX, переключение профилей и проверка IP."
 icon: puzzle-piece
 ---
 
-# ShardExtension для Яндекс.Браузера
+# ShardExtension: Proxy Manager для Яндекс.Браузера
 
-Наше фирменное расширение <mark style="color:purple;">**ShardExtension**</mark> устанавливается в Яндекс.Браузер напрямую из **Chrome Web Store**. Дополнительные действия не требуются.
+Наше фирменное расширение <mark style="color:purple;">**ShardExtension: Proxy Manager**</mark> устанавливается в Яндекс.Браузер напрямую из **Chrome Web Store**. Дополнительные действия не требуются.
 
 {% embed url="https://chromewebstore.google.com/detail/ohlcikccaeapbfpmejhckfjjddkcflbe" %}
 

@@ -1,11 +1,11 @@
 ---
-description: "Установка ShardExtension в Mozilla Firefox, добавление прокси ShardX, переключение профилей и проверка IP."
+description: "Установка ShardExtension: Proxy Manager в Mozilla Firefox, добавление прокси ShardX, переключение профилей и проверка IP."
 icon: puzzle-piece
 ---
 
-# ShardExtension для Mozilla Firefox
+# ShardExtension: Proxy Manager для Mozilla Firefox
 
-Наше фирменное расширение <mark style="color:purple;">**ShardExtension**</mark> позволяет управлять прокси прямо в Mozilla Firefox и устанавливается из **Firefox Add-ons**.
+Наше фирменное расширение <mark style="color:purple;">**ShardExtension: Proxy Manager**</mark> позволяет управлять прокси прямо в Mozilla Firefox и устанавливается из **Firefox Add-ons**.
 
 {% embed url="https://addons.mozilla.org/en-US/firefox/addon/proxyshard-smart-proxy-manager/" %}
 

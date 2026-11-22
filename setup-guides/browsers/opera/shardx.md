@@ -1,11 +1,11 @@
 ---
-description: "Установка ShardExtension в Opera, добавление прокси ShardX, переключение профилей и проверка внешнего IP."
+description: "Установка ShardExtension: Proxy Manager в Opera, добавление прокси ShardX, переключение профилей и проверка внешнего IP."
 icon: puzzle-piece
 ---
 
-# ShardExtension для Opera
+# ShardExtension: Proxy Manager для Opera
 
-Наше фирменное расширение <mark style="color:purple;">**ShardExtension**</mark> устанавливается в Opera напрямую из **Chrome Web Store**.
+Наше фирменное расширение <mark style="color:purple;">**ShardExtension: Proxy Manager**</mark> устанавливается в Opera напрямую из **Chrome Web Store**.
 
 ## Установка
 

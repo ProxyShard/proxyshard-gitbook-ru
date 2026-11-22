@@ -1,5 +1,5 @@
 ---
-description: "Способы настроить прокси ShardX в Brave через ShardExtension, расширение ZeroOmega или системные параметры."
+description: "Способы настроить прокси ShardX в Brave через ShardExtension: Proxy Manager, расширение ZeroOmega или системные параметры."
 icon: shield-halved
 ---
 
@@ -7,4 +7,4 @@ icon: shield-halved
 
 Расширения для браузера Brave. Брэйв построен на движке Chromium и **напрямую поддерживает** установку расширений из Chrome Web Store.
 
-* [🔥 ShardExtension](shardx.md)
+* [🔥 ShardExtension: Proxy Manager](shardx.md)

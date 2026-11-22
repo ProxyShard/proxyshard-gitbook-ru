@@ -1,11 +1,11 @@
 ---
-description: "Установка ShardExtension в Brave, добавление прокси ShardX, переключение профилей и проверка внешнего IP."
+description: "Установка ShardExtension: Proxy Manager в Brave, добавление прокси ShardX, переключение профилей и проверка внешнего IP."
 icon: puzzle-piece
 ---
 
-# ShardExtension для Brave
+# ShardExtension: Proxy Manager для Brave
 
-Наше фирменное расширение <mark style="color:purple;">**ShardExtension**</mark> устанавливается в Brave напрямую из **Chrome Web Store**: браузер использует движок Chromium и совместим со всеми расширениями Chrome.
+Наше фирменное расширение <mark style="color:purple;">**ShardExtension: Proxy Manager**</mark> устанавливается в Brave напрямую из **Chrome Web Store**: браузер использует движок Chromium и совместим со всеми расширениями Chrome.
 
 {% embed url="https://chromewebstore.google.com/detail/ohlcikccaeapbfpmejhckfjjddkcflbe" %}
 

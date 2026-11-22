@@ -1,11 +1,11 @@
 ---
-description: "Установка ShardExtension в Vivaldi, добавление прокси ShardX, переключение профилей и проверка внешнего IP."
+description: "Установка ShardExtension: Proxy Manager в Vivaldi, добавление прокси ShardX, переключение профилей и проверка внешнего IP."
 icon: puzzle-piece
 ---
 
-# ShardExtension для Vivaldi
+# ShardExtension: Proxy Manager для Vivaldi
 
-Наше фирменное расширение <mark style="color:purple;">**ShardExtension**</mark> устанавливается в Vivaldi напрямую из **Chrome Web Store**: браузер использует движок Chromium и совместим со всеми расширениями Chrome.
+Наше фирменное расширение <mark style="color:purple;">**ShardExtension: Proxy Manager**</mark> устанавливается в Vivaldi напрямую из **Chrome Web Store**: браузер использует движок Chromium и совместим со всеми расширениями Chrome.
 
 {% embed url="https://chromewebstore.google.com/detail/ohlcikccaeapbfpmejhckfjjddkcflbe" %}
 

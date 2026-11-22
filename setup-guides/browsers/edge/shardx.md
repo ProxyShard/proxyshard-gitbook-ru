@@ -1,11 +1,11 @@
 ---
-description: "Установка ShardExtension в Microsoft Edge, добавление прокси ShardX, переключение профилей и проверка IP."
+description: "Установка ShardExtension: Proxy Manager в Microsoft Edge, добавление прокси ShardX, переключение профилей и проверка IP."
 icon: puzzle-piece
 ---
 
-# ShardExtension для Microsoft Edge
+# ShardExtension: Proxy Manager для Microsoft Edge
 
-Наше фирменное расширение <mark style="color:purple;">**ShardExtension**</mark> работает в Microsoft Edge без ограничений: браузер построен на движке Chromium и поддерживает расширения из **Chrome Web Store**.
+Наше фирменное расширение <mark style="color:purple;">**ShardExtension: Proxy Manager**</mark> работает в Microsoft Edge без ограничений: браузер построен на движке Chromium и поддерживает расширения из **Chrome Web Store**.
 
 {% hint style="info" %}
 При первой установке расширения из Chrome Web Store Edge может предложить «**Разрешить расширения из других магазинов**», подтвердите это разрешение.

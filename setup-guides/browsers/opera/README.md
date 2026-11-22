@@ -1,5 +1,5 @@
 ---
-description: "Способы настроить прокси ShardX в Opera через ShardExtension, ZeroOmega или системные параметры."
+description: "Способы настроить прокси ShardX в Opera через ShardExtension: Proxy Manager, ZeroOmega или системные параметры."
 icon: opera
 ---
 
@@ -7,5 +7,5 @@ icon: opera
 
 Расширения для браузера Opera
 
-* [🔥 ShardExtension](shardx.md)
+* [🔥 ShardExtension: Proxy Manager](shardx.md)
 * [ZeroOmega](zeroomega.md)

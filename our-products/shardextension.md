@@ -3,9 +3,9 @@ description: Расширение для Chrome, Firefox и других бра�
 icon: puzzle-piece
 ---
 
-# ShardExtension
+# ShardExtension: Proxy Manager
 
-<mark style="color:purple;">**ShardExtension**</mark> - фирменное расширение ShardX для Chrome, Mozilla Firefox и браузеров на Chromium: Edge, Opera, Brave, Yandex и других. С его помощью можно добавлять, проверять и переключать прокси прямо в браузере.
+<mark style="color:purple;">**ShardExtension: Proxy Manager**</mark> - фирменное расширение ShardX для Chrome, Mozilla Firefox и браузеров на Chromium: Edge, Opera, Brave, Yandex и других. С его помощью можно добавлять, проверять и переключать прокси прямо в браузере.
 
 #### Возможности расширения
 
@@ -22,7 +22,7 @@ icon: puzzle-piece
 <figure>
   <picture>
     <source srcset="../.gitbook/assets/proxyshard-extension-popup-overview_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/proxyshard-extension-popup-overview_white.png" alt="Главное окно ShardExtension">
+    <img src="../.gitbook/assets/proxyshard-extension-popup-overview_white.png" alt="Главное окно ShardExtension: Proxy Manager">
   </picture>
   <figcaption><p>Главное окно расширения со списком прокси-профилей</p></figcaption>
 </figure>
@@ -39,12 +39,12 @@ icon: puzzle-piece
 
 {% embed url="https://addons.mozilla.org/en-US/firefox/addon/proxyshard-smart-proxy-manager/" %}
 
-После установки откройте меню `Extensions` справа от адресной строки и закрепите `ShardExtension`, нажав значок булавки.
+После установки откройте меню `Extensions` справа от адресной строки и закрепите `ShardExtension: Proxy Manager`, нажав значок булавки.
 
 <figure>
   <picture>
     <source srcset="../.gitbook/assets/proxyshard-extension-pin_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/proxyshard-extension-pin_white.png" alt="Закрепление ShardExtension в браузере">
+    <img src="../.gitbook/assets/proxyshard-extension-pin_white.png" alt="Закрепление ShardExtension: Proxy Manager в браузере">
   </picture>
   <figcaption><p>Откройте меню Extensions и закрепите расширение</p></figcaption>
 </figure>
@@ -60,7 +60,7 @@ SOCKS5 можно использовать только без учётных д
 {% hint style="success" %}
 **SOCKS5 в Mozilla Firefox**
 
-Версия ShardExtension для Mozilla Firefox поддерживает SOCKS5 с авторизацией, поэтому такие профили можно использовать напрямую.
+Версия ShardExtension: Proxy Manager для Mozilla Firefox поддерживает SOCKS5 с авторизацией, поэтому такие профили можно использовать напрямую.
 {% endhint %}
 
 ## Настройка резидентского прокси
@@ -77,7 +77,7 @@ SOCKS5 можно использовать только без учётных д
   <figcaption><p>Настройка резидентского прокси и блок Proxy List</p></figcaption>
 </figure>
 
-4. Откройте закреплённое ShardExtension.
+4. Откройте закреплённое ShardExtension: Proxy Manager.
 5. Вставьте строку в формате `ip:port:login:password` в нижнее поле и нажмите `Add`.
 
 <figure>
@@ -220,7 +220,7 @@ SOCKS5 можно использовать только без учётных д
 <figure>
   <picture>
     <source srcset="../.gitbook/assets/proxyshard-extension-options-import-export_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/proxyshard-extension-options-import-export_white.png" alt="Импорт и экспорт профилей ShardExtension">
+    <img src="../.gitbook/assets/proxyshard-extension-options-import-export_white.png" alt="Импорт и экспорт профилей ShardExtension: Proxy Manager">
   </picture>
   <figcaption><p>Резервное копирование и восстановление профилей</p></figcaption>
 </figure>
@@ -242,11 +242,11 @@ SOCKS5 можно использовать только без учётных д
 <figure>
   <picture>
     <source srcset="../.gitbook/assets/proxyshard-extension-options-preferences_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/proxyshard-extension-options-preferences_white.png" alt="Настройки Preferences в ShardExtension">
+    <img src="../.gitbook/assets/proxyshard-extension-options-preferences_white.png" alt="Настройки Preferences в ShardExtension: Proxy Manager">
   </picture>
   <figcaption><p>Дополнительные настройки расширения</p></figcaption>
 </figure>
 
 {% hint style="success" %}
-ShardExtension готово к работе. Включать и переключать сохранённые профили можно из главного окна расширения.
+ShardExtension: Proxy Manager готово к работе. Включать и переключать сохранённые профили можно из главного окна расширения.
 {% endhint %}
